@@ -1,2 +1,31 @@
-header.header.brd
-  +img('logo.svg').header__logo
+header.header
+    .header__left
+        a(href='look').look.header__link
+            span.look__text огляд 360°
+            +svg('look').look__svg
+        .header__line
+        .custom-select
+            .select-selected.select-arrow-active УКР
+            .select-items.select-hide
+                a(href='/ru').select-item РУС
+                a(href='/en').select-item ENG
+
+        .header__line
+        a(href='/apartments').header__link квартири
+    a(href='/').header__logo
+        +img('logo.svg')
+    .header__right
+        a(href='/location').header__link локація
+        .header__line
+        .coll
+            .coll__num
+                +svg('tell')
+                a(href='tel:0442992203').coll__phone 044 29-92-203
+            .request
+                a(href='#').request__link.js-form-open Замовити дзвінок
+        .header__line
+        .burger
+            span.burger__name Меню
+            .burger__icon
+                span.burger__line
+                span.burger__line

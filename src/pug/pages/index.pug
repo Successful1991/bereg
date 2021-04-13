@@ -12,7 +12,7 @@ block variable
         link: pagesLink[0].about
       }
     ]
-  
+
 block meta
   title= title_page
   meta(name='description', content='')
@@ -22,11 +22,11 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
-  script(defer src='./assets/scripts/home.js')
+  //script(defer src='./assets/scripts/customSelect.js')
+  script(defer src='./assets/scripts/header.js')
 block content
   //- include ../includes/breadcrumbs.pug
-  each v in [11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,]
-    123 <br>
+
 block footer
   include ../includes/footer.pug
 

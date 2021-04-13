@@ -47,8 +47,6 @@ const merge = require('merge-stream');
 const path = require('path');
 
 
-
-
 const paths = {
     root: './dist',
     templateStyles: {
@@ -59,7 +57,7 @@ const paths = {
 				src: './src/pug/**/*.pug',
 				dest: './dist'
     },
-		styles: { 
+		styles: {
 				main: './src/assets/styles/main.scss',
 				importsFiles: './src/assets/styles/assets/templates.scss',
         stylesPages: './src/assets/styles/pages',
@@ -113,7 +111,7 @@ function watch() {
     if (typeScriptSetting) {
       gulp.watch(paths.ts.src, typeScript);
     }
-    
+
 		gulp.watch(paths.ts.src, testJsLint);
 		gulp.watch(paths.images.src, images);
 		gulp.watch(paths.fonts.src, fonts);
@@ -132,14 +130,14 @@ function watchScssTemplates() {
 }
 
 function scssTemplateCreater() {
-  
+
   fs.readdir(paths.styles.stylesPages, (err, nameFiles) => {
     const filesNameWithoutExt =  nameFiles.map(el => el.replace(/\.scss/g, ''));
     const contentImportsFiles =  filesNameWithoutExt.reduce((acc, el) => acc += `@import './pages/${el}';\n`, ``);
-    
+
     fs.writeFile(paths.styles.importsFiles, contentImportsFiles,  null, ()=>{});
   });
-  
+
 };
 
 
@@ -364,7 +362,7 @@ const pathsProd = {
 		src: './dist/assets/images/**/*',
 		dest: './prod/assets/images'
 	},
-}
+};
 // CLEAN PROD FOLDER
 function _clean() {
 	return del(pathsProd.root);

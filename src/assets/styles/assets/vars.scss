@@ -1,4 +1,4 @@
-$default-font: "montser",
+$default-font: "gilroy",
 sans-serif;
 $default-font2: "montser",
 sans-serif;
@@ -12,7 +12,9 @@ $wc: #fff;
 $bc: #000;
 $bc2: #000;
 
+
+$light: #FCFCFC;
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
-  --header-h: 80px;
+  --header-h: 90px;
 }
