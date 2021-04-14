@@ -47,3 +47,128 @@
 	fill: $mc;
 }
 
+
+.template-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 5;
+  &__title {
+    font-family: $default-font;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.2em;
+    color: $mc;
+    span {
+      font-weight: 400;
+      margin: 0 3px 0 0;
+      @include from(1600px) {
+        margin: 0 6px 0 0;
+      }
+    }
+    @include from(1600px) {
+      font-size: 68px;
+    }
+  }
+  &__text {
+    position: relative;
+    max-width: 258px;
+    padding: 0 0 0 40px;
+    margin-top: 40px;
+
+    font-family: $default-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4em;
+    color: $mc;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0;
+      height: 50px;
+      border-left: 1px solid rgba(26, 41, 65, 0.3);
+    }
+    @include from(1600px) {
+      padding: 0 0 0 78px;
+      max-width: 380px;
+      margin-top: 50px;
+      font-size: 24px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 40px;
+    margin-top: 40px;
+
+    font-family: $default-font;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1em;
+    color: #1A2941;
+    white-space: nowrap;
+    text-decoration: none;
+    @include from(1600px) {
+      padding: 0 0 0 78px;
+      margin-top: 50px;
+      font-size: 28px;
+    }
+  }
+}
+
+.link__arrow {
+  display: flex;
+  width: 50px;
+  height: 9px;
+  margin: 0 0 0 20px;
+  svg {
+    height: 100%;
+  }
+  @include from(1600px) {
+    width: 70px;
+    height: 13px;
+    margin: 0 0 0 50px;
+  }
+}
+
+.section-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  z-index: 1;
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  &__top {
+    top: 0;
+  }
+  &__bottom {
+    bottom: 0;
+  }
+
+  @include from(1600px) {
+    height: 240px;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #CFA46E;
+  svg {
+    height: 55%;
+    width: 55%;
+    fill: transparent;
+  }
+}

@@ -25,6 +25,23 @@ block scripts
   script(defer src='./assets/scripts/header.js')
 block content
   //- include ../includes/breadcrumbs.pug
+  section.home-section-1
+    .section-bg.section-bg__top
+        +img('bg-logo-white-top.png')
+    .template-content.template-dark
+        .template-content__title
+            span Про
+            | Bereg
+            | Residence
+        .template-content__text Дізнайтеся більше про новий житловий комплекс на березі Дніпра.
+        a(href='about').template-content__link
+            span Перейти до розділу
+            .link__arrow
+                +svg('arrow')
+    .section-bg.section-bg__bottom
+      +img('bg-logo-white-bottom.png')
+    .home-bg-image
+      +img('home/1.png')
 
 block footer
   include ../includes/footer.pug

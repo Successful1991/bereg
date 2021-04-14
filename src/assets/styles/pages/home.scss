@@ -1,0 +1,27 @@
+.home {
+  &-section{
+    &-1 {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      padding: 0 0 0 160px;
+      background: $bg;
+    }
+  }
+  &-bg-image {
+    display: inline-block;
+    height: 100%;
+    flex: 1 1 100%;
+    z-index: 3;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+}
+
