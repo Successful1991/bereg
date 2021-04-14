@@ -12,6 +12,22 @@ block variable
         link: pagesLink[0].about
       }
     ]
+    var slider = [{
+      img: 'slider/1.jpg',
+      title: 'Власна резиденція у місті',
+      url: 'about',
+      linkText: 'Обрати квартиру',
+    },{
+      img: 'slider/1.jpg',
+      title: 'Власна резиденція у місті2',
+      url: 'about',
+      linkText: 'Обрати квартиру',
+    },{
+      img: 'slider/1.jpg',
+      title: 'Власна резиденція у місті3',
+      url: 'about',
+      linkText: 'Обрати квартиру',
+    }]
 
 block meta
   title= title_page
@@ -22,9 +38,31 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
 block content
   //- include ../includes/breadcrumbs.pug
+  section.home-section-0
+    .home-slider.js-slider
+        each sl in slider
+            .slide.link__white
+                +img(sl.img)
+                .slide__content
+                    .slide__title= sl.title
+                    a(href= sl.url).slide__link.link
+                        span= sl.linkText
+                        .link__arrow
+                            +svg('arrow')
+    .home-slider__arrows
+        .home-slider__arrow.home-slider__prev
+            +svg('arrow')
+        .home-slider__amount
+            span.home-slider__current.js-home-slider__current
+            span /
+            span.home-slider__all.js-home-slider__all
+        .home-slider__arrow.home-slider__next
+            +svg('arrow')
   section.home-section-1
     .section-bg.section-bg__top
         +img('bg-logo-white-top.png')
@@ -34,7 +72,7 @@ block content
             | Bereg
             | Residence
         .template-content__text Дізнайтеся більше про новий житловий комплекс на березі Дніпра.
-        a(href='about').template-content__link
+        a(href='about').template-content__link.link
             span Перейти до розділу
             .link__arrow
                 +svg('arrow')
@@ -42,6 +80,7 @@ block content
       +img('bg-logo-white-bottom.png')
     .home-bg-image
       +img('home/1.png')
+
 
 block footer
   include ../includes/footer.pug
