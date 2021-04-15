@@ -63,24 +63,94 @@ block content
             span.home-slider__all.js-home-slider__all
         .home-slider__arrow.home-slider__next
             +svg('arrow')
+
+    .home-scroll
+        +svg('scroll')
   section.home-section-1
-    .section-bg.section-bg__top
-        +img('bg-logo-white-top.png')
-    .template-content.template-dark
+    .section-bg.section-bg__white-top
+    .template-content.template-content--dark
         .template-content__title
             span Про
             | Bereg
             | Residence
-        .template-content__text Дізнайтеся більше про новий житловий комплекс на березі Дніпра.
         a(href='about').template-content__link.link
             span Перейти до розділу
             .link__arrow
                 +svg('arrow')
-    .section-bg.section-bg__bottom
-      +img('bg-logo-white-bottom.png')
-    .home-bg-image
+    .section-bg.section-bg__white-bottom
+    .home-bg__image.home-bg__image--right
       +img('home/1.png')
-
+  section.home-section-2
+    +img('home/2.jpg').home-section-2__img
+    .home-section-2__content.all__white
+        .home-section-2__title
+            span Квартири <br>
+            | Bereg <wbr>
+            | Residence
+        .home-section-2__desc
+            .home-section-2__text Кажуть, що мрію потрібно візуалізувати. Переходьте до розділу і оберіть свою.
+            a(href='flats').home-section-2__link.link
+                span Перейти до розділу
+                .link__arrow
+                    +svg('arrow')
+  section.home-section-3
+      .home-bg__image.home-bg__image--left
+          +img('home/3.png')
+      .section-bg.section-bg__dark-top
+      .template-content.template-content--white
+          .template-content__title Тераса
+          .template-content__text Зустріч світанку з кавою набуває нового сенсу, коли зустрічаєш його на власній терасі, площею 800 квадратних метрів!
+          a(href='about').template-content__link.link
+              span Перейти до розділу
+              .link__arrow
+                  +svg('arrow')
+      .section-bg.section-bg__dark-bottom
+  section.home-section-4
+      .template-content.template-content--dark
+          .template-content__title Архітектура <br>та технології
+          .template-content__text Бути першими – складно, але ми впоралися. Сучасна архітектура будинку, якої ще не будували в Україні, в BEREG Residence!
+          a(href='about').template-content__link.link
+              span Перейти до розділу
+              .link__arrow
+                  +svg('arrow')
+      .home-bg__image.home-bg__image--left
+          +img('home/4.jpg')
+  section.home-section-5
+      .home-bg__image.home-bg__image--left
+          +img('home/5.png')
+      .section-bg.section-bg__gold-top
+      .template-content.template-content--white
+          .template-content__title Документи <br>комплексу
+          .template-content__text Ознайомтеся з пакетом документів, що гарантують безпеку вашої інвестиції.
+          a(href='about').template-content__link.link
+              span Перейти до розділу
+              .link__arrow
+                  +svg('arrow')
+      .section-bg.section-bg__gold-bottom
+  section.home-section-6
+    .template-content.template-content--dark
+      .template-content__title Девелопер <br>проєкту
+      .template-content__text Дізнайтеся більше про нас і наші реалізовані проекти.
+      a(href='about').template-content__link.link
+        span Перейти до розділу
+        .link__arrow
+          +svg('arrow')
+    .home-bg__image.home-bg__image--left
+      +img('home/6.jpg')
+  section.home-section-7
+    .home-bg__image.home-bg__image--left
+      +img('home/7.png')
+    .section-bg.section-bg__light-top
+    .template-content.template-content--dark
+      .template-content__title
+        span Новини <br>
+          | Bereg
+          | Residence
+      a(href='about').template-content__link.link
+        span Перейти до розділу
+        .link__arrow
+          +svg('arrow')
+    .section-bg.section-bg__light-bottom
 
 block footer
   include ../includes/footer.pug
