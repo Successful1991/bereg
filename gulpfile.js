@@ -2,7 +2,6 @@ const proxy = "bereg";
 let webPackSetting = true;
 let typeScriptSetting = false;
 
-
 var fs = require('fs');
 const gulp = require('gulp');
 const rename = require('gulp-rename');
@@ -150,7 +149,6 @@ function server() {
 		});
 		browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
-
 
 
 // очистка

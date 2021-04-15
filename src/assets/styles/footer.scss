@@ -12,6 +12,10 @@
   align-items: flex-start;
   justify-content: space-between;
   z-index: 50;
+  @include to(1600px) {
+    height: 80px;
+    padding: 0 110px;
+  }
   &-copy {
     margin-top: 10px;
     font-weight: 500;

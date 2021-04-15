@@ -1,0 +1,26 @@
+.contacts {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  padding: 135px 0 160px;
+  background: #1C2029;
+  .title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 0 0 20px;
+    margin: 15px 0 40px;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: inline-block;
+      width: 50px;
+      transform: translateX(-50%);
+      border-bottom: 1px solid rgba(226, 227, 228, 0.3);
+    }
+  }
+}

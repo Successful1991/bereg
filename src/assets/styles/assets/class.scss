@@ -27,7 +27,6 @@
   border-bottom: 1px solid red;
 }
 
-
 .overflow--hidden:not(#some){
 	overflow: hidden;
 	margin-right: 10px;
@@ -46,7 +45,6 @@
 .fill--mc svg {
 	fill: $mc;
 }
-
 
 .template-content {
   display: flex;
@@ -148,7 +146,6 @@
   &__dark *{
     color: $dark;
     fill: $dark;
-
   }
 }
 
@@ -223,4 +220,13 @@
     width: 55%;
     fill: transparent;
   }
+}
+
+.title {
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #E2E3E4;
 }

@@ -1,8 +1,13 @@
+import Cleave from 'cleave.js';
+import intlTelInput from 'intl-tel-input';
+
 export default class SexyInput {
   constructor(setting) {
     this.selected = false;
     this.$field = setting.$field;
     this.$input = setting.$input || setting.$field.querySelector('input');
+    this.typeInput = setting.typeInput || 'text';
+    this.animation = setting.animation || 'none';
     this.$message = setting.$message || setting.$field.querySelector('[data-input-message]');
 
     this.$body = document.querySelector('body');
@@ -59,7 +64,9 @@ export default class SexyInput {
   }
 
   addSelectedStyle() {
-    this.$field.classList.add('selected');
+    if (this.animation === 'focus') {
+      this.$field.classList.add('selected');
+    }
   }
 
   removeSelectedStyle() {
@@ -103,11 +110,55 @@ export default class SexyInput {
 
   listeners(input) {
     const self = this;
-    input.addEventListener('focus', self.selectIn(self));
-    input.addEventListener('blur', self.selectOut(self));
+
+    if (this.typeInput === 'phone') {
+      /* eslint-disable */
+      input.setAttribute('inputmode', 'tel');
+      // input.intTelIput = intlTelInput(input, {
+      //   preferredCountries: ['ua'],
+      //   autoPlaceholder: 'off',
+      // });
+      let cleave = new Cleave(input, {
+        /* eslint-enable */
+        numericOnly: true,
+        prefix: '+380',
+        blocks: [4, 2, 3, 2, 2],
+        delimiters: [' ', ' ', ' ', ''],
+      });
+      // input.addEventListener('countrychange', () => {
+      //   const currentCountry = input.intTelIput.getSelectedCountryData();
+      //   const { dialCode } = currentCountry;
+      //   const selfInput = input;
+      //   const maskPartForUkraine = currentCountry.iso2 === 'ua' ? 2 : 3;
+      //   cleave.destroy();
+      //   selfInput.value = '';
+      //   cleave = new Cleave(input, {
+      //     numericOnly: true,
+      //     delimiter: '-',
+      //     prefix: `+${dialCode}`,
+      //     /* В код страны добавляется символ + */
+      //     blocks: [dialCode.toString().length + 1, maskPartForUkraine, 3, 2, 2],
+      //     delimiters: [' ', ' ', ' ', ''],
+      //   });
+      // });
+    }
+    if (this.animation === 'focus') {
+      input.addEventListener('focus', self.selectIn(self));
+      input.addEventListener('blur', self.selectOut(self));
+    }
+  }
+
+  prepareMarkup() {
+    if (this.animation === 'focus') {
+      this.$field.setAttribute('data-animation', 'focus');
+    }
+    if (this.animation === 'none') {
+      this.$field.setAttribute('data-animation', 'none');
+    }
   }
 
   init() {
     this.listeners(this.$input);
+    this.prepareMarkup(this.$input);
   }
 }

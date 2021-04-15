@@ -39,6 +39,7 @@ const lang = langDetect();
             'Сообщение не было отправлено за неизвестной ошибки сервера. Код: [front_error]',
           invalid_upload_file: 'Ошибка загрузки файла. Код: [invalid_upload_file]',
           invalid_recaptcha: 'Заполните капчу и попробуйте еще раз снова. Код: [invalid_recaptcha]',
+          connectionFailed: 'Ошибка соединения с CRM',
         },
       },
       uk: {
@@ -66,6 +67,7 @@ const lang = langDetect();
             'Повідомлення не було відправлено через невідому помилку сервера. Код: [front_error] ',
           invalid_upload_file: 'Помилка завантаження файлу. Код: [invalid_upload_file]',
           invalid_recaptcha: 'Заповніть капчу і спробуйте ще раз знову. Код: [invalid_recaptcha]',
+          connectionFailed: 'Помилка з\'єднання с CRM',
         },
       },
       en: {
@@ -90,6 +92,7 @@ const lang = langDetect();
           front_error: 'The message was not sent for an unknown server error. Code: [front_error] ',
           invalid_upload_file: 'Error uploading file. Code: [invalid_upload_file] ',
           invalid_recaptcha: 'Please fill in the captcha and try again. Code: [invalid_recaptcha] ',
+          connectionFailed: 'Server connection error',
         },
       },
     },
@@ -101,6 +104,7 @@ export default class FormMonster {
   constructor(setting) {
     this.elements = setting.elements;
     this.$body = document.querySelector('body');
+    this.showSuccessMessage = setting.showSuccessMessage || true;
 
     this.state = {
       serverError: null,

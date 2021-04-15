@@ -1,0 +1,71 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4em;
+    color: #CFA46E;
+  }
+  &__desc {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2em;
+    color: #FFFFFF;
+  }
+  &__link {
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #CFA46E;
+    &__arrow {
+      display: flex;
+      width: 50px;
+      height: 9px;
+      margin: 0 0 0 20px;
+      svg {
+        height: 100%;
+        fill: #CFA46E;
+      }
+      @include from(1600px) {
+        width: 70px;
+        height: 13px;
+        margin: 0 0 0 50px;
+      }
+    }
+  }
+  &__sales {
+    margin-top: 60px;
+    width: min-content;
+  }
+  &__phone {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2em;
+    color: #FFFFFF;
+  }
+  &__mail {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2em;
+    color: #FFFFFF;
+  }
+  &__work-time {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4em;
+    color: #FCFCFC;
+  }
+}

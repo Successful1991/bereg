@@ -19,8 +19,6 @@ function init() {
     prevArrow: '.home-slider__prev',
     nextArrow: '.home-slider__next',
   });
-
-
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -1,3 +1,3 @@
-@@include('../../../../node_modules/bezier-easing/dist/bezier-easing.min.js');
-@@include('./jquery/jquery.min.js');
-@@include('./slick/slick.min.js');
+@@include('../../../../node_modules/bezier-easing/dist/bezier-easing.min.js')
+@@include('./jquery/jquery.min.js')
+@@include('./slick/slick.min.js')

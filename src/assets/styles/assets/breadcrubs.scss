@@ -1,0 +1,18 @@
+.breadcrumbs {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  color: #C4C7CC;
+  margin: 0 160px 0 auto;
+  &-list {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+  .link__arrow {
+    margin: 0 15px;
+    fill: #C4C7CC;
+  }
+}
