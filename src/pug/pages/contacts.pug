@@ -44,27 +44,27 @@ block content
 
     .form
       h5.form-label.home-contact--width Залишились питання?
-        form(data-home-contact autocomplete="off").home-contact--width
+      form(data-home-contact autocomplete="off").home-contact--width
+        .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(type='text' name="name" placeholder="Ім’я:").form-field__input
           .form-field-message Ваше ім’я
-          .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(type='text' name="name" placeholder="Ім’я:").form-field__input
-            .input-message(data-input-message)
+          .input-message(data-input-message)
 
+        .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+          input(type='text' name="phone" placeholder="Телефон:").form-field__input
           .form-field-message Ваш телефон
-          .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-            input(type='text' name="phone" placeholder="Телефон:").form-field__input
-            .mask-absolute.js-mask-absolute
-            .input-message(data-input-message)
+          .mask-absolute.js-mask-absolute
+          .input-message(data-input-message)
 
-          .form-textarea
-            .form-field-message Введіть ваше повідомлення
-            textarea(placeholder="Повідомлення:")
+        .form-textarea
+          textarea(placeholder="Повідомлення:")
+          .form-field-message Введіть ваше повідомлення
 
-          .form-btn-wrap.df.jcsb.aic
-            button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit")
-              span.main-button__text(data-btn-submit-text="data-btn-submit-text") Надіслати
-              .main-button__arrow
-                +svg('arrow')
+        .form-btn-wrap.df.jcsb.aic
+          button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit")
+            span.main-button__text(data-btn-submit-text="data-btn-submit-text") Надіслати
+            .main-button__arrow
+              +svg('arrow')
 
       //include ../components/form/form.pug
 
