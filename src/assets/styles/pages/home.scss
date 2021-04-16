@@ -181,14 +181,29 @@
     }
     &__arrow {
       display: flex;
-      width: 50px;
-      height: 29px;
+      width: 70px;
+      height: 13px;
       padding: 10px 0;
       cursor: pointer;
       svg {
         height: 100%;
         width: 100%;
         fill: #E2E3E4;
+      }
+      @include to(1440px) {
+        width: 50px;
+        height: 29px;
+        padding: 10px 0;
+      }
+      @include to(992px) {
+        width: 50px;
+        height: 9px;
+        padding: 10px 0;
+      }
+      @include to(576px) {
+        width: 32px;
+        height: 6px;
+        padding: 10px 0;
       }
     }
     &__prev {
@@ -210,13 +225,23 @@
   }
   &-scroll {
     position: absolute;
-    bottom: 50px;
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%);
     svg {
-      height: 36px;
-      width: 24px;
+      height: 52px;
+      width: 34px;
       fill: none;
+      @include to(1440px) {
+        height: 36px;
+        width: 24px;
+      }
+    }
+    @include to(1440px) {
+      bottom: 50px;
+    }
+    @include to(992px) {
+      display: none;
     }
   }
 }
@@ -241,15 +266,50 @@
     align-items: center;
     align-content: center;
     justify-content: flex-start;
+    @include to(992px) {
+      max-width: none;
+      padding: 0 60px;
+    }
   }
   &__title {
+    position: relative;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 55px;
     line-height: 1.5em;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #FFFFFF;
     text-align: center;
+    @include to(1440px) {
+      font-size: 40px;
+    }
+    @include to(992px) {
+      font-size: 35px;
+    }
+    @include to(576px) {
+      font-size: 15px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      @include to(1440px) {
+        width: 50px;
+        bottom: -30px;
+      }
+      @include to(992px) {
+        width: 70px;
+        bottom: -50px;
+      }
+      @include to(576px) {
+        width: 30px;
+        bottom: -25px;
+      }
+    }
   }
   &__link {
     margin-top: 60px;
