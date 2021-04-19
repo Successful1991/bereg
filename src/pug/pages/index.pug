@@ -66,36 +66,48 @@ block content
 
     .home-scroll
         +svg('scroll')
-  section.home-section-1
-    .section-bg.section-bg__white-top
-    .template-content.template-content--dark
-        .template-content__title
-            span Про
-            | Bereg
-            | Residence
-        a(href='about').template-content__link.link
-            span Перейти до розділу
-            .link__arrow
-                +svg('arrow')
-    .section-bg.section-bg__white-bottom
+  section.home-section-1.home-section__grid.home-section-left
+    .home-section__content.home-section__content-left
+      .section-bg.section-bg__white-top
+      .template-content.template-content--dark
+          .template-content__title
+              span Про
+              | Bereg <br>
+              | Residence
+          .template-content__text Дізнайтеся більше про новий житловий комплекс на березі Дніпра.
+          a(href='about').template-content__link.link
+              span Перейти до розділу
+              .link__arrow
+                  +svg('arrow')
+      .section-bg.section-bg__white-bottom
     .home-bg__image.home-bg__image--right
-      +img('home/1.png')
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/home/1.jpg")
+        source(media="(max-width: 992px)" srcset="assets/images/home/1-table.png")
+        img(src="assets/images/home/1.jpg")
   section.home-section-2
-    +img('home/2.jpg').home-section-2__img
+    picture.home-section-2__img
+      source(media="(min-width: 993px)" srcset="assets/images/home/2.jpg")
+      source(media="(max-width: 992px)" srcset="assets/images/home/2-table.jpg")
+      img(src="assets/images/home/2.jpg")
     .home-section-2__content.all__white
-        .home-section-2__title
-            span Квартири <br>
-            | Bereg <wbr>
-            | Residence
-        .home-section-2__desc
-            .home-section-2__text Кажуть, що мрію потрібно візуалізувати. Переходьте до розділу і оберіть свою.
-            a(href='flats').home-section-2__link.link
-                span Перейти до розділу
-                .link__arrow
-                    +svg('arrow')
-  section.home-section-3
-      .home-bg__image.home-bg__image--left
-          +img('home/3.png')
+      .home-section-2__title
+          span Квартири <br>
+          | Bereg <wbr>
+          | Residence
+      .home-section-2__desc
+          .home-section-2__text Кажуть, що мрію потрібно візуалізувати. Переходьте до розділу і оберіть свою.
+          a(href='flats').home-section-2__link.link
+              span Перейти до розділу
+              .link__arrow
+                  +svg('arrow')
+  section.home-section-3.home-section__grid.home-section-right
+    .home-bg__image.home-bg__image--left
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/home/3.jpg")
+        source(media="(max-width: 992px)" srcset="assets/images/home/3-table.png")
+        img(src="assets/images/home/3.jpg")
+    .home-section__content.home-section__content-right
       .section-bg.section-bg__dark-top
       .template-content.template-content--white
           .template-content__title Тераса
@@ -105,7 +117,8 @@ block content
               .link__arrow
                   +svg('arrow')
       .section-bg.section-bg__dark-bottom
-  section.home-section-4
+  section.home-section-4.home-section__grid
+    .home-section__content
       .template-content.template-content--dark
           .template-content__title Архітектура <br>та технології
           .template-content__text Бути першими – складно, але ми впоралися. Сучасна архітектура будинку, якої ще не будували в Україні, в BEREG Residence!
@@ -113,11 +126,18 @@ block content
               span Перейти до розділу
               .link__arrow
                   +svg('arrow')
-      .home-bg__image.home-bg__image--left
-          +img('home/4.jpg')
-  section.home-section-5
-      .home-bg__image.home-bg__image--left
-          +img('home/5.png')
+    .home-bg__image.home-bg__image--left
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/home/4.jpg")
+        source(media="(max-width: 992px)" srcset="assets/images/home/4-table.png")
+        img(src="assets/images/home/4.jpg")
+  section.home-section-5.home-section__grid.home-section-right
+    .home-bg__image.home-bg__image--left
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/home/5.jpg")
+        source(media="(max-width: 992px)" srcset="assets/images/home/5-table.png")
+        img(src="assets/images/home/5.jpg")
+    .home-section__content.home-section__content-right
       .section-bg.section-bg__gold-top
       .template-content.template-content--white
           .template-content__title Документи <br>комплексу
@@ -127,30 +147,81 @@ block content
               .link__arrow
                   +svg('arrow')
       .section-bg.section-bg__gold-bottom
-  section.home-section-6
-    .template-content.template-content--dark
-      .template-content__title Девелопер <br>проєкту
-      .template-content__text Дізнайтеся більше про нас і наші реалізовані проекти.
-      a(href='about').template-content__link.link
-        span Перейти до розділу
-        .link__arrow
-          +svg('arrow')
+  section.home-section-6.home-section__grid
+    .home-section__content
+      .template-content.template-content--dark
+        .template-content__title Девелопер <br>проєкту
+        .template-content__text Дізнайтеся більше про нас і наші реалізовані проекти.
+        a(href='about').template-content__link.link
+          span Перейти до розділу
+          .link__arrow
+            +svg('arrow')
     .home-bg__image.home-bg__image--left
-      +img('home/6.jpg')
-  section.home-section-7
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/home/6.jpg")
+        source(media="(max-width: 992px)" srcset="assets/images/home/6-table.png")
+        img(src="assets/images/home/6.jpg")
+  section.home-section-7.home-section__grid.home-section-right
     .home-bg__image.home-bg__image--left
-      +img('home/7.png')
-    .section-bg.section-bg__light-top
-    .template-content.template-content--dark
-      .template-content__title
-        span Новини <br>
-          | Bereg
-          | Residence
-      a(href='about').template-content__link.link
-        span Перейти до розділу
-        .link__arrow
-          +svg('arrow')
-    .section-bg.section-bg__light-bottom
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/home/7.jpg")
+        source(media="(max-width: 992px)" srcset="assets/images/home/7-table.jpg")
+        img(src="assets/images/home/7.jpg")
+    .home-section__content.home-section__content-right
+      .section-bg.section-bg__light-top
+      .template-content.template-content--dark
+        .template-content__title
+          span Новини <br>
+            | Bereg
+            | Residence
+        a(href='about').template-content__link.link
+          span Перейти до розділу
+          .link__arrow
+            +svg('arrow')
+      .section-bg.section-bg__light-bottom
+  section.home-section-8
+    .title Контакти
+    .contact
+      .contact__location
+        .contact__title Розташування:
+        .contact__desc м. Київ, Оболонський район,<br> пр-т Степана Бандрери, 30
+        a(href="").contact__link
+          span Показати на Google Maps
+          .contact__link__arrow
+            +svg('arrow')
+      .contact__sales
+        .contact__title Відділ продажів:
+        .contact__phone 044 555-55-55
+        .contact__mail info@beregresidence.com
+        .contact__work-time
+          span Пн-пт: 09:00-19:00
+          span Сб-вс: 10:00-18:00
+
+    .form
+      h5.form-label.home-contact--width Залишились питання?
+      form(data-home-contact autocomplete="off").home-contact--width
+        .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(type='text' name="name" placeholder="Ім’я:").form-field__input
+          .form-field-message Ваше ім’я
+          .input-message(data-input-message)
+
+        .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+          input(type='text' name="phone" placeholder="Телефон:").form-field__input
+          .form-field-message Ваш телефон
+          .mask-absolute.js-mask-absolute
+          .input-message(data-input-message)
+
+        .form-textarea
+          textarea(placeholder="Повідомлення:")
+          .form-field-message Введіть ваше повідомлення
+
+        .form-btn-wrap.df.jcsb.aic
+          button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit")
+            span.main-button__text(data-btn-submit-text="data-btn-submit-text") Надіслати
+            .main-button__arrow
+              +svg('arrow')
+
+      //include ../components/form/form.pug
 
 block footer
   include ../includes/footer.pug

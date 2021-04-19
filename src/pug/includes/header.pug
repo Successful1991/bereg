@@ -13,14 +13,17 @@ header.header
         .header__line
         a(href='/apartments').header__link квартири
     a(href='/').header__logo
-        object( type="image/svg+xml" data="./assets/images/logo.svg")
+        img(srcset="./assets/images/logo.svg 1920w, ./assets/images/logo-mobile.svg 992w" sizes="(max-width: 992px) 992px, 1920px")
+        //object( type="image/svg+xml" data="./assets/images/logo.svg")
+    .header__call-mobile
+        +svg('tell')
     .header__right
         a(href='/location').header__link локація
         .header__line
-        .coll
-            .coll__num
+        .call
+            .call__num
                 +svg('tell')
-                a(href='tel:0442992203').coll__phone 044 29-92-203
+                a(href='tel:0442992203').call__phone 044 29-92-203
             .request
                 a(href='#').request__link.js-form-open Замовити дзвінок
         .header__line

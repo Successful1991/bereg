@@ -172,6 +172,9 @@
   @include to(1440px) {
     width: 400px;
   }
+  @include to(1080px) {
+    width: 340px;
+  }
   @include to(992px) {
     margin: 0 auto;
     width: 490px;

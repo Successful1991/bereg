@@ -122,3 +122,17 @@ forms.forEach((form) => {
  * form handlers end
  */
 /** ******************************* */
+
+
+const val = '360.40 46.35, 366.49 -1.00, 870.00 -1.00, 870.00 667.00, 32.00 667.00, 31.00 667.00, 98.68 598.74, 159.85 525.47, 260.29 363.48, 280.88 320.42, 290.30 298.51, 294.97 287.55, 299.27 276.45, 330.07 186.19, 342.14 140.03, 347.59 116.79, 352.21 93.37, 360.40 46.35';
+const arr = val.split(', ');
+const height = 666;
+const width = 414;
+const result = arr.map((str) => {
+  const [x, y] = str.split(' ');
+  console.log(x, y);
+  const newX = (x * 100 / width).toFixed(2);
+  const newY = (y * 100 / height).toFixed(2);
+  return `${newX}% ${newY}%`;
+});
+console.log(result.join(', '));

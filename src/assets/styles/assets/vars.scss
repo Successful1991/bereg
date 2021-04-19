@@ -22,8 +22,18 @@ $dark: #1A2941;
 
 }
 
-@media screen and (min-width: 1600px){
+@media screen and (max-width: 1440px){
   :root {
-    --header-h: 120px;
+    --header-h: 90px;
+  }
+}
+@media screen and (max-width: 992px){
+  :root {
+    --header-h: 110px;
+  }
+}
+@media screen and (max-width: 576px){
+  :root {
+    --header-h: 70px;
   }
 }

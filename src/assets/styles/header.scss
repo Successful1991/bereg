@@ -4,7 +4,7 @@
   left: 0;
   height: var(--header-h);
   width: 100%;
-  padding: 0 50px;
+  padding: 0 80px;
   display: flex;
   align-content: center;
   align-items: center;
@@ -12,13 +12,19 @@
 
   background: rgba(26, 41, 65, 0.6);
   z-index: 100;
+  @include to(1440px) {
+    padding: 0 50px;
+  }
+  @include to(992px) {
+    padding: 0;
+  }
   &__logo {
-    height: 120px;
-    width: 120px;
+    height: 160px;
+    width: 160px;
     flex-shrink: 0;
     align-self: flex-start;
     display: flex;
-    padding: 15px;
+    padding: 20px;
     margin: 0 25px;
     background: #1A2941;
     cursor: pointer;
@@ -26,10 +32,29 @@
       width: 100%;
       height: 100%;
     }
-    @include from(1600px) {
-      padding: 20px;
-      height: 160px;
-      width: 160px;
+    @include to(1440px) {
+      padding: 15px;
+      height: 120px;
+      width: 120px;
+    }
+    @include to(992px) {
+      order: -1;
+      align-self: center;
+      padding: 0;
+      height: 60px;
+      width: 200px;
+      margin: 0 40px;
+      background: none;
+    }
+    //@include to(767px) {
+    //  height: 48px;
+    //  width: 157px;
+    //  margin: 0 30px;
+    //}
+    @include to(576px) {
+      height: 36px;
+      width: 115px;
+      margin: 0 20px;
     }
   }
   &__link {
@@ -37,14 +62,17 @@
     align-self: center;
     font-family: $default-font;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
     color: $light;
-    @include from(1600px) {
-      font-size: 18px;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    @include to(992px) {
+      display: none;
     }
   }
 
@@ -52,19 +80,24 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
+    @include to(992px) {
+      padding: 0;
+    }
   }
 
   &__right {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
+    @include to(992px) {
+      padding: 0;
+    }
   }
   &__line {
     display: flex;
     justify-content: center;
     width: 80px;
     height: initial;
-    //background-color: $light;
     flex: 0 1 80px;
     &:after {
       content: '';
@@ -72,19 +105,42 @@
       height: 100%;
       border-left: 1px solid $light;
     }
+    @include to(992px) {
+      display: none;
+    }
+  }
+
+  &__call-mobile {
+    display: none;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+    background: #CFA46E;
+    border-radius: 50%;
+    svg {
+      width: 11px;
+      height: 18px;
+      fill: #1A2941;
+    }
+    @include to(576px) {
+      display: flex;
+    }
   }
 }
 
 .look {
   &__text {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $light;
-    @include from(1600px) {
-      font-size: 18px;
+    @include to(1440px) {
+      font-size: 14px;
     }
   }
   &__svg {
@@ -93,16 +149,18 @@
   }
 }
 
-.coll {
+.call {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 0;
   &__num {
     svg {
       width: 9px;
       height: 15px;
-      @include from(1600px) {
+      fill: #FCFCFC;
+      @include to(1440px) {
         height: 18px;
       }
     }
@@ -110,16 +168,25 @@
   &__phone {
     font-family: $default-font;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1em;
     text-decoration: none;
     letter-spacing: 0.02em;
     color: $light;
-    margin: 0 0 0 15px;
-    @include from(1600px) {
-      font-size: 22px;
-      margin: 0 0 0 18px;
+    margin: 0 0 0 18px;
+    @include to(1440px) {
+      font-size: 18px;
+      margin: 0 0 0 15px;
     }
+  }
+  @include to(992px) {
+    margin-right: 50px;
+  }
+  //@include to(768px) {
+  //  margin-right: 30px;
+  //}
+  @include to(576px) {
+    display: none;
   }
 }
 .request {
@@ -128,7 +195,7 @@
   padding: 0 0 0 25px;
   a {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1em;
     text-align: center;
     letter-spacing: 0.07em;
@@ -136,8 +203,8 @@
     text-transform: lowercase;
     color: $light;
     border-bottom: 1px solid $light;
-    @include from(1600px) {
-      font-size: 18px;
+    @include to(1440px) {
+      font-size: 14px;
     }
   }
 }
@@ -147,14 +214,29 @@
   flex-direction: column;
   font-family: $default-font;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $light;
   cursor: pointer;
-  @include from(1600px) {
+  @include to(1440px) {
+    font-size: 14px;
+  }
+  @include to(992px) {
+    height: var(--header-h);
+    justify-content: center;
+    padding: 0 40px;
     font-size: 18px;
+    background: #1A2941;
+  }
+  //@include to(768px) {
+  //  padding: 0 20px;
+  //}
+  @include to(576px) {
+    padding: 0 15px;
+    font-size: 11px;
+    background: #1A2941;
   }
   &__icon {
     display: inline-block;
@@ -165,16 +247,16 @@
     width: 100%;
     height: 2px;
     background: $light;
-    margin-top: 10px;
+    margin-top: 15px;
     pointer-events: none;
-    @include from(1600px) {
-      margin-top: 15px;
+    @include to(1440px) {
+      margin-top: 10px;
     }
     &:last-child {
       width: 50%;
-      margin-top: 7px;
-      @include from(1600px) {
-        margin-top: 10px;
+      margin-top: 10px;
+      @include to(1440px) {
+        margin-top: 7px;
       }
     }
   }
@@ -188,9 +270,16 @@
 
 /* The container must be positioned relative: */
 .custom-select {
-  width: 80px;
+  width: 91px;
+  flex-shrink: 0;
   position: relative;
   font-family: $default-font;
+  @include to(1440px) {
+    width: 77px;
+  }
+  @include to(992px) {
+    display: none;
+  }
 }
 
 .custom-select select {
@@ -203,7 +292,7 @@
   position: absolute;
   content: "";
   top: 16px;
-  right: 10px;
+  right: 16px;
   width: 6px;
   height: 6px;
   transform: rotate(45deg);
@@ -234,9 +323,9 @@
 .select-selected {
   background-color: transparent;
   border: none;
-  font-size: 14px;
-  @include from(1600px) {
-    font-size: 18px;
+  font-size: 18px;
+  @include to(1440px) {
+    font-size: 14px;
   }
 }
 
@@ -257,9 +346,9 @@
   padding: 3px;
   text-decoration: none;
   color: $light;
-  font-size: 14px;
-  @include from(1600px) {
-    font-size: 18px;
+  font-size: 18px;
+  @include to(1440px) {
+    font-size: 14px;
   }
 }
 
