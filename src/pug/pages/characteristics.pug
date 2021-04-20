@@ -1,0 +1,128 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Характеристики квартир'
+    var id_page = 'id-page-characteristics'
+    var class_page = 'class-page-characteristics'
+    var breadcrumbsSubitem = [
+      // {
+      //   label: 'About',
+      //   link: pagesLink[0].characteristics
+      // }
+    ]
+    var content = [
+      {
+        title: 'Стіни',
+        text: [
+          'Міжкімнатні стіни: бетонні блоки, товщиною 10 см.',
+          'Санітарні вузли: бетонні блоки, без оздоблення. ',
+          'Зовнішні стіни: екологічна цегла.',
+          'Міжквартирні стіни: 2 бетонні блоки, товщиною 10 см, між якими влаштовано шар звукоізоляції, загальна ширина стіни 25 см.',
+          'Кімнати, кухня, холи: машинна гіпсова штукатурка під шпаклівку або інше фінішне покриття (опція клієнта: відмовитись повністю або частково і отримати знижку).',
+        ]
+      },
+      {
+        title: 'Підлога',
+        text: [
+          'Кімнати, кухня, холи: машинна стяжка з лазерним вирівнюванням, під стяжкою є шар звукоізоляційного покриття.'
+        ]
+      },
+      {
+        title: 'Стеля',
+        text: [
+          'Кімнати, кухня, холи, санітарні вузли: залізобетон, шви зашліфовано.',
+          'Санітарні вузли: бетонна плита.'
+        ]
+      },
+      {
+        title: 'Вікна',
+        text: [
+          'Металопластикові вікна з двокамерним енергоощадним склопакетом.'
+        ]
+      },
+      {
+        title: 'Вхідні двері',
+        text: [
+          'Протизламні, протипожежні, із замком, металеві, з декоративними накладками ззовні. '
+        ]
+      },
+      {
+        title: 'Каналізація',
+        text: [
+          'Місця для підключення до каналізаційних стояків влаштовано у приміщеннях згідно з проектом (санвузли, кухні, пральні).'
+        ]
+      },
+      {
+        title: 'Водопостачання',
+        text: [
+          'Введення у квартиру труб холодної і гарячої води, улаштування внутрішньо- квартирного протипожежного КПК.'
+        ]
+      },
+      {
+        title: 'Лічильники',
+        text: [
+          '4 лічильники: ГВП, ХВП, електроенергії (з автоматом) і на опалення (моделі, що рекомендовані постачальниками).'
+        ]
+      },
+      {
+        title: 'Опалення',
+        text: [
+          'Двотрубна система з розведенням у підлозі, радіатори з нижнім підключенням. Після вводу у квартиру встановлюється вузол розподілу (гребінка).'
+        ]
+      },
+      {
+        title: 'Системи оповіщення',
+        text: [
+          'Датчики диму, пожежні сповіщувачі, інтеграція з центральним пультом протипожежної охорони згідно з законодавством.'
+        ]
+      },
+      {
+        title: 'Телекомунікації',
+        text: [
+          'До кожної квартири влаштовано кабель - канал, через який провайдерами будуть підведені необхідні кабелі, залежно від потреб власника.'
+        ]
+      },
+      {
+        title: 'Електромережа ',
+        text: [
+          'Мідними дротами до місця встановлення квартирного розподільного щитка.'
+        ]
+      },
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/characteristics.js')
+block content
+  include ../includes/breadcrumbs.pug
+  h1.page-title-v1 Характеристики квартир
+  ul.characteristics-list
+    each v, i in content
+      if i == 0
+        li.characteristics-item.characteristics-item--width
+          h4.characteristics-item__title= v.title
+          .characteristics-item-text-wrap
+            each vv in v.text
+              p.characteristics-item__text= vv
+      else
+        li.characteristics-item
+          h4.characteristics-item__title= v.title
+          .characteristics-item-text-wrap
+            each vv in v.text
+              p.characteristics-item__text= vv
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,8 +1,8 @@
 .breadcrumbs {
-  margin: 0 250px 0 auto;
+  margin: 0 250px 30px auto;
   display: flex;
   align-items: center;
-
+  justify-content: flex-end;
   font-weight: 500;
   font-size: 12px;
   line-height: 100%;
@@ -24,15 +24,8 @@
   }
 
   @include to(1440px) {
-    margin: 0 160px 0 auto;
+    margin: 0 110px 15px auto;
   }
 
-  @include to(992px) {
-    font-size: 14px;
-    margin: 0 40px 0 auto;
-  }
-  @include to(480px) {
-    font-size: 10px;
-    margin: 0 20px 0 auto;
-  }
+
 }
