@@ -176,7 +176,7 @@
     width: 340px;
   }
   @include to(992px) {
-    margin: 0 auto;
+    margin: 60px auto 0;
     width: 490px;
   }
   @include to(576px) {
