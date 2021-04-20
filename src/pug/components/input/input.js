@@ -1,5 +1,4 @@
 import Cleave from 'cleave.js';
-import intlTelInput from 'intl-tel-input';
 
 export default class SexyInput {
   constructor(setting) {

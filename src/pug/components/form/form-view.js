@@ -101,7 +101,7 @@ const initView = (state, elementsParamFn) => {
     status: () => renderForm(state, elementsParamFn, toast),
   };
 
-  const watchedState = onChange(state, (path, value) => {
+  const watchedState = onChange(state, (path) => {
     if (mapping[path]) {
       mapping[path]();
     }

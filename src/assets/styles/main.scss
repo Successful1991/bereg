@@ -23,7 +23,7 @@
 @import '../../pug/components/form/form';
 @import '../../pug/components/toster/toster';
 
-@import './pages/contacts';
-@import './pages/contact';
-@import './pages/home.scss';
-//@import './assets/templates'; // main style
+@import 'pages/contacts';
+@import 'pages/contact';
+@import 'pages/home';
+@import './assets/templates'; // main style
