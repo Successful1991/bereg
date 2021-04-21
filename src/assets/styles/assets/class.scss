@@ -60,13 +60,19 @@
     color: $mc;
     span {
       font-weight: 400;
-      margin: 0 3px 0 0;
+      margin: 0 12px 0 0;
       @include from(1600px) {
         margin: 0 6px 0 0;
       }
     }
     @include to(1440px) {
       font-size: 48px;
+    }
+    @include to(573px) {
+      font-size: 30px;
+    }
+    @include to(360px) {
+      font-size: 24px;
     }
   }
   &__text {
@@ -90,9 +96,25 @@
     }
     @include to(1440px) {
       padding: 0 0 0 40px;
-      max-width: 290px;
+      max-width: 300px;
       margin-top: 40px;
       font-size: 16px;
+    }
+    @include to(992px) {
+      max-width: 360px;
+      font-size: 20px;
+    }
+    @include to(576px) {
+      padding: 0 0 0 20px;
+      max-width: 230px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    @include to(380px) {
+      padding: 0 0 0 20px;
+      max-width: 230px;
+      margin-top: 20px;
+      font-size: 13px;
     }
   }
   &__link {
@@ -150,6 +172,9 @@
       height: 9px;
       margin: 0 0 0 20px;
     }
+    @include to(992px) {
+      margin: 0 0 0 30px;
+    }
   }
   &__white *{
     color: $light;
@@ -174,7 +199,6 @@
   position: absolute;
   left: 0;
   width: 100%;
-  //height: 100%;
   height: 240px;
   z-index: 1;
   img {
@@ -184,48 +208,36 @@
   }
   &__dark-top {
     top: 0;
-    //grid-row: 1;
-    //grid-column: 1 / -1;
     background-position-y: top;
     background-image: url("../images/bg-dark-top.png");
     background-repeat: repeat-x;
   }
   &__dark-bottom {
     bottom: 0;
-    //grid-row: -2;
-    //grid-column: 1 / -1;
     background-position-y: bottom;
     background-image: url("../images/bg-dark-bottom.png");
     background-repeat: repeat-x;
   }
   &__white-top {
     top: 0;
-    //grid-row: 1;
-    //grid-column: 1 / -1;
     background-position-y: top;
     background-image: url("../images/bg-white-top.png");
     background-repeat: repeat-x;
   }
   &__white-bottom {
     bottom: 0;
-    //grid-row: -2;
-    //grid-column: 1 / -1;
     background-position-y: bottom;
     background-image: url("../images/bg-white-bottom.png");
     background-repeat: repeat-x;
   }
   &__gold-top {
     top: 0;
-    //grid-row: 1;
-    //grid-column: 1 / -1;
     background-position-y: top;
     background-image: url("../images/bg-gold-top.png");
     background-repeat: repeat-x;
   }
   &__gold-bottom {
     bottom: 0;
-    //grid-row: -2;
-    //grid-column: 1 / -1;
     background-position-y: bottom;
     background-image: url("../images/bg-gold-bottom.png");
     background-repeat: repeat-x;

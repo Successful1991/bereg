@@ -72,7 +72,7 @@ block content
       .template-content.template-content--dark
           .template-content__title
               span Про
-              | Bereg <br>
+              | BEREG <br>
               | Residence
           .template-content__text Дізнайтеся більше про новий житловий комплекс на березі Дніпра.
           a(href='about').template-content__link.link
@@ -83,7 +83,7 @@ block content
     .home-bg__image.home-bg__image--right
       picture
         source(media="(min-width: 993px)" srcset="assets/images/home/1.jpg")
-        source(media="(max-width: 992px)" srcset="assets/images/home/1-table.png")
+        source(media="(max-width: 992px)" srcset="assets/images/home/1-table.jpg")
         img(src="assets/images/home/1.jpg")
   section.home-section-2
     picture.home-section-2__img
@@ -105,7 +105,7 @@ block content
     .home-bg__image.home-bg__image--left
       picture
         source(media="(min-width: 993px)" srcset="assets/images/home/3.jpg")
-        source(media="(max-width: 992px)" srcset="assets/images/home/3-table.png")
+        source(media="(max-width: 992px)" srcset="assets/images/home/3-table.jpg")
         img(src="assets/images/home/3.jpg")
     .home-section__content.home-section__content-right
       .section-bg.section-bg__dark-top
@@ -117,8 +117,11 @@ block content
               .link__arrow
                   +svg('arrow')
       .section-bg.section-bg__dark-bottom
-  section.home-section-4.home-section__grid
-    .home-section__content
+  section.home-section-4.home-section__grid.home-section-left
+    .home-section__content.home-section__content-left
+      svg(class="subtract" width="768" height="222" viewBox="0 0 768 222" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path( fill-rule="evenodd" clip-rule="evenodd" d="M0 0C19.4117 13.5594 42.45 25.7171 65.1224 37.6817C69.4774 39.9799 73.8188 42.2709 78.1184 44.5634C105.06 58.842 133.21 72.3627 162.41 85.0953C220.811 110.5 283.203 132.903 348.746 151.638C363.179 155.938 377.901 159.857 392.62 163.775C394.504 164.276 396.387 164.777 398.271 165.28C403.611 166.676 408.994 167.985 414.379 169.294C417.414 170.032 420.45 170.771 423.479 171.525L436.084 174.617L448.846 177.467C482.773 185.349 517.645 191.806 552.675 197.869C558.184 198.709 563.672 199.587 569.159 200.464C581.301 202.407 593.436 204.348 605.771 205.872L632.503 209.48L659.445 212.542C672.143 214.154 684.947 215.324 697.764 216.495C703.022 216.976 708.283 217.456 713.539 217.968C725.223 219.027 736.973 219.832 748.732 220.638C755.155 221.078 761.581 221.518 768 222V0H0Z")
+
       .template-content.template-content--dark
           .template-content__title Архітектура <br>та технології
           .template-content__text Бути першими – складно, але ми впоралися. Сучасна архітектура будинку, якої ще не будували в Україні, в BEREG Residence!
@@ -129,13 +132,13 @@ block content
     .home-bg__image.home-bg__image--left
       picture
         source(media="(min-width: 993px)" srcset="assets/images/home/4.jpg")
-        source(media="(max-width: 992px)" srcset="assets/images/home/4-table.png")
+        source(media="(max-width: 992px)" srcset="assets/images/home/4-table.jpg")
         img(src="assets/images/home/4.jpg")
   section.home-section-5.home-section__grid.home-section-right
     .home-bg__image.home-bg__image--left
       picture
         source(media="(min-width: 993px)" srcset="assets/images/home/5.jpg")
-        source(media="(max-width: 992px)" srcset="assets/images/home/5-table.png")
+        source(media="(max-width: 992px)" srcset="assets/images/home/5-table.jpg")
         img(src="assets/images/home/5.jpg")
     .home-section__content.home-section__content-right
       .section-bg.section-bg__gold-top
@@ -147,8 +150,8 @@ block content
               .link__arrow
                   +svg('arrow')
       .section-bg.section-bg__gold-bottom
-  section.home-section-6.home-section__grid
-    .home-section__content
+  section.home-section-6.home-section__grid.home-section-left
+    .home-section__content.home-section__content-left
       .template-content.template-content--dark
         .template-content__title Девелопер <br>проєкту
         .template-content__text Дізнайтеся більше про нас і наші реалізовані проекти.
@@ -159,7 +162,7 @@ block content
     .home-bg__image.home-bg__image--left
       picture
         source(media="(min-width: 993px)" srcset="assets/images/home/6.jpg")
-        source(media="(max-width: 992px)" srcset="assets/images/home/6-table.png")
+        source(media="(max-width: 992px)" srcset="assets/images/home/6-table.jpg")
         img(src="assets/images/home/6.jpg")
   section.home-section-7.home-section__grid.home-section-right
     .home-bg__image.home-bg__image--left
@@ -168,7 +171,7 @@ block content
         source(media="(max-width: 992px)" srcset="assets/images/home/7-table.jpg")
         img(src="assets/images/home/7.jpg")
     .home-section__content.home-section__content-right
-      .section-bg.section-bg__light-top
+      .section-bg.section-bg__white-top
       .template-content.template-content--dark
         .template-content__title
           span Новини <br>
@@ -178,7 +181,7 @@ block content
           span Перейти до розділу
           .link__arrow
             +svg('arrow')
-      .section-bg.section-bg__light-bottom
+      .section-bg.section-bg__white-bottom
   section.home-section-8
     .title Контакти
     .contact
