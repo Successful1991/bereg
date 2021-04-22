@@ -1,4 +1,5 @@
 function init() {
+  // eslint-disable-next-line no-undef
   const slider = new Swiper('.swiper-container', {
     loop: true,
     navigation: {
