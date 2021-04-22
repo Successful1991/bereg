@@ -51,6 +51,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  width: min-content;
   z-index: 5;
   &__title {
     font-family: $default-font;
@@ -148,6 +149,8 @@
   color: #1A2941;
   white-space: nowrap;
   text-decoration: none;
+  overflow: hidden;
+  transition: color 0.3s ease-in;
   @include to(1440px) {
     font-size: 20px;
     line-height: 1.2em;
@@ -160,13 +163,22 @@
     font-size: 14px;
     line-height: 1em;
   }
+  @include from(1023px) {
+    &:hover {
+      svg {
+        transform: translateX(-30px);
+      }
+    }
+  }
   &__arrow {
     display: flex;
     width: 70px;
     height: 13px;
     margin: 0 0 0 50px;
+    overflow: hidden;
     svg {
       height: 100%;
+      transition: transform 0.3s ease-in;
     }
     @include to(1440px) {
       width: 50px;
@@ -261,10 +273,22 @@
   width: 40px;
   border-radius: 50%;
   background: #CFA46E;
+  transition: background-color 0.3s ease-in-out;
   svg {
     height: 55%;
     width: 55%;
-    fill: transparent;
+    stroke: $wc;
+    fill: $wc;
+    transition: stroke 0.3s ease-in-out;
+  }
+  @include from(1023px) {
+    &:hover {
+      background: $wc;
+      svg {
+        stroke: #CFA46E;
+        fill: #CFA46E;
+      }
+    }
   }
 }
 

@@ -238,8 +238,13 @@
       position: relative;
       height: 100vh;
       width: 100%;
-      .template-content__text:before {
-        border-color: rgba(255, 255, 255, 0.3);
+      .template-content{
+        &__link {
+          padding: 0;
+        }
+        &__text:before {
+          border-color: rgba(255, 255, 255, 0.3);
+        }
       }
       @include to(992px) {
         background: $bg;
@@ -427,11 +432,6 @@
     &--left img {
       object-position: right;
     }
-    //@include to(992px) {
-    //  position: absolute;
-    //  top: 0;
-    //  left: 0;
-    //}
   }
   &-slider {
     display: inline-block;
