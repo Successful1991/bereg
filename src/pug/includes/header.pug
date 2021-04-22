@@ -13,8 +13,10 @@ header.header
         .header__line
         a(href='/apartments').header__link квартири
     a(href='/').header__logo
-        img(srcset="./assets/images/logo.svg 1920w, ./assets/images/logo-mobile.svg 992w" sizes="(max-width: 992px) 992px, 1920px")
-        //object( type="image/svg+xml" data="./assets/images/logo.svg")
+      picture
+        source(media="(min-width: 993px)" srcset="assets/images/logo.svg")
+        source(media="(max-width: 992px)" srcset="assets/images/logo-mobile.svg")
+        img(src="assets/images/logo.svg")
     .header__call-mobile
         +svg('tell')
     .header__right

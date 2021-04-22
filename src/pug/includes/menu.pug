@@ -1,0 +1,79 @@
+.menu-wrap
+  .menu
+    .menu__top
+      .menu__social
+        a(href="https://www.facebook.com/" target="_blank") facebook
+        a(href="https://www.instagram.com/" target="_blank") instagram
+        a(href="https://www.youtube.com/" target="_blank") youtube
+      .menu__logo.header__logo
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/logo.svg")
+          source(media="(max-width: 992px)" srcset="assets/images/logo-mobile.svg")
+          img(src="assets/images/logo.svg")
+      .menu__right
+        .call
+          .call__num
+            +svg('tell')
+            a(href='tel:0442992203').call__phone 044 29-92-203
+          .request
+            a(href='#').request__link.js-form-open Замовити дзвінок
+        .menu__close(data-menu-close)
+          span Закрити
+          .menu__close-icon
+            span
+            span
+
+    .menu__section-left
+      .menu__section.menu__section-big
+        ul
+          li
+            a(href="/") Головна
+          li
+            a(href="/") Галерея
+          li
+            a(href="/") Live камера
+          li
+            a(href="/") Стан будівництва
+          li
+            a(href="/") Новини
+          li
+            a(href="/") Контакти
+    .menu__section-right
+      .menu__section
+        .menu__title Про BEREG Residence
+        ul
+          li
+            a(href="") Концепція
+          li
+            a(href="") Локація та інфраструктура
+          li
+            a(href="") Тераса
+          li
+            a(href="") Архітектура та технології
+          li
+            a(href="") Безпека
+          li
+            a(href="") Документи
+          li
+            a(href="") Девелопер
+      .menu__section
+        .menu__title Квартири
+        ul
+          li
+            a(href="") Огляд 360°
+          li
+            a(href="") Візуальний підбір
+          li
+            a(href="") План поверху
+          li
+            a(href="") 1-кімнатні
+          li
+            a(href="") 3-кімнатні
+          li
+            a(href="") Характеристики квартир
+          li
+            a(href="") Умови придбання
+    .menu__social.menu__social-mobile
+      a(href="https://www.facebook.com/" target="_blank") facebook
+      a(href="https://www.instagram.com/" target="_blank") instagram
+      a(href="https://www.youtube.com/" target="_blank") youtube

@@ -38,7 +38,7 @@ body input, body textarea {
 
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 /* Track */
@@ -130,7 +130,7 @@ select:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .iti-flag{
     //background-image: url("../img/flag/flags@2x.png");
-  } 
+  }
 }
 .intl-tel-input.allow-dropdown .flag-container,.intl-tel-input.separate-dial-code .flag-container{
   @include to(1200px){
@@ -145,7 +145,7 @@ select:hover {
 .intl-tel-input.separate-dial-code input[type=text]{
   @include to(1200px){
     padding-left: 95px
-  } 
+  }
 }
 
 input[type=number]::-webkit-inner-spin-button,
