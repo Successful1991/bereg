@@ -79,6 +79,7 @@
     grid-row: 1 /span 2;
     @include to(680px) {
       position: static;
+      transform: none;
     }
     & > * {
       margin: 0 20px;
