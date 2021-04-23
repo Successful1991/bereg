@@ -386,7 +386,6 @@
       .home-section__content {
         grid-row: 1 / span 3;
         grid-column: 1 / span 3;
-        //clip-path: none;
         clip-path: ellipse(200% 200% at -100% -20%);
         @include to(992px) {
           grid-row: 1 / span 2;
