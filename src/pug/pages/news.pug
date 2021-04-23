@@ -1,0 +1,63 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news'
+    var id_page = 'page-news'
+    var class_page = 'page-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/news.js')
+block content
+  .news-page
+    include ../includes/breadcrumbs.pug
+    h1.title Новини
+    .news
+      each id in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        a(href='#' data-id=id).news__card
+          .news__img
+            +img('news/1.jpg')
+          .news__date
+            span 22.12.2020
+          .news__title Продаж квартир у жк BEREG Residence вже відкрито
+          .news__desc Компанія-забудовник входить до британської інвестиційно ...
+          .news__link.link
+            span Детальніше
+            .link__arrow
+              +svg('arrow')
+    .pagination
+      .pagination__arrow
+        +svg('arrow')
+      .pagination__dots
+        .pagination__dot.active
+          span 1
+        .pagination__dot
+          span 2
+        .pagination__dot
+          span 3
+        .pagination__dot
+          span 4
+        .pagination__dot
+          span 5
+      .pagination__arrow
+        +svg('arrow')
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

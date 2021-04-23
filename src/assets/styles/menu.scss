@@ -165,9 +165,6 @@
         margin: auto auto 23px 0;
         a {
           margin-top: 17px;
-          //&:nth-child(1) {
-          //  margin: 0;
-          //}
         }
       }
     }
@@ -270,18 +267,7 @@
         }
       }
     }
-    //&-1 {
-    //  grid-row: 3;
-    //  grid-column: 2;
-    //}
-    //&-2 {
-    //  grid-row: 3;
-    //  grid-column: 4;
-    //}
-    //&-3 {
-    //  grid-row: 3;
-    //  grid-column: 6;
-    //}
+
     &-left {
       grid-area: left;
     }

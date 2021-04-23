@@ -149,7 +149,7 @@
   color: #1A2941;
   white-space: nowrap;
   text-decoration: none;
-  overflow: hidden;
+  //overflow: hidden;
   transition: color 0.3s ease-in;
   @include to(1440px) {
     font-size: 20px;
@@ -311,11 +311,40 @@
 
 .title {
   font-weight: normal;
-  font-size: 30px;
+  font-size: 36px;
   line-height: 100%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #E2E3E4;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: inline-block;
+    width: 50px;
+    transform: translateX(-50%);
+    border-bottom: 1px solid rgba(226, 227, 228, 0.3);
+    @include to(576px) {
+      display: none;
+    }
+  }
+  @include to(1440px) {
+    padding: 0 0 20px;
+    margin: 15px 0 0;
+    font-size: 30px;
+  }
+  @include to(992px) {
+    padding: 0 0 20px;
+    margin: 36px 0 0;
+    font-size: 36px;
+  }
+  @include to(576px) {
+    padding: 0 40px;
+    margin: 20px 0 0;
+    text-align: left;
+    font-size: 20px;
+  }
 }
 
 .sliceFigure {

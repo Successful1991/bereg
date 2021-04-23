@@ -27,7 +27,6 @@ function menuInit() {
   const menu = document.querySelector('[data-menu]');
   document.querySelector('[data-open-menu]').addEventListener('click', () => menuOpen(menu));
   document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
-  // menuOpen();
 }
 
 function init() {

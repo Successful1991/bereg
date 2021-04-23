@@ -1,0 +1,262 @@
+.news-page {
+  padding: 185px 0 80px 0;
+  @include to(1440px) {
+    padding: 135px 0 80px 0;
+  }
+  @include to(992px) {
+    padding: 140px 0 80px 0;
+  }
+  @include to(576px) {
+    padding: 90px 0 50px 0;
+  }
+  .title {
+    color: $mc;
+    text-align: center;
+  }
+}
+.news {
+  display: grid;
+  grid-gap: 3.3vw 3.3vw;
+  grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+  grid-auto-rows: auto;
+  padding: 0 13%;
+  margin-top: 50px;
+  @include to(1440px) {
+    grid-gap: 4.4vw 4.4vw;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    padding: 0 11.7%;
+    margin-top: 40px;
+  }
+  @include to(992px) {
+    grid-gap: 6.5vw 6.5vw;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    padding: 0 5.2%;
+    margin-top: 50px;
+  }
+  @include to(576px) {
+    grid-gap: 9.3vw 9.3vw;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    padding: 0 12.5%;
+    margin-top: 30px;
+  }
+  &__card {
+    display: inline-block;
+    height: min-content;
+    text-decoration: none;
+    cursor: pointer;
+    @include from(1023px) {
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        .link {
+          color: $gold;
+        }
+        svg {
+          fill: $gold;
+          transform: translateX(-30px);
+        }
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    @include to(1440px) {
+      max-height: 160px;
+    }
+    @include to(992px) {
+      max-height: 190px;
+    }
+    @include to(576px) {
+      max-height: 150px;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease-in;
+    }
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: $default-font;
+    font-weight: 500;
+    line-height: 100%;
+    text-align: right;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E2E3E4;
+    @include to(1440px) {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    @include to(576px) {
+      margin-top: 15px;
+      font-size: 10px;
+    }
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 70px;
+      margin-right: 20px;
+      border: 1px solid #E2E3E4;
+      @include to(1440px) {
+        width: 50px;
+      }
+      @include to(576px) {
+        width: 30px;
+        margin-right: 15px;
+      }
+    }
+  }
+  &__title {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: #1A2941;
+    @include to(1440px) {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    @include to(992px) {
+      font-size: 22px;
+    }
+    @include to(576px) {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  }
+  &__desc {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    color: #1A2941;
+    @include to(1440px) {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    @include to(992px) {
+      font-size: 18px;
+    }
+
+    @include to(576px) {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+  }
+  &__link {
+    margin-top: 30px;
+    .link__arrow {
+      margin-left: 40px;
+      @include to(1440px) {
+        margin-left: 20px;
+      }
+      @include to(992px) {
+        margin-left: 30px;
+      }
+      @include to(576px) {
+        margin-left: 20px;
+      }
+    }
+    @include to(1440px) {
+      margin-top: 20px;
+    }
+    @include to(576px) {
+      margin-top: 15px;
+    }
+  }
+}
+
+.pagination {
+  margin: 120px 0 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  @include to(1440px) {
+    margin: 70px 0 0;
+  }
+  @include to(992px) {
+    margin: 50px 0 0;
+  }
+  @include to(576px) {
+    margin: 30px 0 0;
+  }
+  &__arrow {
+    display: flex;
+    width: 70px;
+    height: 13px;
+    margin: 0;
+    overflow: hidden;
+    svg {
+      fill: #C4C7CC;
+      height: 100%;
+    }
+    &:first-child {
+      transform: rotate(180deg);
+    }
+    @include to(1440px) {
+      width: 50px;
+      height: 9px;
+    }
+    @include to(576px) {
+      width: 34px;
+      height: 6px;
+    }
+  }
+  &__dots {
+    display: flex;
+    margin: 0 50px;
+    @include to(1440px) {
+      margin: 0 40px;
+    }
+    @include to(992px) {
+      margin: 0 50px;
+    }
+    @include to(576px) {
+      margin: 0 20px;
+    }
+  }
+  &__dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $mc;
+    @include to(1440px) {
+      font-size: 18px;
+      height: 35px;
+      width: 35px;
+    }
+    @include to(992px) {
+      height: 40px;
+      width: 40px;
+    }
+    @include to(576px) {
+      font-size: 14px;
+      height: 30px;
+      width: 30px;
+    }
+    &.active {
+      color: $wc;
+      background: $mc;
+    }
+  }
+}
