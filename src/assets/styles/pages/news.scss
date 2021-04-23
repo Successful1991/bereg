@@ -12,6 +12,9 @@
   .title {
     color: $mc;
     text-align: center;
+    &:after {
+      border-bottom-color: #E2E3E4;
+    }
   }
 }
 .news {
