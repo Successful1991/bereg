@@ -2,6 +2,7 @@ function menuOpen(menu) {
   menu.classList.add('menu__active');
   const createAnimation = (links, translateY = 0, delay = 0) => {
     links.forEach((link, i) => {
+      // eslint-disable-next-line no-undef
       gsap.from(link, {
         delay: delay + i / 10,
         y: translateY,
