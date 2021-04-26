@@ -1,0 +1,68 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'documents'
+    var id_page = 'page-documents'
+    var class_page = 'page-documents'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/documents.js')
+block content
+  include ../includes/breadcrumbs.pug
+  h1.title.document__title Документи
+  .document-wrap
+    .document
+      .document__data
+        .document__icon
+          +img('file.png')
+        span 22.12.20
+      .document__content
+        span.document__name Політика для обробки персональних даних
+        a(href="").document__link
+          p.document__link-name завантажити doc
+          .document__link-icon
+            +svg('arrow-down')
+    .document
+      .document__data
+        .document__icon
+          +img('file.png')
+        span 22.12.20
+      .document__content
+        span.document__name Політика для обробки персональних даних
+        a(href="").document__link
+          p.document__link-name завантажити doc
+          .document__link-icon
+            +svg('arrow-down')
+    .document
+      .document__data
+        .document__icon
+          +img('file.png')
+        span 22.12.20
+      .document__content
+        span.document__name Політика для обробки персональних даних
+        a(href="").document__link
+          p.document__link-name завантажити doc
+          .document__link-icon
+            +svg('arrow-down')
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

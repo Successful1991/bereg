@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   back();
 });
 
-window.addEventListener('resize', (event) => {
+window.addEventListener('resize', () => {
   setHeightContainer('resize');
   locoScroll.update();
 });
