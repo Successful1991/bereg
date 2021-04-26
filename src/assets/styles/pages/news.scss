@@ -12,30 +12,32 @@
   .title {
     color: $mc;
     text-align: center;
+    &:after {
+      border-bottom-color: #E2E3E4;
+    }
   }
 }
 .news {
   display: grid;
   grid-gap: 3.3vw 3.3vw;
-  grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   padding: 0 13%;
   margin-top: 50px;
   @include to(1440px) {
     grid-gap: 4.4vw 4.4vw;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     padding: 0 11.7%;
     margin-top: 40px;
   }
   @include to(992px) {
     grid-gap: 6.5vw 6.5vw;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 5.2%;
     margin-top: 50px;
   }
   @include to(576px) {
     grid-gap: 9.3vw 9.3vw;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: 1fr;
     padding: 0 12.5%;
     margin-top: 30px;
   }
