@@ -1,0 +1,134 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-news'
+    var id_page = 'page-single-news'
+    var class_page = 'page-single-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/single-news.js')
+  script(defer src='./assets/scripts/index.js')
+block content
+  include ../includes/breadcrumbs.pug
+  .single-news(data-container)
+    .single-news__image
+      a(href='#' data-back).back
+        +svg('arrow')
+        span назад
+      .single-news__img
+        +img('news/big.jpg')(data-img)
+        +svg('DecorTriangle').single-news__decorate
+    .single-news__content
+      .single-news__date
+        span 22.12.2020
+      .single-news__text(data-disable-page-scroll)
+        .single-news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .single-news__desc
+          p Поспішай скоріше купувати!
+          p Компанія-забудовник входить до британської інвестиційно-девелоперської компанії Quadrum Global, що має більш ніж 15-річну історію успішної діяльності на ринках США, Великої Британії, Грузії, України, та інших країн.
+          p Всі проекти Quadrum Global було побудовано і своєчасно введено в эксплуатацію.
+          p Компанія-забудовник входить до британської інвестиційно-девелоперської компанії Quadrum Global, що має більш ніж 15-річну історію успішної діяльності на ринках США, Великої Британії, Грузії, України, та інших країн.
+          p Всі проекти Quadrum Global було побудовано і своєчасно введено в эксплуатацію.
+          p Компанія-забудовник входить до британської інвестиційно-девелоперської компанії Quadrum Global, що має більш ніж 15-річну історію успішної діяльності на ринках США, Великої Британії, Грузії, України, та інших країн.
+          p Всі проекти Quadrum Global було побудовано і своєчасно введено в эксплуатацію.
+  .different-news
+    .title інші новини
+    .news
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
