@@ -1,5 +1,5 @@
 .breadcrumbs {
-  margin: 0 250px 30px auto;
+  margin: 0 vw(170, 1920) 30px auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -24,8 +24,24 @@
   }
 
   @include to(1440px) {
-    margin: 0 110px 15px auto;
+    margin: 0 vw(110, 1360) 15px auto;
   }
-
-
+  @include to(992px) {
+    margin: 0 vw(40, 768) 36px auto;
+  }
+  @include to(576px) {
+    margin: 0 vw(20, 320) 20px auto;
+  }
+  &-item {
+    &:last-child {
+      display: initial;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 23ch;
+      @include to(576px) {
+        max-width: 14ch;
+      }
+    }
+  }
 }

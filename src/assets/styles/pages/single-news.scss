@@ -1,14 +1,14 @@
 .page-single-news {
   .page__content {
-    padding: 185px 0 80px 0;
+    padding: 185px 0 0 0;
     @include to(1440px) {
-      padding: 135px 0 80px 0;
+      padding: 135px 0 0 0;
     }
     @include to(992px) {
-      padding: 140px 0 80px 0;
+      padding: 140px 0 0 0;
     }
     @include to(576px) {
-      padding: 90px 0 50px 0;
+      padding: 90px 0 0 0;
     }
   }
   .breadcrumbs {
@@ -264,13 +264,13 @@
     margin: 120px 0 80px;
   }
   @include to(992px) {
-    margin: 80px 0 0;
+    margin: 80px 0;
     .news__card:nth-child(1n+3) {
       display: none;
     }
   }
   @include to(576px) {
-    margin: 40px 0 0;
+    margin: 40px 0 50px;
     .news__card:nth-child(1n+3) {
       display: inline-block;
     }

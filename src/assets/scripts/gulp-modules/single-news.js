@@ -6,8 +6,12 @@ function back() {
   });
 }
 
-function setHeightContainer() {
+function setHeightContainer(type) {
   const width = window.innerWidth;
+  if (type === 'resize') {
+    const container = document.querySelector('[data-container]');
+    container.style.height = '';
+  }
   if (width <= 992) { return; }
   const img = document.querySelector('[data-img]');
   const height = img.clientHeight;
@@ -19,4 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setHeightContainer();
   locoScroll.update();
   back();
+});
+
+window.addEventListener('resize', (event) => {
+  setHeightContainer('resize');
+  locoScroll.update();
 });

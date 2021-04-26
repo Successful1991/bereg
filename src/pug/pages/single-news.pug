@@ -2,7 +2,7 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'single-news'
+    var title_page = 'Продаж квартир у жк BEREG Residence вже відкрито'
     var id_page = 'page-single-news'
     var class_page = 'page-single-news'
     var breadcrumbsSubitem = [
@@ -22,8 +22,8 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/single-news.js')
   script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/single-news.js')
 block content
   include ../includes/breadcrumbs.pug
   .single-news(data-container)
@@ -83,50 +83,7 @@ block content
           span Детальніше
           .link__arrow
             +svg('arrow')
-      a(href='single-news.html' data-id=id).news__card
-        .news__img
-          +img('news/1.jpg')
-        .news__date
-          span 22.12.2020
-        .news__title Продаж квартир у жк BEREG Residence вже відкрито
-        .news__desc Компанія-забудовник входить до британської інвестиційно ...
-        .news__link.link
-          span Детальніше
-          .link__arrow
-            +svg('arrow')
-      a(href='single-news.html' data-id=id).news__card
-        .news__img
-          +img('news/1.jpg')
-        .news__date
-          span 22.12.2020
-        .news__title Продаж квартир у жк BEREG Residence вже відкрито
-        .news__desc Компанія-забудовник входить до британської інвестиційно ...
-        .news__link.link
-          span Детальніше
-          .link__arrow
-            +svg('arrow')
-      a(href='single-news.html' data-id=id).news__card
-        .news__img
-          +img('news/1.jpg')
-        .news__date
-          span 22.12.2020
-        .news__title Продаж квартир у жк BEREG Residence вже відкрито
-        .news__desc Компанія-забудовник входить до британської інвестиційно ...
-        .news__link.link
-          span Детальніше
-          .link__arrow
-            +svg('arrow')
-      a(href='single-news.html' data-id=id).news__card
-        .news__img
-          +img('news/1.jpg')
-        .news__date
-          span 22.12.2020
-        .news__title Продаж квартир у жк BEREG Residence вже відкрито
-        .news__desc Компанія-забудовник входить до британської інвестиційно ...
-        .news__link.link
-          span Детальніше
-          .link__arrow
-            +svg('arrow')
+
 block footer
   include ../includes/footer.pug
 
