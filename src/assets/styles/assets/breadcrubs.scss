@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-end;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 100%;
   color: #C4C7CC;
   &-list {
@@ -25,12 +25,15 @@
 
   @include to(1440px) {
     margin: 0 vw(110, 1360) 15px auto;
+    font-size: 12px;
   }
   @include to(992px) {
     margin: 0 vw(40, 768) 36px auto;
+    font-size: 14px;
   }
   @include to(576px) {
     margin: 0 vw(20, 320) 20px auto;
+    font-size: 10px;
   }
   &-item {
     &:last-child {

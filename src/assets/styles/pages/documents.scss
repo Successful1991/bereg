@@ -161,6 +161,7 @@
       svg {
         height: 45%;
         width: 45%;
+        fill: $gold;
       }
       @include to(1440px) {
         height: 35px;

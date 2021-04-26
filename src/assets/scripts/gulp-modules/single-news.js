@@ -21,11 +21,11 @@ function setHeightContainer(type) {
 
 document.addEventListener('DOMContentLoaded', () => {
   setHeightContainer();
-  locoScroll.update();
+  window.locoScroll.update();
   back();
 });
 
 window.addEventListener('resize', () => {
   setHeightContainer('resize');
-  locoScroll.update();
+  window.locoScroll.update();
 });

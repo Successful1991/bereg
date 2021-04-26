@@ -181,6 +181,22 @@
       }
     }
   }
+  &__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: $dark;
+    @include to(1440px) {
+      font-size: 30px;
+    }
+    @include to(992px) {
+      font-size: 35px;
+    }
+    @include to(576px) {
+      font-size: 16px;
+    }
+  }
 }
 .back {
   display: flex;
