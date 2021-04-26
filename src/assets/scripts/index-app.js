@@ -19,6 +19,7 @@ const locoScroll = new LocomotiveScroll({
   inertia: 1.1,
 });
 
+global.locoScroll = locoScroll;
 /*
  * smooth scroll end
  */
@@ -121,4 +122,19 @@ forms.forEach((form) => {
 /*
  * form handlers end
  */
+function disableScroll() {
+  const containersScroll = document.querySelectorAll('[data-disable-page-scroll]');
+  containersScroll.forEach((block) => {
+    block.addEventListener('mouseenter', () => {
+      locoScroll.stop();
+    });
+    block.addEventListener('mouseleave', () => {
+      locoScroll.start();
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  disableScroll();
+});
 /** ******************************* */
