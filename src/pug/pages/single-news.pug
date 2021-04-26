@@ -28,7 +28,7 @@ block content
   include ../includes/breadcrumbs.pug
   .single-news(data-container)
     .single-news__image
-      a(href='#').back
+      a(href='#' data-back).back
         +svg('arrow')
         span назад
       .single-news__img
@@ -50,6 +50,50 @@ block content
   .different-news
     .title інші новини
     .news
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
+      a(href='single-news.html' data-id=id).news__card
+        .news__img
+          +img('news/1.jpg')
+        .news__date
+          span 22.12.2020
+        .news__title Продаж квартир у жк BEREG Residence вже відкрито
+        .news__desc Компанія-забудовник входить до британської інвестиційно ...
+        .news__link.link
+          span Детальніше
+          .link__arrow
+            +svg('arrow')
       a(href='single-news.html' data-id=id).news__card
         .news__img
           +img('news/1.jpg')

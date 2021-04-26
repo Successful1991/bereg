@@ -13,6 +13,18 @@
   }
   .breadcrumbs {
     margin-bottom: 70px;
+    @include to(1440px) {
+      margin-bottom: 40px;
+    }
+    @include to(992px) {
+      margin-bottom: 35px;
+    }
+    @include to(576px) {
+      margin-bottom: 20px;
+    }
+  }
+  .title {
+    margin: 0;
   }
 }
 
@@ -21,31 +33,64 @@
   align-items: flex-start;
   align-content: flex-start;
   padding: 0 vw(80, 1920);
-  .breadcrumbs {
-    width: 100%;
+  @include to(1440px) {
+    padding: 0 vw(50, 1440);
+  }
+  @include to(992px) {
+    flex-direction: column;
+    padding: 0;
   }
   &__image {
     display: flex;
     flex-shrink: 0;
-    width: 60%;
+    max-width: 60%;
+    @include to(992px) {
+      max-width: none;
+      margin: 0 vw(40, 768);
+    }
+    @include to(576px) {
+      margin: 0 vw(20, 320);
+    }
   }
   &__img {
     position: relative;
   }
   &__content {
     height: 100%;
-    width: 40%;
     margin-left: vw(90, 1920);
     padding: 0;
+    @include to(1440px) {
+      margin-left: vw(60, 1360);
+    }
+    @include to(992px) {
+      margin: 120px vw(90, 768) 0;
+    }
+    @include to(576px) {
+      margin: 50px vw(40, 320) 0;
+    }
   }
   &__text {
     height: calc(100% - 30px);
-    padding: 0 vw(60, 1920) 0 0;
+    padding: 0 vw(90, 1920) 0 0;
     margin-top: 30px;
     overflow: auto;
     &::-webkit-scrollbar-thumb {
       background: $gold;
       box-shadow: none;
+    }
+    @include to(1440px){
+      height: calc(100% - 20px);
+      padding: 0 vw(60, 1360) 0 0;
+      margin-top: 20px;
+    }
+    @include to(992px) {
+      overflow: visible;
+      height: initial;
+      padding: 0;
+      margin-top: 40px;
+    }
+    @include to(576px) {
+      margin-top: 15px;
     }
   }
   &__date {
@@ -92,6 +137,18 @@
     z-index: 10;
     transform: translate(-50%, 35%);
     fill: none;
+    @include to(1440px) {
+      height: 207px;
+      width: 226px;
+    }
+    @include to(992px) {
+      height: 187px;
+      width: 204px;
+    }
+    @include to(576px) {
+      height: 86px;
+      width: 94px;
+    }
   }
   &__desc {
     margin-top: 30px;
@@ -101,6 +158,27 @@
     color: $dark;
     p {
       margin-top: 30px;
+    }
+    @include to(1440px) {
+      margin-top: 20px;
+      font-size: 16px;
+      p {
+        margin-top: 20px;
+      }
+    }
+    @include to(992px) {
+      margin-top: 40px;
+      font-size: 20px;
+      p {
+        margin-top: 40px;
+      }
+    }
+    @include to(576px) {
+      margin-top: 15px;
+      font-size: 13px;
+      p {
+        margin-top: 15px;
+      }
     }
   }
   &__title {
@@ -114,7 +192,7 @@
 .back {
   display: flex;
   flex-direction: column;
-  margin: 0 100px 0 0;
+  margin: 0 vw(100, 1920) 0 0;
   height: min-content;
   font-weight: 500;
   font-size: 18px;
@@ -142,6 +220,35 @@
       }
     }
   }
+  @include to(1440px) {
+    margin-right: vw(60, 1360);
+    font-size: 14px;
+    span {
+      margin-top: 10px;
+    }
+    svg {
+      width: 50px;
+      height: 9px;
+    }
+  }
+  @include to(992px) {
+    font-size: 18px;
+    margin-right: vw(35, 768);
+    span {
+      margin-top: 15px;
+    }
+  }
+  @include to(576px) {
+    font-size: 9px;
+    margin-right: vw(13, 320);
+    span {
+      margin-top: 15px;
+    }
+    svg {
+      width: 34px;
+      height: 6px;
+    }
+  }
 }
 
 .different-news {
@@ -151,6 +258,21 @@
     text-align: center;
     &:after {
       border-bottom-color: #E2E3E4;
+    }
+  }
+  @include to(1440px) {
+    margin: 120px 0 80px;
+  }
+  @include to(992px) {
+    margin: 80px 0 0;
+    .news__card:nth-child(1n+3) {
+      display: none;
+    }
+  }
+  @include to(576px) {
+    margin: 40px 0 0;
+    .news__card:nth-child(1n+3) {
+      display: inline-block;
     }
   }
 }
