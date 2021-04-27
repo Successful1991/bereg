@@ -1,0 +1,81 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'construction'
+    var id_page = 'page-construction'
+    var class_page = 'page-construction'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/construction.js')
+block content
+  include ../includes/breadcrumbs.pug
+  h1.title Cтан будівництва
+  .construction
+    .select.construction__select
+        .select__name Період
+        .select__selected(data-selected) Лютий 2021
+        ul.select__list(data-select-list)
+          li.select__element
+            span 2021
+          li.select__element
+            a(href="#" class="select__link" data-select data-year='2021' data-mounth='dec') Січень
+          li.select__element
+            a(href="#" class="select__link" data-select data-year='2021' data-mounth='dec') Лютий
+          li.select__element
+            span(data-year) 2020
+          li.select__element
+            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Грудень
+          li.select__element
+            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Листопад
+          li.select__element
+            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Жовтень
+          li.select__element
+            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Вересень
+    a(href='camera.html').construction__link LIVE камера
+    .construction__slider.construction__slider_offset
+      .swiper-container.js-construction__slider
+        .swiper-wrapper
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+    .construction__desc.construction__desc_offset(data-disable-page-scroll)
+      p.construction__p Завершено роботи по влаштуванню монолітних конструкцій висотної частини до п'ятнадцятого рівня включно
+      p.construction__p У завершальній стадії знаходяться роботи по трасування механічних інженерних систем в підземній частині об'єкту
+      p.construction__p Розпочато роботи з улаштування мереж електропостачання
+      p.construction__p Виробляються роботи по влаштуванню пожежогасіння
+      p.construction__p Завершено роботи по влаштуванню монолітних конструкцій висотної частини до п'ятнадцятого рівня включно
+      p.construction__p Виробляються роботи по влаштуванню пожежогасіння
+      p.construction__p Виробляються роботи по влаштуванню пожежогасіння
+      p.construction__p Завершено роботи по влаштуванню монолітних конструкцій висотної частини до п'ятнадцятого рівня включно
+      p.construction__p Виробляються роботи по влаштуванню пожежогасіння
+      p.construction__p Виробляються роботи по влаштуванню пожежогасіння
+      p.construction__p Завершено роботи по влаштуванню монолітних конструкцій висотної частини до п'ятнадцятого рівня включно
+      p.construction__p Виробляються роботи по влаштуванню пожежогасіння
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

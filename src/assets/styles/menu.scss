@@ -1,5 +1,6 @@
 .menu {
   display: grid;
+  height: 100%;
   grid-template-columns: 13% auto 1fr 2fr 1fr 2fr 13%;
   grid-template-rows: auto 140px 1fr;
   grid-template-areas: 'top top top top top top top'
@@ -106,7 +107,7 @@
       display: inline-block;
       font-family: $default-font;
       font-weight: 500;
-      font-size: 18px;
+      font-size: min(vw(18, 1920), 18px);
       line-height: 100%;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -204,7 +205,7 @@
       display: inline-block;
       font-family: $default-font;
       font-weight: 500;
-      font-size: 22px;
+      font-size: min(vw(22, 1920), 22px);
       line-height: 160%;
       letter-spacing: 0.01em;
       text-decoration: none;
@@ -241,7 +242,7 @@
     }
     &-big {
       a {
-        font-size: 38px;
+        font-size: min(vw(38, 1920), 38px);
         line-height: 1em;
         letter-spacing: 0.02em;
         @include to(1440px) {
@@ -302,7 +303,7 @@
     align-items: center;
     font-family: $default-font;
     font-weight: 500;
-    font-size: 18px;
+    font-size: min(vw(18, 1920), 18px);
     line-height: 100%;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -371,7 +372,7 @@
   &__title {
     font-family: $default-font;
     font-weight: 500;
-    font-size: 38px;
+    font-size: min(vw(38, 1920), 38px);
     line-height: 100%;
     letter-spacing: 0.02em;
     color: $gold;
