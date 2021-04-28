@@ -28,30 +28,47 @@ block content
   include ../includes/breadcrumbs.pug
   h1.title Cтан будівництва
   .construction
-    .select.construction__select
+    .select.construction__select(data-select-container)
         .select__name Період
-        .select__selected(data-selected) Лютий 2021
-        ul.select__list(data-select-list)
-          li.select__element
-            span 2021
-          li.select__element
-            a(href="#" class="select__link" data-select data-year='2021' data-mounth='dec') Січень
-          li.select__element
-            a(href="#" class="select__link" data-select data-year='2021' data-mounth='dec') Лютий
-          li.select__element
-            span(data-year) 2020
-          li.select__element
-            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Грудень
-          li.select__element
-            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Листопад
-          li.select__element
-            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Жовтень
-          li.select__element
-            a(href="#" class="select__link" data-select data-year='2020' data-mounth='dec') Вересень
+        .select__dropdown(data-dropdown)
+          .select__selected(data-selected) Лютий 2021
+          ul.select__list(data-disable-page-scroll data-select-list)
+            li.select__element
+              span 2021
+            li.select__element
+              a(href="#" class="select__link disabled" data-id='1' select data-year='2021' data-month='dec') Січень
+            li.select__element
+              a(href="#" class="select__link" data-id='2' select data-year='2021' data-month='dec') Лютий
+            li.select__element
+              span(data-year) 2020
+            li.select__element
+              a(href="#" class="select__link" data-id='3' select data-year='2020' data-month='dec') Грудень
+            li.select__element
+              a(href="#" class="select__link" data-id='4' select data-year='2020' data-month='dec') Листопад
+            li.select__element
+              a(href="#" class="select__link" data-id='5' select data-year='2020' data-month='dec') Жовтень
+            li.select__element
+              a(href="#" class="select__link" data-id='6' select data-year='2020' data-month='dec') Вересень
+            li.select__element
+              span 2021
+            li.select__element
+              a(href="#" class="select__link" data-id='1' select data-year='2021' data-month='dec') Січень
+            li.select__element
+              a(href="#" class="select__link" data-id='2' select data-year='2021' data-month='dec') Лютий
+            li.select__element
+              span(data-year) 2020
+            li.select__element
+              a(href="#" class="select__link" data-id='3' select data-year='2020' data-month='dec') Грудень
+            li.select__element
+              a(href="#" class="select__link" data-id='4' select data-year='2020' data-month='dec') Листопад
+            li.select__element
+              a(href="#" class="select__link" data-id='5' select data-year='2020' data-month='dec') Жовтень
+            li.select__element
+              a(href="#" class="select__link" data-id='6' select data-year='2020' data-month='dec') Вересень
     a(href='camera.html').construction__link LIVE камера
     .construction__slider.construction__slider_offset
       .swiper-container.js-construction__slider
-        .swiper-wrapper
+        .swiper-wrapper(data-slides-wrap)
           .swiper-slide.construction__slide
             +img('slider/1.jpg')
           .swiper-slide.construction__slide
@@ -60,7 +77,20 @@ block content
             +img('slider/1.jpg')
           .swiper-slide.construction__slide
             +img('slider/1.jpg')
-    .construction__desc.construction__desc_offset(data-disable-page-scroll)
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+          .swiper-slide.construction__slide
+            +img('slider/1.jpg')
+        .swiper-nav
+          div(data-prev).construction__arrow.construction__arrow--prev
+            +svg('arrow').link__arrow
+          .swiper-pagination
+          div(data-next).construction__arrow.construction__arrow--next
+            +svg('arrow').link__arrow
+
+    .construction__desc.construction__desc_offset(data-disable-page-scroll data-description-container)
       p.construction__p Завершено роботи по влаштуванню монолітних конструкцій висотної частини до п'ятнадцятого рівня включно
       p.construction__p У завершальній стадії знаходяться роботи по трасування механічних інженерних систем в підземній частині об'єкту
       p.construction__p Розпочато роботи з улаштування мереж електропостачання

@@ -1,6 +1,7 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import i18next from 'i18next';
 import gsap from 'gsap';
+import axios from 'axios';
 import * as yup from 'yup';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
@@ -10,6 +11,7 @@ import SexyInput from '../../pug/components/input/input';
  * smooth scroll start
  */
 global.gsap = gsap;
+global.axios = axios;
 
 /* eslint-disable-next-line */
 const locoScroll = new LocomotiveScroll({
