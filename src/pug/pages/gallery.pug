@@ -1,0 +1,58 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'gallery'
+    var id_page = 'page-gallery'
+    var class_page = 'page-gallery'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/gallery.js')
+block content
+  include ../includes/breadcrumbs.pug
+  h1.title gallery
+  .gallery
+    .gallery__slider
+      .swiper-container.js-gallery__slider
+        .swiper-wrapper(data-slides-wrap)
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+          .swiper-slide.gallery__slide
+            +img('slider/1.jpg')
+        .swiper-nav
+          div(data-prev).gallery__arrow.gallery__arrow--prev
+            +svg('arrow').link__arrow
+          .swiper-pagination
+          div(data-next).gallery__arrow.gallery__arrow--next
+            +svg('arrow').link__arrow
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

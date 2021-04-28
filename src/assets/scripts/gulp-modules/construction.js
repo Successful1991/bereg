@@ -1,6 +1,6 @@
 function initSlider() {
   // eslint-disable-next-line no-undef
-  Swiper('.js-construction__slider', {
+  const slider = new Swiper('.js-construction__slider', {
     loop: true,
     navigation: {
       nextEl: document.querySelector('[data-next]'),
@@ -18,6 +18,9 @@ function initSlider() {
     speed: 400,
     watchSlidesVisibility: true,
   });
+  if (slider) {
+    console.log('');
+  }
 }
 function createSlide(slide) {
   return `<div class="swiper-slide construction__slide">
