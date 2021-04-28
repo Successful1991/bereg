@@ -11,18 +11,6 @@
       padding: 90px 0 0 0;
     }
   }
-  .breadcrumbs {
-    margin-bottom: 70px;
-    @include to(1440px) {
-      margin-bottom: 40px;
-    }
-    @include to(992px) {
-      margin-bottom: 35px;
-    }
-    @include to(576px) {
-      margin-bottom: 20px;
-    }
-  }
   .title {
     margin: 0;
     color: $mc;
