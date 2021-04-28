@@ -1,6 +1,6 @@
 function initSlider() {
   // eslint-disable-next-line no-undef
-  const slider = new Swiper('.js-construction__slider', {
+  Swiper('.js-construction__slider', {
     loop: true,
     navigation: {
       nextEl: document.querySelector('[data-next]'),
@@ -17,16 +17,7 @@ function initSlider() {
     lazy: true,
     speed: 400,
     watchSlidesVisibility: true,
-    on: {
-      // init: (e) => {
-      //   document.querySelector('[data-total]').innerHTML = document.querySelectorAll('.slide').length - 2;
-      //   document.querySelector('[data-current]').innerHTML = e.activeIndex + 1;
-      // },
-    },
   });
-  // slider.on('activeIndexChange', (obj) => {
-  //   document.querySelector('[data-current]').innerHTML = obj.realIndex + 1;
-  // });
 }
 function createSlide(slide) {
   return `<div class="swiper-slide construction__slide">
@@ -46,7 +37,8 @@ function replaceContent(data) {
 }
 
 function updateSelected(selected, state) {
-  selected.innerHTML = `${state.month} ${state.year}`;
+  const select = selected;
+  select.innerHTML = `${state.month} ${state.year}`;
   const oldElement = document.querySelector('[select].disabled');
   oldElement.classList.remove('disabled');
   const currentElement = document.querySelector(`[data-id="${state.selected}"]`);
@@ -109,7 +101,7 @@ function initDropdown() {
           updateSelected(selected, state);
         }).catch((error) => {
           console.log(error);
-      });
+        });
     }
   });
 }

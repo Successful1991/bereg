@@ -1,0 +1,49 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'camera'
+    var id_page = 'page-camera'
+    var class_page = 'page-camera'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/camera.js')
+block content
+  include ../includes/breadcrumbs.pug
+  h1.title Live камера
+  .camera
+    .select.camera__select(data-select-container)
+      .select__name LIVE камери
+      .select__dropdown(data-dropdown)
+        .select__selected(data-selected) Камера 1
+        ul.select__list(data-disable-page-scroll data-select-list)
+          li.select__element
+            a(href="#" class="select__link disabled" data-name="Камера 1" data-id="1" select data-link="https://rtsp.me/embed/eQFsYfeQ/") Камера 1
+          li.select__element
+            a(href="#" class="select__link" data-name="Камера 2" data-id="2" select data-link="https://rtsp.me/embed/eQFsYfeQ/") Камера 2
+    a(href='construction.html').camera__link стан будівництва
+    .camera__container(data-container-camera)
+      iframe(class="fancybox-iframe" data-camera  frameborder="0" vspace="0" hspace="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allowtransparency="true" src="https://rtsp.me/embed/eQFsYfeQ/" scrolling="auto")
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
