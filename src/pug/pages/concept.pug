@@ -1,0 +1,67 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'concept'
+    var id_page = 'page-concept'
+    var class_page = 'page-concept'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/concept.js')
+block content
+  .concept
+    include ../includes/breadcrumbs.pug
+    .section-sliceFigure
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        h1.section-sliceFigure__title Концепція
+        .section-sliceFigure__text.section-sliceFigure__text_offset BEREG Residence —це архітектурне втілення всіх вимог до омріяного житла високої якості без компромісів з Вашого боку. Житло бізнес класу, де все продумано до дрібниць.
+        a(href='about').section-sliceFigure__link.section-sliceFigure__link_offset.link
+          span замовити презентацію
+        +svg('DecorTriangle').section-sliceFigure__decorate
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/concept/1.jpeg")
+          source(media="(max-width: 992px)" srcset="assets/images/concept/1-table.jpeg")
+          img(src="assets/images/concept/1.jpeg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+    .concept__section-2.template-simple.template-simple_img-left
+      .template-simple__img
+        +img('concept/2.jpg')
+        +svg('DecorTriangle').template-simple__decorate
+      .template-simple__text
+        p Краєвиди, що відкриваються з вікон Вашої квартири на Дніпро, Оболонь, мальовничий Поділ та архітектурні домінанти Печерська.
+        p Якість життя, до якої прагне кожен мешканець мегаполіса: свіже повітря, панорамні вікна, якісна сучасна будівля.
+    .concept__section-3.template-simple.template-simple_img-right
+      .template-simple__img
+        +img('concept/3.jpg')
+        +svg('DecorTriangle').template-simple__decorate
+      .template-simple__content
+        .template-simple__title Сучасна архітектура, зручне розташування, закрита територія, європейські стандарти з благоустрою:
+        .template-simple__items
+          .template-simple__item футбольний, баскетбольний та волейбольний майданчики
+          .template-simple__item масштабна тераса на даху, площею 800 кв.м, доступна кожному
+          .template-simple__item дитячі майданчики, воркаут зони, ландшафтний парк
+          .template-simple__item наземний критий та гостьовий паркінг
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

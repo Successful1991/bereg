@@ -1,0 +1,32 @@
+.page-concept {
+  .breadcrumbs {
+    position: absolute;
+    top: calc(var(--header-h) + 65px);
+    right: 0;
+    color: #E2E3E4;
+    @include to(1440px) {
+      top: calc(var(--header-h) + 45px);
+    }
+    @include to(992px) {
+      top: calc(var(--header-h) + 30px);
+    }
+    @include to(576px) {
+      top: calc(var(--header-h) + 20px);
+    }
+  }
+}
+
+.concept {
+  .sliceFigure-big {
+    svg {
+      fill: #FFFFFF;
+    }
+  }
+  &__section {
+    &-2 {
+      //padding: 170px 0 120px;
+      background: #1D222B;
+      color: #E2E3E4;
+    }
+  }
+}

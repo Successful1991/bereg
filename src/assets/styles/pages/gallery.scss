@@ -112,10 +112,15 @@
       border-radius: 0;
     }
     svg {
+      width: 70%;
       margin: 0;
       fill: $light;
       @include to(992px) {
         fill: $dark;
+        width: 50px;
+      }
+      @include to(576px) {
+        width: 34px;
       }
     }
     &--prev {
