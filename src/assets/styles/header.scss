@@ -46,6 +46,11 @@
       margin: 0 40px;
       background: none;
     }
+    @include to(767px) {
+      height: 55px;
+      width: 180px;
+      margin: 0 20px;
+    }
     @include to(576px) {
       height: 36px;
       width: 115px;
@@ -139,7 +144,7 @@
       height: 18px;
       fill: #1A2941;
     }
-    @include to(576px) {
+    @include to(680px) {
       display: flex;
     }
   }
@@ -206,9 +211,9 @@
     }
   }
   @include to(992px) {
-    margin-right: 50px;
+    margin-right: min(vw(50, 768), 50px);
   }
-  @include to(576px) {
+  @include to(680px) {
     display: none;
   }
 }
@@ -311,12 +316,33 @@
   flex-shrink: 0;
   position: relative;
   font-family: $default-font;
+  &[data-lang="desktop"] {
+    visibility: visible;
+    @include to(576px) {
+      visibility: hidden;
+      pointer-events: none;
+      position: absolute;
+    }
+  }
+  &[data-lang="mobile"] {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    @include to(992px) {
+      visibility: visible;
+      pointer-events: painted;
+      position: relative;
+    }
+  }
   @include to(1440px) {
     width: 77px;
   }
   @include to(992px) {
-    display: none;
+    margin-right: 20px;
   }
+  //@include to(992px) {
+  //  display: none;
+  //}
 }
 
 .custom-select select {
@@ -336,10 +362,13 @@
   transform-origin: 25% 25%;
   border: 1px solid transparent;
   border-color: #fff transparent transparent #fff;
-  @include from(1600px) {
+  @include to(1440px) {
     border-width: 2px;
     width: 10px;
     height: 10px;
+  }
+  @include to(992px) {
+    right: 5px;
   }
 }
 
@@ -364,6 +393,12 @@
   @include to(1440px) {
     font-size: 14px;
   }
+  @include to(992px) {
+    font-size: 18px;
+  }
+  @include to(576px) {
+    font-size: 12px;
+  }
 }
 
 /* Style items (options): */
@@ -386,6 +421,13 @@
   font-size: 18px;
   @include to(1440px) {
     font-size: 14px;
+  }
+  @include to(992px) {
+    font-size: 18px;
+  }
+
+  @include to(576px) {
+    font-size: 12px;
   }
 }
 

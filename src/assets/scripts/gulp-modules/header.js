@@ -30,18 +30,23 @@ function menuInit() {
 }
 
 function init() {
-  window.addEventListener('click', (e) => {
-    const elem = document.querySelector('.select-items');
-    if (!e.target.classList.contains('select-selected') && !elem.classList.contains('select-hide')) {
-      document.querySelector('.select-selected').classList.remove('select-arrow-active');
+  const unSelectHandler = (container) => {
+    const elem = container.querySelector('.select-items');
+    if (!elem.classList.contains('select-hide')) {
+      container.classList.remove('select-arrow-active');
       elem.classList.add('select-hide');
     }
-  });
-
-  document.querySelector('.select-selected').addEventListener('click', (e) => {
-    e.target.classList.add('select-arrow-active');
-    document.querySelector('.select-items').classList.remove('select-hide');
-  });
+    window.removeEventListener('click', unSelectHandler);
+  };
+  const selectHandler = (event) => {
+    event.stopPropagation();
+    const container = event.target.closest('[data-lang]');
+    container.classList.add('select-arrow-active');
+    container.querySelector('.select-items').classList.remove('select-hide');
+    window.addEventListener('click', unSelectHandler.bind(null, container));
+  };
+  document.querySelector('[data-lang="mobile"]').addEventListener('click', selectHandler);
+  document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
 
   menuInit();
 }

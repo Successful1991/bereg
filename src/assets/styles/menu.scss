@@ -181,9 +181,14 @@
       margin: 0 50px 0 auto;
       width: calc(50% - 50px - 60px);
     }
+    @include to(992px) {
+      margin: 0 20px 0 max(vw(65, 768), 65px);
+      width: 100%;
+      justify-content: space-between;
+    }
     @include to(576px) {
       margin: 0 0 0 auto;
-      width: auto;
+      width: 50%;
     }
   }
   &__section {
@@ -353,6 +358,7 @@
     }
     @include to(992px) {
       flex-direction: column;
+      margin-left: 0;
     }
     @include to(576px) {
       font-size: 11px;
@@ -390,7 +396,7 @@
     }
   }
   .call {
-    margin-left: clamp(20px, 15%, 100px);
+    //margin-left: clamp(20px, 15%, 100px);
   }
 
 

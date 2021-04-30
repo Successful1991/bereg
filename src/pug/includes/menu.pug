@@ -38,6 +38,11 @@
           source(media="(max-width: 992px)" srcset="assets/images/logo-mobile.svg")
           img(src="assets/images/logo.svg")
       .menu__right
+        .custom-select(data-lang="mobile")
+          .select-selected УКР
+          .select-items.select-hide
+            a(href='/ru').select-item РУС
+            a(href='/en').select-item ENG
         .call
           .call__num
             +svg('tell')
