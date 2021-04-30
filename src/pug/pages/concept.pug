@@ -37,10 +37,14 @@ block content
       .section-sliceFigure__img
         picture
           source(media="(min-width: 993px)" srcset="assets/images/concept/1.jpeg")
-          source(media="(max-width: 992px)" srcset="assets/images/concept/1-table.jpeg")
+          source(media="(max-width: 992px)" srcset="assets/images/concept/1-table.jpg")
           img(src="assets/images/concept/1.jpeg")
       .sliceFigure-big
         +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
     .concept__section-2.template-simple.template-simple_img-left
       .template-simple__img
         +img('concept/2.jpg')
@@ -59,7 +63,18 @@ block content
           .template-simple__item масштабна тераса на даху, площею 800 кв.м, доступна кожному
           .template-simple__item дитячі майданчики, воркаут зони, ландшафтний парк
           .template-simple__item наземний критий та гостьовий паркінг
-
+    .concept__section-4
+      .concept__section-4__img
+        +img('concept/bg.jpg')
+      .concept__section-4__content
+        .concept__section-4__block
+          p Мешканцям BEREG Residence стануть звичними неймовірно красиві заходи сонця, романтичні вечори на даху, прогулянки на свіжому повітрі у власному парку або по набережній.
+        .concept__section-4__block
+          p Краса кожного дня – це BEREG Residence. Насолода від кожного дня, що мотивує досягати більшого для себе та своїх близьких.
+          a(href='view.html').link.concept__link_offset
+            span Огляд 360°
+            .link__arrow
+              +svg('arrow')
 block footer
   include ../includes/footer.pug
 

@@ -29,12 +29,14 @@ $gold: #CFA46E;
   :root {
     --header-h: 90px;
     --logo-w: 120px;
+    --sliceFigure-big: 362px;
   }
 }
 @media screen and (max-width: 992px){
   :root {
     --header-h: 110px;
     --logo-w: 90px;
+    --sliceFigure-big: 44px;
   }
 }
 @media screen and (max-width: 576px){

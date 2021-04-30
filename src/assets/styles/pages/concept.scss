@@ -14,6 +14,14 @@
       top: calc(var(--header-h) + 20px);
     }
   }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .sliceFigure svg {
+    fill: #FCFCFC;
+  }
 }
 
 .concept {
@@ -24,9 +32,107 @@
   }
   &__section {
     &-2 {
-      //padding: 170px 0 120px;
       background: #1D222B;
       color: #E2E3E4;
+    }
+    &-4 {
+      display: grid;
+      grid-template-rows: var(--header-h) 1fr 1fr;
+      grid-template-columns: 1fr;
+      @include to(992px) {
+        grid-template-rows: 0 1fr 1fr;
+      }
+      &__img {
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 2;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__content {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        grid-row: 2;
+        grid-column: 1 / span 2;
+        margin: 0 vw(250, 1920);
+        @include to(1440px) {
+          margin: 0 vw(110, 1360);
+        }
+        @include to(992px) {
+          flex-direction: column;
+          margin: 80px vw(90, 768);
+        }
+        @include to(576px) {
+          margin: 50px vw(40, 320) 20px;
+        }
+      }
+      &__block {
+        width: min(vw(540, 1920), 540px);
+
+        font-weight: 500;
+        font-size: min(vw(24, 1920), 24px);
+        line-height: 140%;
+        color: #FCFCFC;
+        @include to(1440px) {
+          width: min(vw(450, 1360), 450px);
+          font-size: min(vw(20, 1360), 20px);
+        }
+        @include to(992px) {
+          width: 100%;
+          font-size: 24px;
+          margin-top: 40px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        @include to(576px) {
+          font-size: max(vw(13, 320), 13px);
+          margin-top: 20px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        .link {
+          font-size: min(vw(24, 1920), 24px);
+          color: $gold;
+          fill: $gold;
+          @include to(1440px) {
+            font-size: min(vw(20, 1360), 20px);
+          }
+          @include to(992px) {
+            font-size: 24px;
+          }
+          @include to(576px) {
+            font-size: max(vw(13, 320), 13px);
+          }
+          &__arrow {
+            margin-left: 40px;
+            @include to(1440px) {
+              margin-left: 20px;
+            }
+            @include to(992px) {
+              margin-left: 30px;
+            }
+            @include to(576px) {
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__link_offset {
+    margin-top: 40px;
+    @include to(1440px) {
+      margin-top: 30px;
+    }
+    @include to(992px) {
+      margin-top: 40px;
+    }
+    @include to(576px) {
+      margin-top: 20px;
     }
   }
 }

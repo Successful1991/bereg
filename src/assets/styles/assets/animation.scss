@@ -39,3 +39,13 @@
 		opacity: 0;
 	}
 }
+
+
+@keyframes scroll {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, 40%);
+  }
+}
