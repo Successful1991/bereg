@@ -1,0 +1,109 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'infrastructure'
+    var id_page = 'page-infrastructure'
+    var class_page = 'page-infrastructure'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/infrastructure.js')
+block content
+  .infrastructure
+    include ../includes/breadcrumbs.pug
+    .section-sliceFigure
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        h1.section-sliceFigure__title Локація та інфраструктура
+        .section-sliceFigure__text.section-sliceFigure__text_offset Житловий комплекс BEREG Residence розташований між Оболонською набережною та Рибальським півостровом. У пішої доступності ТРЦ Блокбастер, кінотеатр Планета Кіно, парк розваг Галактика, фітнес-центр Спортлайф, Сільпо та IKEA.
+          +svg('DecorTriangle').section-sliceFigure__decorate
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/infrastructure/1.jpg")
+          source(media="(max-width: 992px)" srcset="assets/images/infrastructure/1-table.jpg")
+          img(src="assets/images/infrastructure/1.jpg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
+
+    .infrastructure__section-2
+      .infrastructure__left.infrastructure__left_offset
+        .template-simple__content
+          .template-simple__title Вся міська інфраструктура, як на долоні:
+          .template-simple__items
+            .template-simple__item приватні та державні лікарні і клініки
+            .template-simple__item ветеринарна клініка Зоолюкс
+            .template-simple__item спортзал з басейном SportLife
+            .template-simple__item загальноосвітні школи та безліч приватних дитячих садочків
+      .infrastructure__right.infrastructure__right_offset
+        .template-simple__text
+          p Парк Почайна безпосередньо межує з територією BEREG Residence, а за 10 хвилин пішки Ви дістанетесь Оболонської набережної.
+          p Не треба планувати довгі поїздки у центр Києва, лише 10 хвилин на авто  і Ви вже на місці. Більше не треба витрачати час, який можна присвятити собі та своїй родині!
+      .infrastructure__dark-bg
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+    .infrastructure__map
+      div(id='map' class='map')
+      .infra
+        .infra__title Об’єкти інфраструктури
+        ul.infra__list
+          li.infra__elem
+            a.infra__link
+              +svg('cafe').infra__icon
+              .infra__name Ресторани
+          li.infra__elem
+            a.infra__link
+              +svg('bars').infra__icon
+              .infra__name Бари
+          li.infra__elem
+            a.infra__link
+              +svg('school').infra__icon
+              .infra__name Навчальні заклади
+          li.infra__elem
+            a.infra__link
+              +svg('kindergarden').infra__icon
+              .infra__name Дитячі садочки
+          li.infra__elem
+            a.infra__link
+              +svg('parks').infra__icon
+              .infra__name Парки та сквери
+    .genplan
+      .genplan__svg
+        +img('infrastructure/genplan.jpg')
+      .genplan__content
+        .genplan__title Генплан
+        ul.genplan__list
+          li(data-marker data-category='terrace').genplan__elem Тераса
+          li(data-marker data-category='greenZone').genplan__elem Аллея для прогулянок
+          li(data-marker data-category='childrenPlace').genplan__elem Дитячі майданчики
+          li(data-marker data-category='workout').genplan__elem Воркаут зона
+          li(data-marker data-category='football').genplan__elem Міні-футбольне поле
+          li(data-marker data-category='basket').genplan__elem Баскетбольний майданчик
+          li(data-marker data-category='parking').genplan__elem Паркінг
+          li(data-marker data-category='transition').genplan__elem Критий перехід до паркінгу
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
