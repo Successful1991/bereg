@@ -525,13 +525,23 @@ picture img {
   &__decorate {
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: calc(1.1em + 50px);
     fill: none;
     stroke: #F2F2F2;
     width: 80%;
     height: 80%;
-    transform: translate(-25%, 25%);
+    transform: translate(-25%, 0);
     z-index: -1;
+
+    font-size: min(vw(58, 1920), 58px);
+    @include to(1440px) {
+      top: 30px;
+      font-size: 48px;
+    }
+    @include to(576px) {
+      top: 30px;
+      font-size: max(vw(20, 320), 20px);
+    }
   }
 }
 

@@ -1,0 +1,61 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'security'
+    var id_page = 'page-security'
+    var class_page = 'page-security'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Безпека',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/security.js')
+block content
+  .security
+    include ../includes/breadcrumbs.pug
+    .section-sliceFigure
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        h1.section-sliceFigure__title Безпека
+        .section-sliceFigure__text.section-sliceFigure__text_offset Безпека власного житла у великому місті – передумова Вашого життєвого комфорту. Ми подбали про безпеку та надійну охорону житлового комплексу.
+        +svg('DecorTriangle').section-sliceFigure__decorate
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/security/1.jpg")
+          source(media="(max-width: 992px)" srcset="assets/images/security/1-table.jpg")
+          img(src="assets/images/security/1.jpg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
+    .security__section-2.template-simple.template-simple_img-left
+      .template-simple__img
+        +img('security/2.jpg')
+        +svg('DecorTriangle').template-simple__decorate
+      .template-simple__content
+        .template-simple__title Безпека BEREG Residence:
+        .template-simple__items
+          .template-simple__item в’їзд на територію здійснюється тільки по перепустках
+          .template-simple__item камери спостереження розміщені по всій території
+          .template-simple__item територія резиденції огороджена та має систему контролю доступу
+          .template-simple__item адміністрація, що працює цілодобово та має тривожну кнопку виклику правоохоронців і пожежників
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

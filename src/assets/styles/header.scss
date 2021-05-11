@@ -326,11 +326,9 @@
   }
   &[data-lang="mobile"] {
     visibility: hidden;
-    pointer-events: none;
     position: absolute;
     @include to(992px) {
       visibility: visible;
-      pointer-events: painted;
       position: relative;
     }
   }
@@ -340,9 +338,6 @@
   @include to(992px) {
     margin-right: 20px;
   }
-  //@include to(992px) {
-  //  display: none;
-  //}
 }
 
 .custom-select select {
