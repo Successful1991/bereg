@@ -1,0 +1,61 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'terrace'
+    var id_page = 'page-terrace'
+    var class_page = 'page-terrace'
+    var breadcrumbsSubitem = [
+      {
+        label: 'terrace',
+        link: pagesLink[0].terrace
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/terrace.js')
+block content
+  .terrace
+    include ../includes/breadcrumbs.pug
+    .section-sliceFigure
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        h1.section-sliceFigure__title Тераса
+        .section-sliceFigure__text.section-sliceFigure__text_offset Терасі на даху BEREG Residence хочеться співати дифірамби нескінченно. Це перша тераса на Оболоні, площа якої 800 квадратних метрів, і вона доступна кожному мешканцю BEREG Residence.
+        +svg('DecorTriangle').section-sliceFigure__decorate
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/terrace/1.jpg")
+          source(media="(max-width: 992px)" srcset="assets/images/terrace/1-table.jpg")
+          img(src="assets/images/terrace/1.jpg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
+    .terrace__section-2.template-simple.template-simple_img-left
+      .template-simple__img
+        +img('terrace/2.jpg')
+        +svg('DecorTriangle').template-simple__decorate
+      .template-simple__content
+        .template-simple__title Що на ній можна робити?
+        .template-simple__items
+          .template-simple__item зустрічати світанок з кавою, проводжати день з келихом вина
+          .template-simple__item запросити друзів на домашню вечірку на даху
+          .template-simple__item запостити в Instagram запаморочливі світлини заходів сонця
+          .template-simple__item надихатися краєвидом на Оболонську набережну та Дніпро, величний Печерськ та мальовничий Поділ
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
