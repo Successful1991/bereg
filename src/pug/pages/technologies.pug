@@ -1,0 +1,119 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'technologies'
+    var id_page = 'page-technologies'
+    var class_page = 'page-technologies'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/technologies.js')
+block content
+  .technologies
+    include ../includes/breadcrumbs.pug
+    .section-sliceFigure
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        h1.section-sliceFigure__title Архітектура та технології
+        .section-sliceFigure__text.section-sliceFigure__text_offset Архітектурне рішення проекту не має аналогів в Україні і робить BEREG Residence домінантою Оболонського району! Будинок спроектовано у формі трилисника, що якнайкраще розкриває потенціал ландшафту.
+        +svg('DecorTriangle').section-sliceFigure__decorate
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/technologies/1.jpg")
+          source(media="(max-width: 992px)" srcset="assets/images/technologies/1-table.jpg")
+          img(src="assets/images/technologies/1.jpg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
+    .technologies__section-2.template-simple.template-simple_img-left
+      .template-simple__img
+        +img('technologies/2.jpg')
+        +svg('DecorTriangle').template-simple__decorate
+      .template-simple__text
+        p Така форма дозволяє кожному мешканцю милуватися мальовничими краєвидами, а у квартирах буде вдосталь природного світла.
+        p Сучасні ліфти швидко доставлять на свій поверх або до сходинок тераси. Для зручності мешканців є додатковий вхід до будинку, який буде використовуватися для доставки будівельних матеріалів, меблів, води та інших об’ємних речей.
+    .technologies__section-3.template-simple.template-simple_img-right
+      .template-simple__img
+        +img('technologies/3.jpg')
+        +svg('DecorTriangle').template-simple__decorate
+      .template-simple__text
+        p Балконів багато не буває, тож кожне фасадне вікно має вихід до французького балкона. Ми заздалегідь залишили місце для встановлення кондиціонерів.
+        p На кожному балконі встановлено дренажні системи для відводу конденсату з кондиціонерів – ніяких літніх чи зимових “злив” не відбудеться.
+    .technologies__section-4.solutions
+      .solutions__title Технічні рішення:
+      .solutions__list
+        .solutions__elem
+          +svg('technologies-1').solutions__icon
+          p.solutions__desc.solutions__desc_offset технологія будівництва: монолітно-каркасна
+        .solutions__elem
+          +svg('technologies-2').solutions__icon
+          p.solutions__desc.solutions__desc_offset фасад: навісний-вентильований з оздобленням з керамограніту
+        .solutions__elem
+          +svg('technologies-3').solutions__icon
+          p.solutions__desc.solutions__desc_offset зовнішні стіни: екологічна цегла 250 мм
+        .solutions__elem
+          +svg('technologies-4').solutions__icon
+          p.solutions__desc.solutions__desc_offset утеплювач: мінеральна вата, товщиною 150 мм
+        .solutions__elem
+          +svg('technologies-5').solutions__icon
+          p.solutions__desc.solutions__desc_offset вікна: на фасадах встановлено енергоощадний металопластиковий склопакет з напиленням, бокові частини будинку повністю облаштовані склом
+    .section-sliceFigure.technologies__section-5
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        .characteristic
+          .characteristic__group
+            .characteristic__title Характеристики будинку:
+            .characteristic__coll
+              .characteristic__elem
+                .characteristic__value.characteristic__value_offset 27
+                .characteristic__name поверхів
+              .characteristic__elem
+                .characteristic__value.characteristic__value_offset 6
+                .characteristic__name ліфтів
+              .characteristic__elem
+                .characteristic__value.characteristic__value_offset 520
+                .characteristic__name квартир
+              .characteristic__elem.characteristic__elem_column
+                .characteristic__name.characteristic__name_yellow Опалення:
+                .characteristic__name власна котельня
+          .characteristic__group
+            .characteristic__title Характеристики паркінгу:
+            .characteristic__coll
+              .characteristic__elem
+                .characteristic__value.characteristic__value_offset 300
+                .characteristic__name місць
+              .characteristic__elem
+                .characteristic__value.characteristic__value_offset 3
+                .characteristic__name рівні
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/technologies/1.jpg")
+          source(media="(max-width: 992px)" srcset="assets/images/technologies/1-table.jpg")
+          img(src="assets/images/technologies/1.jpg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

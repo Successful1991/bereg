@@ -7,8 +7,8 @@ extends ../layout/main
 block variable
   -
     var title_page = '${scriptName}'
-    var id_page = 'id-page-${scriptName}'
-    var class_page = 'class-page-${scriptName}'
+    var id_page = 'page-${scriptName}'
+    var class_page = 'page-${scriptName}'
     var breadcrumbsSubitem = [
       {
         label: 'About',
