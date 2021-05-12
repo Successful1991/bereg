@@ -8,7 +8,7 @@ function func() {
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
-// setTimeout(func, 1000);
+
 const maps = document.querySelectorAll('.map');
 const options = {
   rootMargin: '0px',
@@ -201,10 +201,10 @@ window.addEventListener('load', () => {
     legend.classList.toggle('opened');
     // добавить плавность появление блока с маркерами
     if (legend.classList.contains('opened')) {
-      gsap.fromTo('.map__legend-markers-wrap', { height: 0 },
-        { height: '50vh' });
+      gsap.fromTo('.map__legend-markers-wrap', { maxHeight: 0 },
+        { maxHeight: '50vh' });
     } else {
-      gsap.fromTo('.map__legend-markers-wrap', { height: '50vh' }, { height: 0 });
+      gsap.fromTo('.map__legend-markers-wrap', { maxHeight: '50vh' }, { maxHeight: 0 });
     }
   });
   legend.addEventListener('mouseenter', () => {

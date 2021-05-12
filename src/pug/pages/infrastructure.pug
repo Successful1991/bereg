@@ -64,29 +64,24 @@ block content
         +svg('sliceFigure')
     .infrastructure__map
       div(id='map' class='map')
-      .infra
-        .infra__title Об’єкти інфраструктури
-        ul.infra__list
-          li.infra__elem
-            a.infra__link
-              +svg('cafe').infra__icon
-              .infra__name Ресторани
-          li.infra__elem
-            a.infra__link
-              +svg('bars').infra__icon
-              .infra__name Бари
-          li.infra__elem
-            a.infra__link
-              +svg('school').infra__icon
-              .infra__name Навчальні заклади
-          li.infra__elem
-            a.infra__link
-              +svg('kindergarden').infra__icon
-              .infra__name Дитячі садочки
-          li.infra__elem
-            a.infra__link
-              +svg('parks').infra__icon
-              .infra__name Парки та сквери
+      .infra.map__legend(data-mob-accordeon)
+        .infra__title.map__legend-title Об’єкти інфраструктури
+        ul.infra__list.map__legend-markers-wrap
+          li.infra__elem.map__legend-marker(data-category='cafe' data-marker)
+            +svg('cafe').infra__icon
+            .infra__name Ресторани
+          li.infra__elem.map__legend-marker(data-category='bar' data-marker)
+            +svg('bars').infra__icon
+            .infra__name Бари
+          li.infra__elem.map__legend-marker(data-category='school' data-marker)
+            +svg('school').infra__icon
+            .infra__name Навчальні заклади
+          li.infra__elem.map__legend-marker(data-category='kindergarden' data-marker)
+            +svg('kindergarden').infra__icon
+            .infra__name Дитячі садочки
+          li.infra__elem.map__legend-marker(data-category='park' data-marker)
+            +svg('parks').infra__icon
+            .infra__name Парки та сквери
     .genplan
       .genplan__svg
         +img('infrastructure/genplan.jpg')
