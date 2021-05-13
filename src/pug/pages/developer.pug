@@ -1,0 +1,78 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'developer'
+    var id_page = 'page-developer'
+    var class_page = 'page-developer'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/developer.js')
+block content
+  .developer
+    include ../includes/breadcrumbs.pug
+    .section-sliceFigure
+      .section-sliceFigure__template.section-sliceFigure__template_offset
+        h1.section-sliceFigure__title Девелопер
+        .section-sliceFigure__text.section-sliceFigure__text_offset Компанія-забудовник входить до британської інвестиційно- девелоперської компанії Quadrum Global, що має більш ніж 15-річну історію успішної діяльності на ринках США, Великої Британії, Грузії, України та інших країн.
+          +svg('DecorTriangle').section-sliceFigure__decorate
+      .section-sliceFigure__img
+        picture
+          source(media="(min-width: 993px)" srcset="assets/images/developer/1.jpg")
+          source(media="(max-width: 992px)" srcset="assets/images/developer/1-table.jpg")
+          img(src="assets/images/developer/1.jpg")
+      .sliceFigure-big
+        +svg('sliceFigure-big')
+      .sliceFigure
+        +svg('sliceFigure')
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
+    .developer__section-2
+      .developer__about
+        .developer__logo
+          +svg('developer-logo')
+        .developer__description Компанія спеціалізується на проектах житлової та комерційної нерухомості, включаючи готелі, торговельні центри, житлові та багатофункціональні комплекси, обслуговуванні апартаменти та пансіонати для людей похилого віку, а також нерухомість для промислових потреб.
+        a(href='/').developer__link.link
+          span Сайт девелопера
+          .link__arrow
+            +svg('arrow')
+      .objects
+        .objects__title Об'єкти:
+        .objects__slider
+          .objects__arrow.objects__arrow--prev(data-prev)
+            +svg('arrow').link__arrow
+          .swiper-container.js-objects__slider
+            .swiper-wrapper(data-slides-wrap)
+              a(href='#').swiper-slide
+                +img('developer/essex.png')
+              a(href='#').swiper-slide
+                +img('developer/amavida.png')
+              a(href='#').swiper-slide
+                +img('developer/westend.png')
+              a(href='#').swiper-slide
+                +img('developer/midtown.png')
+          .objects__arrow.objects__arrow--next(data-next)
+            +svg('arrow').link__arrow
+        .objects__description Всі проекти Quadrum Global було якісно побудовано і своєчасно введено в експлуатацію. BEREG Residence – житловий комплекс, який вже незабаром стане ще одним успішним проектом Quadrum Global в Україні.
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

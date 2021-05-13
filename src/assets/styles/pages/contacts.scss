@@ -2,6 +2,9 @@
   .footer {
     background: #1C2029;
   }
+  .page__content {
+    background: #1C2029;
+  }
 }
 .contacts {
   display: flex;
@@ -10,7 +13,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   height: 100%;
-  min-height: 100vh;
+  //min-height: 100vh;
   width: 100%;
   padding: 185px 0 230px;
   background: #1C2029;

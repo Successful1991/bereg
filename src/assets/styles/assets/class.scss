@@ -56,25 +56,25 @@
   &__title {
     font-family: $default-font;
     font-weight: 600;
-    font-size: 68px;
+    font-size: min(vw(58, 1920), 58px);
     line-height: 1.2em;
     color: $mc;
     span {
       font-weight: 400;
-      margin: 0 12px 0 0;
-      @include from(1600px) {
-        margin: 0 6px 0 0;
+      margin: 0 6px 0 0;
+      @include to(1440px) {
+        margin: 0 12px 0 0;
       }
     }
     @include to(1440px) {
       font-size: 48px;
     }
-    @include to(573px) {
-      font-size: 30px;
+    @include to(576px) {
+      font-size: min(vw(24, 320), 24px);
     }
-    @include to(360px) {
-      font-size: 24px;
-    }
+    //@include to(360px) {
+    //  font-size: 24px;
+    //}
   }
   &__text {
     position: relative;
@@ -83,7 +83,7 @@
     margin-top: 50px;
     font-family: $default-font;
     font-weight: 400;
-    font-size: 24px;
+    font-size: min(vw(20, 1920), 20px);
     line-height: 1.4em;
     color: $mc;
     &:before {
@@ -118,7 +118,7 @@
   &__link {
     padding: 0 0 0 78px;
     margin-top: 50px;
-    font-size: 28px;
+    font-size: min(vw(24, 1920), 24px);
     @include to(1440px) {
       padding: 0 0 0 40px;
       margin-top: 40px;
@@ -144,7 +144,7 @@
   align-items: center;
   font-family: $default-font;
   font-weight: 600;
-  font-size: 28px;
+  font-size: min(vw(24, 1920), 24px);
   line-height: 1em;
   color: #1A2941;
   white-space: nowrap;
@@ -159,7 +159,7 @@
     line-height: 1.4em;
   }
   @include to(576px) {
-    font-size: 14px;
+    font-size: max(vw(14, 320), 14px);
     line-height: 1em;
   }
   @include from(1023px) {

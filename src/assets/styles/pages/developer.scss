@@ -1,0 +1,223 @@
+.page-developer {
+  background: $light;
+  .breadcrumbs {
+    position: absolute;
+    top: calc(var(--header-h) + 65px);
+    right: 0;
+    color: #E2E3E4;
+    @include to(1440px) {
+      top: calc(var(--header-h) + 45px);
+    }
+    @include to(992px) {
+      top: calc(var(--header-h) + 30px);
+    }
+    @include to(576px) {
+      top: calc(var(--header-h) + 20px);
+    }
+  }
+  .footer {
+    background: #1D222B;
+  }
+  .sliceFigure svg {
+    fill: $light;
+  }
+  .sliceFigure-big {
+    svg {
+      fill: $light;
+    }
+  }
+}
+
+
+.developer {
+  &__section-2 {
+    display: grid;
+    grid-template-columns: vw(170, 1920) 1fr vw(170, 1920) 1fr vw(170, 1920);
+    padding: 270px 0 210px;
+    background: #1D222B;
+    @include to(1440px) {
+      grid-template-columns: vw(110, 1360) 1fr vw(110, 1360) 1fr vw(110, 1360);
+      padding: 210px 0 115px;
+    }
+    @include to(992px) {
+      grid-template-columns: vw(80, 768) 1fr vw(140, 768);
+      padding: 80px 0;
+      grid-gap: 80px 0;
+    }
+    @include to(576px) {
+      grid-template-columns: vw(40, 320) 1fr vw(40, 320);
+      padding: 50px 0;
+      grid-gap: 50px 0;
+    }
+  }
+  &__logo svg {
+    height: 61px;
+    width: 286px;
+    @include to(1440px) {
+      height: 45px;
+      width: 210px;
+    }
+    @include to(992px) {
+      height: 61px;
+      width: 283px;
+    }
+    @include to(576px) {
+      height: 37px;
+      width: 175px;
+    }
+  }
+  &__about {
+    grid-column: 2;
+    @include to(992px) {
+      grid-row: 1;
+    }
+  }
+  &__link {
+    margin-top: 70px;
+    color: $gold;
+    @include to(1440px) {
+      margin-top: 50px;
+    }
+    @include to(992px) {
+      margin-top: 40px;
+    }
+    @include to(576px) {
+      margin-top: 30px;
+    }
+    svg {
+      fill: $gold;
+    }
+  }
+  &__description {
+    margin-top: 70px;
+    font-size: min(vw(20, 1920), 20px);
+    line-height: 150%;
+    color: #E2E3E4;
+    @include to(1440px) {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+    @include to(992px) {
+      margin-top: 50px;
+      font-size: 20px;
+    }
+    @include to(576px) {
+      margin-top: 30px;
+      font-size: max(vw(13, 320), 13px);
+    }
+  }
+}
+
+.objects {
+  grid-column: 4;
+  @include to(992px) {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: max(vw(24, 1920), 24px);
+    line-height: 140%;
+    color: $light;
+    @include to(1440px) {
+      font-size: 20px;
+    }
+    @include to(992px) {
+      font-size: 24px;
+    }
+    @include to(576px) {
+      font-size: min(vw(16, 320), 16px);
+    }
+  }
+  &__slider {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: vw(710, 1920);
+    margin-top: 40px;
+    @include to(1440px) {
+      width: vw(490, 1360);
+      margin-top: 30px;
+    }
+    @include to(992px) {
+      width: vw(540, 768);
+      margin-top: 40px;
+    }
+    @include to(576px) {
+      width: vw(240, 320);
+      margin-top: 30px;
+    }
+    .swiper-container {
+      margin: 0 70px;
+      @include to(1440px) {
+        margin: 0 24px;
+      }
+      @include to(576px) {
+        margin: 0 10px;
+      }
+    }
+    .swiper-wrapper {
+      align-content: center;
+      align-items: center;
+    }
+    .swiper-slide {
+      object-fit: contain;
+    }
+  }
+  &__arrow {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 15px;
+    width: 70px;
+    flex-shrink: 0;
+    z-index: 10;
+    @include to(1440px) {
+      height: 9px;
+      width: 50px;
+    }
+    @include to(576px) {
+      height: 6px;
+      width: 34px;
+    }
+    svg {
+      width: 100%;
+      margin: 0;
+      fill: $light;
+    }
+    &--prev {
+      svg {
+        transform: rotate(-180deg);
+      }
+      @include to(992px) {
+        transform: none;
+      }
+    }
+    &--next {
+      @include to(992px) {
+        transform: none;
+      }
+    }
+  }
+  &__description {
+    margin-top: 70px;
+    font-size: min(vw(20, 1920), 20px);
+    line-height: 150%;
+    color: #E2E3E4;
+    @include to(1440px) {
+      margin-top: 50px;
+      font-size: 16px;
+    }
+    @include to(992px) {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    @include to(576px) {
+      margin-top: 30px;
+      font-size: max(vw(13, 320), 13px);
+    }
+  }
+
+}
