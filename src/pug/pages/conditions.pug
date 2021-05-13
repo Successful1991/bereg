@@ -1,0 +1,83 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'conditions'
+    var id_page = 'page-conditions'
+    var class_page = 'page-conditions'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/conditions.js')
+block content
+  .conditions
+    include ../includes/breadcrumbs.pug
+    h1.title Умови придбання
+    .conditions__section-1
+      .installment
+        h2.installment__title
+        p.installment__p Видається до завершення будівництва будинку, що заплановано на 1-й квартал 2023 року.
+        p.installment__p Перший внесок – від
+          span.color--gold 30%
+        p.installment__p Видається до завершення будівництва будинку, що заплановано на 1-й квартал 2023 року.
+
+      .form
+        h5.form-label.home-contact--width Залишились питання?
+        form(data-home-contact autocomplete="off").home-contact--width
+          .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(type='text' name="name" placeholder="Ім’я:").form-field__input
+            .form-field-message Ваше ім’я
+            .input-message(data-input-message)
+
+          .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(type='text' name="phone" placeholder="Телефон:").form-field__input
+            .form-field-message Ваш телефон
+            .mask-absolute.js-mask-absolute
+            .input-message(data-input-message)
+
+          .form-textarea
+            textarea(placeholder="Повідомлення:")
+            .form-field-message Введіть ваше повідомлення
+
+          .form-btn-wrap.df.jcsb.aic
+            button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit")
+              span.main-button__text(data-btn-submit-text="data-btn-submit-text") Надіслати
+              .main-button__arrow
+                +svg('arrow')
+
+        //include ../components/form/form.pug
+      .icon-mouse.icon-mouse_position.icon-mouse_animation
+        +svg('scroll')
+    .conditions__section-2
+      +img('conditions/1.jpg').conditions__img
+      .conditions__group
+        .conditions__price від 194 202 грн
+        .conditions__title оДНОКІМНАТНІ квартири
+        a(href='#').conditions__link Перейти до розділу
+
+      .conditions__group
+        .conditions__price від 194 202 грн
+        .conditions__title триКІМНАТНІ квартири
+        a(href='#').conditions__link Перейти до розділу
+      +img('conditions/2.jpg').conditions__img
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

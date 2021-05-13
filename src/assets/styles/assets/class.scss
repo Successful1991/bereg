@@ -41,6 +41,9 @@
 .color--mc{
   color: $mc;
 }
+.color--gold{
+  color: $gold;
+}
 
 .fill--mc svg {
 	fill: $mc;
@@ -72,9 +75,6 @@
     @include to(576px) {
       font-size: min(vw(24, 320), 24px);
     }
-    //@include to(360px) {
-    //  font-size: 24px;
-    //}
   }
   &__text {
     position: relative;

@@ -177,9 +177,11 @@
   }
   @include to(992px) {
     margin: 60px auto 0;
-    width: 490px;
+  }
+  @include to(992px) {
+    width: vw(490, 768);
   }
   @include to(576px) {
-    width: 240px;
+    width: vw(240, 320);
   }
 }
