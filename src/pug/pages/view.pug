@@ -1,0 +1,36 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'view'
+    var id_page = 'page-view'
+    var class_page = 'page-view'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/view.js')
+block content
+  include ../includes/breadcrumbs.pug
+  h1.title Огляд 360°
+  .view
+    iframe
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

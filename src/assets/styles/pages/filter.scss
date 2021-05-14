@@ -1,0 +1,22 @@
+.filter {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 45px min(vw(260, 1920), 260px);
+  padding: 0 vw(250, 1920) 45px;
+  filter: drop-shadow(0px 4px 11px rgba(226, 227, 228, 0.6));
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: max(vw(24, 1920), 24px);
+    line-height: 140%;
+    color: $dark;
+    text-align: center;
+  }
+
+}

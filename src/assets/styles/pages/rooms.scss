@@ -1,0 +1,22 @@
+.page-rooms {
+  .page__content {
+    padding: 185px 0 0 0;
+    @include to(1440px) {
+      padding: 135px 0 0 0;
+    }
+    @include to(992px) {
+      padding: 140px 0 0 0;
+    }
+    @include to(576px) {
+      padding: 90px 0 0 0;
+    }
+  }
+  .title {
+    margin: 0;
+    color: $mc;
+    text-align: center;
+    &:after {
+      border-bottom-color: #E2E3E4;
+    }
+  }
+}

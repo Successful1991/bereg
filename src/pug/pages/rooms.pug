@@ -1,0 +1,63 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'rooms'
+    var id_page = 'page-rooms'
+    var class_page = 'page-rooms'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/rooms.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  .filter-wrap
+    .filter__title
+    .filter
+      .filter__group
+        .filter__name Загальна пл. м
+          sup ²
+        input.filter__input(data-filter-name='area' data-type="floor" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group
+        .filter__name Загальна пл. м
+          sup ²
+        input.filter__input(data-filter-name='life' data-type="floor" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group
+        .filter__name Загальна пл. м
+          sup ²
+        input.filter__input(data-filter-name='floor' data-type="floor" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group
+        a(href='one').filter__link.link_disable 1-кімнатні
+        a(href='three').filter__link 3-кімнатні
+      .filter__group
+        .filter__apply шукати
+      .filter__group
+        .filter__reset
+          +svg('reset')
+          span Скинути параметри
+      .filter__hide
+        span Згорнути
+
+  h1.title Фільтр вибору
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
