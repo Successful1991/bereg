@@ -193,7 +193,41 @@ function initMap() {
   });
 }
 
+function helperMapInit() {
+  const helperMap = $('[data-helper-map]');
+  const map = $('#map');
+  $('.page__inner').before(helperMap);
+  function throttle(f, t) {
+    let previousCall;
+    return function (args) {
+      const lastCall = Date.now();
+      if (previousCall === undefined // function is being called for the first time
+        || (lastCall - previousCall) > t) { // throttle time has elapsed
+        previousCall = lastCall;
+        f(args);
+      }
+    };
+  }
+  const throttleLogger = throttle(() => {
+    const heightWrap = window.innerHeight;
+    const mapTop = map.offset().top;
+    if (mapTop - heightWrap <= 0) {
+      helperMap[0].style.visibility = 'hidden';
+    } else {
+      helperMap[0].style.visibility = 'visible';
+    }
+  }, 400);
+  locoScroll.on('scroll', (event) => {
+    throttleLogger(event);
+  });
+
+  helperMap.on('click', () => {
+    locoScroll.scrollTo(map[0]);
+  });
+}
+
 window.addEventListener('load', () => {
+  helperMapInit();
   /** Выдвижная панель маркеров на мобильной версии */
   const legend = document.querySelector('[data-mob-accordeon]');
   const legendTitle = legend.querySelector('.map__legend-title');

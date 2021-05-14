@@ -1,4 +1,3 @@
-
 extends ../layout/main
 block variable
   -
@@ -96,6 +95,10 @@ block content
           li(data-marker data-category='basket').genplan__elem Баскетбольний майданчик
           li(data-marker data-category='parking').genplan__elem Паркінг
           li(data-marker data-category='transition').genplan__elem Критий перехід до паркінгу
+  .helper-map(data-helper-map)
+    span.helper-map__title Карта
+    .link__arrow.helper-map__arrow
+      +svg('arrow')
 
 block footer
   include ../includes/footer.pug

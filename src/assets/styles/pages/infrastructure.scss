@@ -401,3 +401,26 @@
     }
   }
 }
+
+.helper-map {
+  position: fixed;
+  bottom: 30px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 700;
+  text-decoration: none;
+  &__title {
+    font-weight: 500;
+    font-size: max(14px, vw(14, 1920));
+    line-height: 100%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #CFA46E;
+  }
+  &__arrow {
+    transform: translateX(-50%)rotate(90deg);
+    fill: $gold;
+  }
+}

@@ -3,33 +3,36 @@
 }
 
 .class-page-characteristics .page__content {
-    padding-top: 230px;
-    @include to(1440px){
-      padding-top: 160px;
-    }
+  padding-top: 185px;
+  margin-bottom: 120px;
+  @include to(1440px){
+    padding-top: 135px;
+    margin-bottom: 80px;
+  }
 }
 
 .page-title-v1-wrap{
-  
+
 }
 .page-title-v1{
   margin-bottom: 40px;
   padding-bottom: 30px;
   position: relative;
-  font-size: 45px;
+  font-size: max(vw(36, 1920), 36px);
   line-height: 100%;
-  /* identical to box height, or 30px */
-
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-
-  /* серый */
-
   color: #E2E3E4;
   @include to(1440px){
     font-size: 30px;
     padding-bottom: 20px;
+  }
+  @include to(576px) {
+    text-align: left;
+    font-size: max(20px, vw(20, 320));
+    line-height: 130%;
+    padding: 0 vw(40, 320);
   }
   &::after{
     display: flex;
@@ -104,7 +107,7 @@
   @include to(768px){
     width: 50%;
   }
-  @include to(450px){
+  @include to(576px){
     width: 100%;
   }
   &__title{
@@ -112,18 +115,13 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 140%;
-    /* identical to box height, or 28px */
-
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
-    /* дорого богато */
-
     color: #CFA46E;
     @include to(768px){
       font-size: 24px;
     }
-    @include to(450px){
+    @include to(576px){
       font-size: 16px;
     }
   }
@@ -138,7 +136,7 @@
     @include to(768px){
       font-size: 18px;
     }
-    @include to(450px){
+    @include to(576px){
       font-size: 13px;
     }
   }
@@ -156,7 +154,7 @@
     @include to(768px){
       width: 50%;
     }
-    @include to(450px){
+    @include to(576px){
       width: 100%;
     }
   }
@@ -168,7 +166,7 @@
       @include to(768px){
         width: 50%;
       }
-      @include to(450px){
+      @include to(576px){
         width: 100%;
       }
     }
