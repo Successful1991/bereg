@@ -85,7 +85,7 @@ function initMap() {
     }],
 
   });
-  const filterMarkers = function (category, categoriesArray) {
+  const filterMarkers = function filterMarkers(category, categoriesArray) {
     gmarkers1.forEach((el) => {
       if (categoriesArray.has(el.category)) {
         el.setMap(map);
@@ -199,7 +199,7 @@ function helperMapInit() {
   $('.page__inner').before(helperMap);
   function throttle(f, t) {
     let previousCall;
-    return function (args) {
+    return (args) => {
       const lastCall = Date.now();
       if (previousCall === undefined // function is being called for the first time
         || (lastCall - previousCall) > t) { // throttle time has elapsed
