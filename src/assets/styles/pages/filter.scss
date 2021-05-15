@@ -5,7 +5,7 @@
   grid-auto-rows: auto;
   grid-gap: 45px min(vw(260, 1920), 260px);
   padding: 0 vw(250, 1920) 45px;
-  filter: drop-shadow(0px 4px 11px rgba(226, 227, 228, 0.6));
+  box-shadow: 0 8px 11px rgba(226, 227, 228, 0.6);
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -18,5 +18,22 @@
     color: $dark;
     text-align: center;
   }
+  &__hide {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    padding: 3px 25px 10px;
+    border-radius: 0 0 20px 20px;
+    background: #FFFFFF;
+    z-index: 10;
+  }
+  &__reset {
+    svg {
+      width: 21px;
+      height: 27px;
+    }
+  }
+
 
 }

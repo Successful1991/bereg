@@ -54,7 +54,35 @@ block content
       .filter__hide
         span Згорнути
 
-  h1.title Фільтр вибору
+  .page-rooms__top
+    h1.title Фільтр вибору
+    .found
+      .found__name Знайдено
+      span.found__num 1
+      span з
+      span.found__all 234
+  .rooms
+    .card
+      +img('rooms/flat.svg').card__img
+      .card__title Квартира Р6-3
+      table.card__table
+        tr
+          td Поверх:
+          td 7
+        tr
+          td Кімнат:
+          td 4
+        tr
+          td Загальна пл. м²:
+          td 98
+        tr
+          td Житлова пл. м²:
+          td 124
+      a(href="").card__link
+        span Детальніше
+        .card__link-svg
+          +svg('arrow')
+
 
 block footer
   include ../includes/footer.pug
