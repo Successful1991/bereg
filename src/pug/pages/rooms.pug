@@ -28,30 +28,30 @@ block content
   include ../includes/breadcrumbs.pug
 
   .filter-wrap
-    .filter__title
-    .filter
+    .filter__title Фільтр вибору
+    form(name="filter").filter
       .filter__group
         .filter__name Загальна пл. м
           sup ²
-        input.filter__input(data-filter-name='area' data-type="floor" data-min="1" data-max="15" data-from="1" data-to="15")
+        input.filter__input(name="area" data-filter-name='area' data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
       .filter__group
         .filter__name Загальна пл. м
           sup ²
-        input.filter__input(data-filter-name='life' data-type="floor" data-min="1" data-max="15" data-from="1" data-to="15")
+        input.filter__input(name="life" data-filter-name='life' data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
       .filter__group
         .filter__name Загальна пл. м
           sup ²
-        input.filter__input(data-filter-name='floor' data-type="floor" data-min="1" data-max="15" data-from="1" data-to="15")
-      .filter__group
-        a(href='one').filter__link.link_disable 1-кімнатні
+        input.filter__input(name="floor" data-filter-name='floor' data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group.filter__group_center
+        a(href='one' data-disabled).filter__link.filter__link_offset.link_disable 1-кімнатні
         a(href='three').filter__link 3-кімнатні
       .filter__group
-        .filter__apply шукати
-      .filter__group
-        .filter__reset
-          +svg('reset')
+        button(type="button").filter__apply шукати
+      .filter__group.filter__group_center
+        button(type="button").filter__reset
+          +svg('reset').reset__icon.reset__icon_offset
           span Скинути параметри
-      .filter__hide
+      button(type="button").filter__hide
         span Згорнути
 
   .page-rooms__top
