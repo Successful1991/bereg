@@ -21,38 +21,40 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/rooms.js')
 block content
   include ../includes/breadcrumbs.pug
 
-  .filter-wrap
+  .filter__wrap
     .filter__title Фільтр вибору
     form(name="filter").filter
-      .filter__group
-        .filter__name Загальна пл. м
-          sup ²
-        input.filter__input(name="area" data-filter-name='area' data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
-      .filter__group
-        .filter__name Загальна пл. м
-          sup ²
-        input.filter__input(name="life" data-filter-name='life' data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
-      .filter__group
-        .filter__name Загальна пл. м
-          sup ²
-        input.filter__input(name="floor" data-filter-name='floor' data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
-      .filter__group.filter__group_center
+      .filter__group.filter__group_mobile_col-2
+        .filter__name Загальна пл. м²:
+          //sup ²
+        .filter__input-wrap
+          input.filter__input.filter__input_hide(name="all_room" data-filter-name='area' data-hide-from-to=true data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group.filter__group_mobile_col-2
+        .filter__name Житлова пл. м²:
+          //sup ²
+        .filter__input-wrap
+          input.filter__input.filter__input_hide(name="life_room" data-filter-name='life' data-hide-from-to=true data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group.filter__group_mobile_col-2
+        .filter__name Поверх:
+        .filter__input-wrap
+          input.filter__input.filter__input_hide(name="floor" data-filter-name='floor' data-hide-from-to=true data-type="range" data-min="1" data-max="15" data-from="1" data-to="15")
+      .filter__group.filter__group_center.filter__group_mobile_col-2
         a(href='one' data-disabled).filter__link.filter__link_offset.link_disable 1-кімнатні
         a(href='three').filter__link 3-кімнатні
       .filter__group
-        button(type="button").filter__apply шукати
+        button(type="submit").filter__apply шукати
       .filter__group.filter__group_center
         button(type="button").filter__reset
           +svg('reset').reset__icon.reset__icon_offset
           span Скинути параметри
-      button(type="button").filter__hide
-        span Згорнути
+    button(type="button" data-filter-hide data-is-visible="true").filter__hide
+      span(data-filter="show") Разгорнути
+      span(data-filter="hide") Згорнути
 
   .page-rooms__top
     h1.title Фільтр вибору
@@ -61,7 +63,7 @@ block content
       span.found__num 1
       span з
       span.found__all 234
-  .rooms
+  .rooms(data-list)
     .card
       +img('rooms/flat.svg').card__img
       .card__title Квартира Р6-3

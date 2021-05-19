@@ -1,4 +1,5 @@
 .page-rooms {
+  background: $light;
   .page__content {
     padding: 185px 0 0 0;
     @include to(1440px) {
@@ -14,11 +15,31 @@
   &__top {
     position: relative;
     margin: 0 vw(250, 1920);
+    @include to(1440px) {
+      margin: 0 vw(110, 1360);
+    }
+    @include to(992px) {
+      margin: 0 vw(40, 768);
+    }
+    @include to(576px) {
+      margin: 0 vw(40, 320);
+    }
     .found {
       position: absolute;
       top: 0;
       left: 0;
       height: 36px; //line-height .title
+      @include to(1440px) {
+        height: 30px;
+      }
+      @include to(992px) {
+        height: 35px;
+      }
+      @include to(576px) {
+        height: initial;
+        position: static;
+        margin-top: 15px;
+      }
     }
   }
   .title {
@@ -27,6 +48,18 @@
     text-align: center;
     &:after {
       border-bottom-color: #E2E3E4;
+    }
+    @include to(1440px) {
+      margin: 60px 0 0;
+    }
+    @include to(992px) {
+      margin: 70px 0 0;
+    }
+    @include to(576px) {
+      margin: 50px 0 0;
+      text-align: left;
+      padding: 0;
+      font-size: max(20px , vw(20, 320));
     }
   }
 }
@@ -39,16 +72,46 @@
   gap: 40px;
   padding: 0 vw(250, 1920) 120px;
   margin-top: 50px;
+  @include to(1440px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: vw(33, 1360);
+    padding: 0 vw(110, 1360) 80px;
+    margin-top: 40px;
+  }
+  @include to(992px) {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: vw(40, 768);
+    padding: 0 vw(40, 768) 80px;
+    margin-top: 40px;
+  }
+  @include to(576px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 vw(40, 320) 50px;
+    margin-top: 20px;
+  }
 }
 
 .card {
   padding: 25px 33px 20px;
   background: #FFFFFF;
   border: 1px solid #EFEFEF;
+  @include to(992px) {
+    padding: 30px 30px 25px;
+  }
+  @include to(576px) {
+    padding: 25px 35px 25px;
+  }
   &__img {
     max-height: 150px;
-    margin: 30px auto 0;
+    margin: 0 auto;
     object-fit: contain;
+    @include to(992px) {
+      max-height: 180px;
+    }
+    @include to(576px) {
+      max-height: 150px;
+    }
   }
   &__title {
     margin-top: 30px;
@@ -56,10 +119,31 @@
     font-size: 20px;
     line-height: 100%;
     color: $dark;
+    @include to(992px) {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    @include to(576px) {
+      font-size: max(16px, vw(16, 320));
+      margin-top: 23px;
+    }
   }
   &__table {
     margin-top: 15px;
     width: 100%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #2C435D;
+    border-collapse: separate;
+    border-spacing: 0 7px;
+    @include to(992px) {
+      font-size: 18px;
+    }
+    @include to(576px) {
+      font-size: max(13px, vw(13, 320));
+    }
   }
   &__name {
 
@@ -85,6 +169,10 @@
       height: 9px;
       fill: $dark;
       transition: transform 0.3s ease-in-out;
+      @include to(576px) {
+        width: 34px;
+        height: 6px;
+      }
     }
     @include from(1023px) {
       &:hover {
@@ -94,6 +182,12 @@
           transform: translateX(-30px);
         }
       }
+    }
+    @include to(992px) {
+      font-size: 24px;
+    }
+    @include to(992px) {
+      font-size: max(14px, vw(14, 320));
     }
   }
 }
@@ -107,6 +201,12 @@
   font-size: max(16px, vw(16, 1920));
   line-height: 100%;
   color: #C4C7CC;
+  @include to(1440px) {
+    font-size: 12px;
+  }
+  @include to(576px) {
+    font-size: max(10px, vw(10, 320));
+  }
   &__name {
 
   }

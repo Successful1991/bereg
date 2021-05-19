@@ -3,6 +3,8 @@ import i18next from 'i18next';
 import gsap from 'gsap';
 import axios from 'axios';
 import * as yup from 'yup';
+import _ from 'lodash';
+import onChange from 'on-change';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
 
@@ -12,6 +14,8 @@ import SexyInput from '../../pug/components/input/input';
  */
 global.gsap = gsap;
 global.axios = axios;
+global._ = _;
+global.onChange = onChange;
 
 /* eslint-disable-next-line */
 const locoScroll = new LocomotiveScroll({

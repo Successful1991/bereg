@@ -42,7 +42,7 @@ const browserify = require("browserify");
 const source = require('vinyl-source-stream');
 const tsify = require("tsify");
 const buffer = require('vinyl-buffer');
-const glob = require("glob")
+const glob = require("glob");
 const merge = require('merge-stream');
 const path = require('path');
 
@@ -98,7 +98,7 @@ const paths = {
 				src: './src/static/**/*.*',
 				dest: './dist/static/'
 		},
-}
+};
 
 // слежка
 function watch() {
@@ -131,7 +131,6 @@ function watchScssTemplates() {
 }
 
 function scssTemplateCreater() {
-
   fs.readdir(paths.styles.stylesPages, (err, nameFiles) => {
     const filesNameWithoutExt =  nameFiles.map(el => el.replace(/\.scss/g, ''));
     const contentImportsFiles =  filesNameWithoutExt.reduce((acc, el) => acc += `@import './pages/${el}';\n`, ``);
@@ -280,8 +279,6 @@ function typeScript() {
 			.pipe(gulp.dest(paths.ts.dest))
 	}));
 }
-
-
 
 
 //libs-scripts

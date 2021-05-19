@@ -60,7 +60,7 @@ Build date: 2018-12-11 23:23:51
 .irs-single {
   position: absolute;
   display: block;
-  top: 0;
+  top: 24px;
   left: 0;
   cursor: default;
   white-space: nowrap;
@@ -136,21 +136,21 @@ Build date: 2018-12-11 23:23:51
   border-color: transparent !important;
 }
 .irs--flat {
-  height: 40px;
+  height: 24px;
 }
 .irs--flat.irs-with-grid {
-  height: 60px;
+  height: 44px;
 }
 .irs--flat .irs-line {
-  top: 25px;
-  height: 12px;
-  background-color: #e1e4e9;
+  top: 12px;
+  height: 1px;
+  background-color: #529A9C;
   border-radius: 4px;
 }
 .irs--flat .irs-bar {
-  top: 25px;
-  height: 12px;
-  background-color: #ed5565;
+  top: 12px;
+  height: 1px;
+  background-color: #CFBE97;
 }
 .irs--flat .irs-bar--single {
   border-radius: 4px 0 0 4px;
@@ -161,20 +161,22 @@ Build date: 2018-12-11 23:23:51
   background-color: #e1e4e9;
 }
 .irs--flat .irs-handle {
-  top: 22px;
-  width: 16px;
-  height: 18px;
-  background-color: transparent;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #CFBE97;
 }
 .irs--flat .irs-handle > i:first-child {
   position: absolute;
   display: block;
-  top: 0;
+  top: 50%;
   left: 50%;
-  width: 2px;
-  height: 100%;
-  margin-left: -1px;
-  background-color: #da4453;
+  width: 4px;
+  height: 4px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #CFBE97;
 }
 .irs--flat .irs-handle.state_hover > i:first-child,
 .irs--flat .irs-handle:hover > i:first-child {
@@ -182,7 +184,7 @@ Build date: 2018-12-11 23:23:51
 }
 .irs--flat .irs-min,
 .irs--flat .irs-max {
-  top: 0;
+  top: 24px;
   padding: 1px 3px;
   color: #999;
   font-size: 10px;
@@ -194,29 +196,32 @@ Build date: 2018-12-11 23:23:51
 .irs--flat .irs-from,
 .irs--flat .irs-to,
 .irs--flat .irs-single {
-  color: white;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 12px;
   line-height: 1.333;
-  text-shadow: none;
-  padding: 1px 5px;
-  background-color: #ed5565;
-  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  /*text-shadow: none;*/
+  /*padding: 1px 5px;*/
+  /*background-color: #ed5565;*/
+  /*border-radius: 4px;*/
 }
-.irs--flat .irs-from:before,
-.irs--flat .irs-to:before,
-.irs--flat .irs-single:before {
-  position: absolute;
-  display: block;
-  content: "";
-  bottom: -6px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -3px;
-  overflow: hidden;
-  border: 3px solid transparent;
-  border-top-color: #ed5565;
-}
+/*.irs--flat .irs-from:before,*/
+/*.irs--flat .irs-to:before,*/
+/*.irs--flat .irs-single:before {*/
+/*  position: absolute;*/
+/*  display: block;*/
+/*  content: "";*/
+/*  bottom: -6px;*/
+/*  left: 50%;*/
+/*  width: 0;*/
+/*  height: 0;*/
+/*  margin-left: -3px;*/
+/*  overflow: hidden;*/
+/*  border: 3px solid transparent;*/
+/*  border-top-color: #ed5565;*/
+/*}*/
+
 .irs--flat .irs-grid-pol {
   background-color: #e1e4e9;
 }
@@ -312,6 +317,7 @@ Build date: 2018-12-11 23:23:51
 .irs--modern .irs-bar {
   top: 25px;
   height: 5px;
+  border-radius: 50%;
   background: #20b426;
   background: linear-gradient(to bottom, #20b426 0%, #18891d 100%);
 }

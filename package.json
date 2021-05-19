@@ -88,6 +88,7 @@
     "intl-tel-input": "^17.0.12",
     "jquery": "^3.2.1",
     "locomotive-scroll": "^4.0.6",
+    "lodash": "^4.17.21",
     "on-change": "^2.2.1",
     "yup": "^0.32.8"
   }
