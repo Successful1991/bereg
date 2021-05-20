@@ -40,12 +40,26 @@
 	}
 }
 
-
 @keyframes scroll {
   from {
     transform: translate(0, 0);
   }
   to {
     transform: translate(0, 40%);
+  }
+}
+
+@keyframes download {
+  from {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0, 30%);
+  }
+  85% {
+    transform: translate(0, -30%);
+  }
+  to {
+    transform: translate(0, 0);
   }
 }
