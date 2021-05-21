@@ -15,17 +15,17 @@ block variable
     var slider = [{
       img: 'slider/1.jpg',
       title: 'Власна резиденція у місті',
-      url: 'about',
+      url: 'about.html',
       linkText: 'Обрати квартиру',
     },{
       img: 'slider/1.jpg',
       title: 'Власна резиденція у місті2',
-      url: 'about',
+      url: 'about.html',
       linkText: 'Обрати квартиру',
     },{
       img: 'slider/1.jpg',
       title: 'Власна резиденція у місті3',
-      url: 'about',
+      url: 'about.html',
       linkText: 'Обрати квартиру',
     }]
 
@@ -53,7 +53,7 @@ block content
                       +img(sl.img)
                       .slide__content(data-swiper-parallax="300" data-swiper-parallax-delay="600")
                           .slide__title= sl.title
-                          a(href= sl.url data-swiper-parallax="500").slide__link.link
+                          a(href=sl.url data-swiper-parallax="500").slide__link.link
                               span= sl.linkText
                               .link__arrow
                                   +svg('arrow')
@@ -80,7 +80,7 @@ block content
             | BEREG <br>
             | Residence
         .template-content__text Дізнайтеся більше про новий житловий комплекс на березі Дніпра.
-        a(href='about').template-content__link.link
+        a(href='concept.html').template-content__link.link
             span Перейти до розділу
             .link__arrow
                 +svg('arrow')
