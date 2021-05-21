@@ -2,13 +2,13 @@
   .page__content {
     padding: 185px 0 120px 0;
     @include to(1440px) {
-      padding: 135px 0 0 0;
+      padding: 135px 0 40px 0;
     }
     @include to(992px) {
-      padding: 140px 0 0 0;
+      padding: 140px vw(40, 768) 80px;
     }
     @include to(576px) {
-      padding: 90px 0 0 0;
+      padding: 90px vw(20, 320) 60px;
     }
   }
   .back {
@@ -31,6 +31,9 @@
       text-transform: uppercase;
       color: $gold;
       margin: 0 0 0 40px;
+      @include to(1440px) {
+        font-size: 14px;
+      }
     }
     @include from(1023px) {
       &:hover {
@@ -39,9 +42,18 @@
         }
       }
     }
+    @include to(1440px) {
+      margin: 0 auto 0 vw(50, 1360);
+    }
+    @include to(992px) {
+      display: none;
+    }
   }
   .breadcrumbs {
     grid-area: breadcrumbs;
+    @include to(992px) {
+      margin-right: 0;
+    }
   }
   .plan {
     margin-top: 30px;
@@ -52,13 +64,40 @@
   display: grid;
   width: 100%;
   grid-template-columns: auto auto 1.7fr 1fr;
-  grid-template-rows: 70px 1fr;
+  grid-template-rows: auto 1fr;
   grid-gap: 20px vw(80, 1920);
   grid-template-areas: 'back compass breadcrumbs breadcrumbs'
   'info info plane floor';
+  @include to(1440px) {
+    grid-gap: 20px vw(40, 1360);
+  }
+  @include to(992px) {
+    grid-gap: 60px 0;
+    grid-template-columns: vw(100, 768) 1fr vw(100, 768);
+    grid-template-rows: auto;
+    grid-template-areas: 'breadcrumbs breadcrumbs breadcrumbs'
+    'plane plane plane'
+    'info info info'
+    'floor floor floor';
+  }
+  @include to(576px) {
+    width: 100%;
+    grid-gap: 0;
+    grid-template-columns: 50px calc(100% - 100px) 50px;
+  }
   &__info {
     grid-area: info;
     width: max(vw(435, 1920), 435px);
+    @include to(1440px) {
+      width: max(vw(320, 1360), 320px);
+    }
+    @include to(992px) {
+      width: auto;
+
+    }
+    @include to(576px) {
+      margin-top: 30px;
+    }
   }
   &__plane {
     grid-area: plane;
@@ -66,23 +105,51 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    @include to(576px) {
+      margin-top: 30px;
+    }
   }
   &__floor {
     grid-area: floor;
     margin: 0 vw(80, 1920) 0 0;
+    @include to(1440px) {
+      margin: 0 vw(40, 1360) 0 0;
+    }
+    @include to(992px) {
+      margin: 0;
+    }
   }
   &__img {
     width: 100%;
     object-fit: contain;
+    cursor: pointer;
   }
   &__order {
     margin-top: 30px;
+    @include to(992px) {
+      margin-top: 35px;
+    }
   }
   &__compass {
     position: relative;
     grid-area: compass;
     height: 70px;
     width: 70px;
+    pointer-events: none;
+    @include to(1440px) {
+      height: 50px;
+      width: 50px;
+    }
+    @include to(992px) {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    @include to(576px) {
+      height: 35px;
+      width: 35px;
+      margin: 0 0 auto auto;
+    }
     &-text {
       position: absolute;
       top: 50%;
@@ -94,6 +161,9 @@
       line-height: 100%;
       text-transform: uppercase;
       color: #C4C7CC;
+      @include to(576px) {
+        font-size: 10px;
+      }
     }
     svg {
       height: 100%;
@@ -104,6 +174,12 @@
   .pdf {
     width: max-content;
     margin: 40px auto 0 vw(80, 1920);
+    @include to(1440px) {
+      margin: 30px auto 0 vw(40, 1360);
+    }
+    @include to(1440px) {
+      margin: 40px auto 0;
+    }
   }
 }
 
@@ -115,16 +191,43 @@
     &:last-child {
       border: none;
     }
+    @include to(1440px) {
+      padding: 25px vw(50, 1360);
+    }
+    @include to(992px) {
+      padding: 30px vw(75, 768);
+    }
+    @include to(576px) {
+      padding: 15px vw(20, 320);
+    }
   }
   &__list {
     font-weight: 400;
     font-size: max(vw(18, 1920), 18px);
     line-height: 130%;
     color: $dark;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    @include to(992px) {
+      font-size: 20px;
+    }
+    @include to(576px) {
+      font-size: max(13px, vw(13, 320));
+    }
     &-row {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
+      @include to(1440px) {
+        margin-bottom: 12px;
+      }
+      @include to(992px) {
+        margin-bottom: 15px;
+      }
+      @include to(576px) {
+        margin-bottom: 7px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -142,7 +245,6 @@
     &_font-medium {
       font-weight: 500;
     }
-
   }
   &__title {
     font-weight: 500;
@@ -150,9 +252,15 @@
     line-height: 100%;
     letter-spacing: 0.01em;
     color: $dark;
-  }
-
-  &__name {
+    @include to(1440px) {
+      font-size: 18px;
+    }
+    @include to(992px) {
+      font-size: 24px;
+    }
+    @include to(576px) {
+      font-size: max(14px, vw(14, 320));
+    }
   }
   &__value {
     margin: 0 0 0 auto;
@@ -170,6 +278,15 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $gold;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    @include to(992px) {
+      font-size: 18px;
+    }
+    @include to(576px) {
+      font-size: max(vw(14, 320), 14px);
+    }
   }
   &__arrow {
     margin-left: 45px;
@@ -187,6 +304,19 @@
       stroke: $gold;
       animation: download 1s infinite ease-out;
       transition: fill 0.4s ease-in-out;
+    }
+    @include to(1440px) {
+      margin-left: 30px;
+      height: 35px;
+      width: 35px;
+    }
+    @include to(992px) {
+      margin-left: 35px;
+    }
+    @include to(576px) {
+      height: 28px;
+      width: 28px;
+      margin-left: 20px;
     }
   }
 
@@ -215,22 +345,69 @@
     letter-spacing: 0.01em;
     color: $dark;
     text-align: center;
+    @include to(1440px) {
+      font-size: 18px;
+    }
+    @include to(992px) {
+      font-size: 24px;
+    }
+    @include to(576px) {
+      font-size: max(vw(14, 320), 14px);
+    }
     &:after {
       content: "";
       display: block;
       width: 60px;
       border-bottom: 1px solid #E2E3E4;
       margin: 25px auto 0;
+      @include to(1440px) {
+        margin: 15px auto 0;
+        width: 30px;
+      }
+      @include to(992px) {
+        margin: 25px auto 0;
+        width: 50px;
+      }
+      @include to(576px) {
+        margin: 15px auto 0;
+        width: 30px;
+      }
     }
   }
   &__flat {
     display: flex;
     justify-content: center;
     margin: 25px auto 0;
+
+    font-weight: 400;
+    font-size: max(18px, vw(18, 1920));
+    line-height: 130%;
+    color: $dark;
+    @include to(1440px) {
+      margin: 15px auto 0;
+      font-size: 14px;
+    }
+    @include to(992px) {
+      margin: 25px auto 0;
+      font-size: 20px;
+    }
+    @include to(992px) {
+      margin: 15px auto 0;
+      font-size: max(vw(13, 320), 13px);
+    }
     > div {
       display: flex;
       align-items: center;
       margin: 0 7px;
+      @include to(1440px) {
+        margin: 0 4px;
+      }
+      @include to(992px) {
+        margin: 0 7px;
+      }
+      @include to(576px) {
+        margin: 0 4px;
+      }
       span {
         margin-left: 5px;
       }
@@ -244,11 +421,20 @@
 .order {
   &__arrow {
     margin: 0 0 0 40px;
+    @include to(1440px) {
+      margin: 0 0 0 20px;
+    }
+    @include to(992px) {
+      margin: 0 0 0 30px;
+    }
+    @include to(576px) {
+      margin: 0 0 0 20px;
+    }
   }
 }
 
 .plan {
-  //display: none;
+  display: none;
   align-items: center;
   justify-content: space-around;
   margin: 0 auto;
@@ -267,6 +453,9 @@
     transition-duration: 300ms;
     transform-origin: center;
     pointer-events: painted;
+    @include to(576px) {
+      margin: 0 10px;
+    }
     &:after{
       content: "";
       height: 18px;
@@ -289,6 +478,9 @@
       }
     }
   }
+  &-active {
+    display: flex;
+  }
   span {
     font-weight: 500;
     font-size: 14px;
@@ -296,6 +488,9 @@
     color: #C4C7CC;
     &.active {
       color: $gold;
+    }
+    @include to(576px) {
+      font-size: 10px;
     }
   }
 }

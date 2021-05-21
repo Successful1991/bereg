@@ -27,7 +27,7 @@ block scripts
 block content
   .flat
     include ../includes/breadcrumbs.pug
-    .back(data-back)
+    a(href="javascript:history.back()").back(data-back)
       +svg('arrow').back__arrow
       span.back__name назад
     .flat__compass
@@ -63,12 +63,18 @@ block content
             li.info__list-row
               .info__name Кухня-їдальня:
               .info__value 13,74 м²
+            li.info__list-row
+              .info__name Спальня
+              .info__value 19,24 м²
+            li.info__list-row
+              .info__name Балкон:
+              .info__value 1,72 м²
       a(href='#').pdf
         span.pdf__name завантажити pdf
         .pdf__arrow
           +svg('pdf-arrow')
     .flat__plane
-      +img('flat/flat.png' ).flat__img(data-flat-image data-src={"2d":"./assets/images/flat/flat2.png", "3d":"./assets/images/flat/flat.png"})
+      +img('flat/flat2.jpg' ).flat__img(data-flat-image data-mfp-src="./assets/images/flat/flat2.jpg" data-src={"2d":"./assets/images/flat/flat2.jpg", "3d":"./assets/images/flat/flat.png"})
       .plan.plan-active
         span(data-plane data-type="2d").active План-схема
         input.plan-switch-input.js-switch-btn(type="checkbox" id="plan3d")
@@ -81,49 +87,49 @@ block content
             +svg('arrow')
     .flat__floor
       .floor
-        svg(viewBox="0 0 1615 1999")
+        svg(viewBox="0 0 1615 1999" class="flat__svg" data-svg-container)
           image(href="assets/images/flat/image.png" x="0" y="0" height="100%" width="100%")
-          a(href="/flat/?flat=330" class="appart__hover" data-section="3" data-all_room="64.65" data-life_room="64.65" data-rooms="2" data-number="2c211" data-id="330")
-            polygon( fill="" class="" points="517.99716186523,501.54541015625,518.99716186523,665.54541015625,774.99716186523,669.54541015625,777.99716186523,446.54541015625,677.99716186523,447.54541015625,675.99716186523,498.54541015625" data-id="330" data-section="3" data-all_room="64.65" data-life_room="64.65" data-rooms="2" data-number="2c211")
-          a(href="/flat/?flat=331" class="appart__hover" data-section="3" data-all_room="51.16" data-life_room="51.16" data-rooms="1" data-number="1c210" data-id="331")
-            polygon( fill="" class="" points="776.99716186523,448.45452880859,774.99716186523,671.45452880859,948.99716186523,667.45452880859,946.99716186523,445.45452880859" data-id="331" data-section="3" data-all_room="51.16" data-life_room="51.16" data-rooms="1" data-number="1c210")
-          a(href="/flat/?flat=332" class="appart__hover" data-section="3" data-all_room="66.5" data-life_room="66.5" data-rooms="2" data-number="2c26" data-id="332")
-            polygon( fill="" class="" points="513.99716186523,192.7272644043,511.99716186523,403.7272644043,417.99716186523,404.7272644043,417.99716186523,362.7272644043,256.99716186523,362.7272644043,253.99716186523,191.7272644043" data-id="332" data-section="3" data-all_room="66.5" data-life_room="66.5" data-rooms="2" data-number="2c26")
-          a(href="/flat/?flat=333" class="appart__hover" data-section="3" data-all_room="71.65" data-life_room="71.65" data-rooms="2" data-number="2c25" data-id="333")
-            polygon( fill="" class="" points="770.99716186523,192.7272644043,769.99716186523,404.7272644043,511.99716186523,401.7272644043,513.99716186523,191.7272644043" data-id="333" data-section="3" data-all_room="71.65" data-life_room="71.65" data-rooms="2" data-number="2c25")
-          a(href="/flat/?flat=334" class="appart__hover" data-section="3" data-all_room="52.26" data-life_room="52.26" data-rooms="1" data-number="1c24" data-id="334")
-            polygon( fill="" class="" points="944.99716186523,129.7272644043,946.99716186523,334.7272644043,904.99716186523,332.7272644043,906.99716186523,404.7272644043,771.99716186523,401.7272644043,771.99716186523,190.7272644043,850.99716186523,189.7272644043,851.99716186523,131.7272644043" data-id="334" data-section="3" data-all_room="52.26" data-life_room="52.26" data-rooms="1" data-number="1c24")
-          a(href="/flat/?flat=425" class="appart__hover" data-section="4" data-all_room="52.97" data-life_room="52.97" data-rooms="1" data-number="1c29" data-id="425")
-            polygon( fill="" class="" points="946.99716186523,377.45452880859,947.99716186523,645.45452880859,1016.9971618652,643.45452880859,1017.9971618652,591.45452880859,1127.9971618652,590.45452880859,1125.9971618652,374.45452880859" data-id="425" data-section="4" data-all_room="52.97" data-life_room="52.97" data-rooms="1" data-number="1c29")
-          a(href="/flat/?flat=426" class="appart__hover" data-section="4" data-all_room="44.13" data-life_room="44.13" data-rooms="1" data-number="1c28" data-id="426")
-            polygon( fill="" class="" points="1125.9971618652,376.27270507812,1127.9971618652,592.27270507812,1205.9971618652,590.27270507812,1205.9971618652,616.27270507812,1280.9971618652,615.27270507812,1280.9971618652,575.27270507812,1298.9971618652,576.27270507812,1296.9971618652,448.27270507812,1236.9971618652,446.27270507812,1236.9971618652,375.27270507812" data-id="426" data-section="4" data-all_room="44.13" data-life_room="44.13" data-rooms="1" data-number="1c28")
-          a(href="/flat/?flat=427" class="appart__hover" data-section="4" data-all_room="79.26" data-life_room="79.26" data-rooms="2" data-number="3c27" data-id="427")
-            polygon( fill="" class="" points="1297.9971618652,449.36364746094,1298.9971618652,577.36364746094,1606.9971618652,578.36364746094,1604.9971618652,334.36364746094,1507.9971618652,331.36364746094,1503.9971618652,387.36364746094,1419.9971618652,388.36364746094,1419.9971618652,452.36364746094" data-id="427" data-section="4" data-all_room="79.26" data-life_room="79.26" data-rooms="2" data-number="3c27")
-          a(href="/flat/?flat=428" class="appart__hover" data-section="4" data-all_room="51.44" data-life_room="51.44" data-rooms="1" data-number="1c23" data-id="428")
-            polygon( fill="" class="" points="1123.9971618652,118.7272644043,1124.9971618652,333.7272644043,946.99716186523,333.7272644043,946.99716186523,128.7272644043,996.99716186523,129.7272644043,996.99716186523,81.727264404297,1070.9971618652,81.727264404297,1071.9971618652,117.7272644043" data-id="428" data-section="4" data-all_room="51.44" data-life_room="51.44" data-rooms="1" data-number="1c23")
-          a(href="/flat/?flat=429" class="appart__hover" data-section="4" data-all_room="50.15" data-life_room="50.15" data-rooms="1" data-number="1c22" data-id="429")
-            polygon( fill="" class="" points="1310.9971618652,116.7272644043,1313.9971618652,275.7272644043,1230.9971618652,279.7272644043,1230.9971618652,331.7272644043,1124.9971618652,331.7272644043,1124.9971618652,115.7272644043,1172.9971618652,116.7272644043,1173.9971618652,79.727264404297,1247.9971618652,80.727264404297,1247.9971618652,118.7272644043" data-id="429" data-section="4" data-all_room="50.15" data-life_room="50.15" data-rooms="1" data-number="1c22")
-          a(href="/flat/?flat=430" class="appart__hover" data-section="4" data-all_room="78.13" data-life_room="78.13" data-rooms="2" data-number="3c21" data-id="430")
-            polygon( fill="" class="" points="1310.9971618652,118.54544067383,1313.9971618652,275.54544067383,1427.9971618652,279.54544067383,1427.9971618652,320.54544067383,1505.9971618652,321.54544067383,1506.9971618652,331.54544067383,1603.9971618652,332.54544067383,1606.9971618652,116.54544067383,1586.9971618652,119.54544067383,1584.9971618652,80.545440673828,1495.9971618652,80.545440673828,1495.9971618652,114.54544067383" data-id="430" data-section="4" data-all_room="78.13" data-life_room="78.13" data-rooms="2" data-number="3c21")
-          a(href="/flat/?flat=196" class="appart__hover" data-section="1" data-all_room="95.47" data-life_room="95.47" data-rooms="2" data-number="2c118" data-id="196")
-            polygon( fill="#85C44" class=" u-svg-plan--active" points="1063.9971618652,1454.1817626953,1269.9971618652,1456.1817626953,1269.9971618652,1931.1817626953,1183.9971618652,1930.1817626953,1183.9971618652,1724.1817626953,1140.9971618652,1722.1817626953,1139.9971618652,1663.1817626953,1054.9971618652,1665.1817626953" data-id="196" data-section="1" data-all_room="95.47" data-life_room="95.47" data-rooms="2" data-number="2c118")
-          a(href="/flat/?flat=197" class="appart__hover" data-section="1" data-all_room="53.94" data-life_room="53.94" data-rooms="1" data-number="1c119/2" data-id="197")
-            polygon( fill="" class="" points="1004.9971618652,1712.3636474609,1138.9971618652,1711.3636474609,1139.9971618652,1723.3636474609,1183.9971618652,1725.3636474609,1183.9971618652,1931.3636474609,1003.9971618652,1926.3636474609" data-id="197" data-section="1" data-all_room="53.94" data-life_room="53.94" data-rooms="1" data-number="1c119/2")
-          a(href="/flat/?flat=198" class="appart__hover" data-section="1" data-all_room="54.17" data-life_room="54.17" data-rooms="1" data-number="1c120" data-id="198")
-            polygon( fill="" class="" points="1005.9971618652,1712.3636474609,1003.9971618652,1929.3636474609,825.99716186523,1927.3636474609,826.99716186523,1711.3636474609" data-id="198" data-section="1" data-all_room="54.17" data-life_room="54.17" data-rooms="1" data-number="1c120")
+          a(href="/flat/?flat=330" class="appart__hover" data-section="3" data-area="64.65" data-life="64.65" data-rooms="2" data-type="2c211" data-id="330")
+            polygon( fill="" class="" points="517.99716186523,501.54541015625,518.99716186523,665.54541015625,774.99716186523,669.54541015625,777.99716186523,446.54541015625,677.99716186523,447.54541015625,675.99716186523,498.54541015625" data-id="330" data-section="3" data-area="64.65" data-life="64.65" data-rooms="2" data-type="2c211")
+          a(href="/flat/?flat=331" class="appart__hover" data-section="3" data-area="51.16" data-life="51.16" data-rooms="1" data-type="1c210" data-id="331")
+            polygon( fill="" class="" points="776.99716186523,448.45452880859,774.99716186523,671.45452880859,948.99716186523,667.45452880859,946.99716186523,445.45452880859" data-id="331" data-section="3" data-area="51.16" data-life="51.16" data-rooms="1" data-type="1c210")
+          a(href="/flat/?flat=332" class="appart__hover" data-section="3" data-area="66.5" data-life="66.5" data-rooms="2" data-type="2c26" data-id="332")
+            polygon( fill="" class="" points="513.99716186523,192.7272644043,511.99716186523,403.7272644043,417.99716186523,404.7272644043,417.99716186523,362.7272644043,256.99716186523,362.7272644043,253.99716186523,191.7272644043" data-id="332" data-section="3" data-area="66.5" data-life="66.5" data-rooms="2" data-type="2c26")
+          a(href="/flat/?flat=333" class="appart__hover" data-section="3" data-area="71.65" data-life="71.65" data-rooms="2" data-type="2c25" data-id="333")
+            polygon( fill="" class="" points="770.99716186523,192.7272644043,769.99716186523,404.7272644043,511.99716186523,401.7272644043,513.99716186523,191.7272644043" data-id="333" data-section="3" data-area="71.65" data-life="71.65" data-rooms="2" data-type="2c25")
+          a(href="/flat/?flat=334" class="appart__hover" data-section="3" data-area="52.26" data-life="52.26" data-rooms="1" data-type="1c24" data-id="334")
+            polygon( fill="" class="" points="944.99716186523,129.7272644043,946.99716186523,334.7272644043,904.99716186523,332.7272644043,906.99716186523,404.7272644043,771.99716186523,401.7272644043,771.99716186523,190.7272644043,850.99716186523,189.7272644043,851.99716186523,131.7272644043" data-id="334" data-section="3" data-area="52.26" data-life="52.26" data-rooms="1" data-type="1c24")
+          a(href="/flat/?flat=425" class="appart__hover" data-section="4" data-area="52.97" data-life="52.97" data-rooms="1" data-type="1c29" data-id="425")
+            polygon( fill="" class="" points="946.99716186523,377.45452880859,947.99716186523,645.45452880859,1016.9971618652,643.45452880859,1017.9971618652,591.45452880859,1127.9971618652,590.45452880859,1125.9971618652,374.45452880859" data-id="425" data-section="4" data-area="52.97" data-life="52.97" data-rooms="1" data-type="1c29")
+          a(href="/flat/?flat=426" class="appart__hover" data-section="4" data-area="44.13" data-life="44.13" data-rooms="1" data-type="1c28" data-id="426")
+            polygon( fill="" class="" points="1125.9971618652,376.27270507812,1127.9971618652,592.27270507812,1205.9971618652,590.27270507812,1205.9971618652,616.27270507812,1280.9971618652,615.27270507812,1280.9971618652,575.27270507812,1298.9971618652,576.27270507812,1296.9971618652,448.27270507812,1236.9971618652,446.27270507812,1236.9971618652,375.27270507812" data-id="426" data-section="4" data-area="44.13" data-life="44.13" data-rooms="1" data-type="1c28")
+          a(href="/flat/?flat=427" class="appart__hover" data-section="4" data-area="79.26" data-life="79.26" data-rooms="2" data-type="3c27" data-id="427")
+            polygon( fill="" class="" points="1297.9971618652,449.36364746094,1298.9971618652,577.36364746094,1606.9971618652,578.36364746094,1604.9971618652,334.36364746094,1507.9971618652,331.36364746094,1503.9971618652,387.36364746094,1419.9971618652,388.36364746094,1419.9971618652,452.36364746094" data-id="427" data-section="4" data-area="79.26" data-life="79.26" data-rooms="2" data-type="3c27")
+          a(href="/flat/?flat=428" class="appart__hover" data-section="4" data-area="51.44" data-life="51.44" data-rooms="1" data-type="1c23" data-id="428")
+            polygon( fill="" class="" points="1123.9971618652,118.7272644043,1124.9971618652,333.7272644043,946.99716186523,333.7272644043,946.99716186523,128.7272644043,996.99716186523,129.7272644043,996.99716186523,81.727264404297,1070.9971618652,81.727264404297,1071.9971618652,117.7272644043" data-id="428" data-section="4" data-area="51.44" data-life="51.44" data-rooms="1" data-type="1c23")
+          a(href="/flat/?flat=429" class="appart__hover" data-section="4" data-area="50.15" data-life="50.15" data-rooms="1" data-type="1c22" data-id="429")
+            polygon( fill="" class="" points="1310.9971618652,116.7272644043,1313.9971618652,275.7272644043,1230.9971618652,279.7272644043,1230.9971618652,331.7272644043,1124.9971618652,331.7272644043,1124.9971618652,115.7272644043,1172.9971618652,116.7272644043,1173.9971618652,79.727264404297,1247.9971618652,80.727264404297,1247.9971618652,118.7272644043" data-id="429" data-section="4" data-area="50.15" data-life="50.15" data-rooms="1" data-type="1c22")
+          a(href="/flat/?flat=430" class="appart__hover" data-section="4" data-area="78.13" data-life="78.13" data-rooms="2" data-type="3c21" data-id="430")
+            polygon( fill="" class="" points="1310.9971618652,118.54544067383,1313.9971618652,275.54544067383,1427.9971618652,279.54544067383,1427.9971618652,320.54544067383,1505.9971618652,321.54544067383,1506.9971618652,331.54544067383,1603.9971618652,332.54544067383,1606.9971618652,116.54544067383,1586.9971618652,119.54544067383,1584.9971618652,80.545440673828,1495.9971618652,80.545440673828,1495.9971618652,114.54544067383" data-id="430" data-section="4" data-area="78.13" data-life="78.13" data-rooms="2" data-type="3c21")
+          a(href="/flat/?flat=196" class="appart__hover" data-section="1" data-area="95.47" data-life="95.47" data-rooms="2" data-type="2c118" data-id="196")
+            polygon( fill="#85C44" class=" u-svg-plan--active" points="1063.9971618652,1454.1817626953,1269.9971618652,1456.1817626953,1269.9971618652,1931.1817626953,1183.9971618652,1930.1817626953,1183.9971618652,1724.1817626953,1140.9971618652,1722.1817626953,1139.9971618652,1663.1817626953,1054.9971618652,1665.1817626953" data-id="196" data-section="1" data-area="95.47" data-life="95.47" data-rooms="2" data-type="2c118")
+          a(href="/flat/?flat=197" class="appart__hover" data-section="1" data-area="53.94" data-life="53.94" data-rooms="1" data-type="1c119/2" data-id="197")
+            polygon( fill="" class="" points="1004.9971618652,1712.3636474609,1138.9971618652,1711.3636474609,1139.9971618652,1723.3636474609,1183.9971618652,1725.3636474609,1183.9971618652,1931.3636474609,1003.9971618652,1926.3636474609" data-id="197" data-section="1" data-area="53.94" data-life="53.94" data-rooms="1" data-type="1c119/2")
+          a(href="/flat/?flat=198" class="appart__hover" data-section="1" data-area="54.17" data-life="54.17" data-rooms="1" data-type="1c120" data-id="198")
+            polygon( fill="" class="" points="1005.9971618652,1712.3636474609,1003.9971618652,1929.3636474609,825.99716186523,1927.3636474609,826.99716186523,1711.3636474609" data-id="198" data-section="1" data-area="54.17" data-life="54.17" data-rooms="1" data-type="1c120")
 
       .flat__data
         .data
           .data__title План поверху 7
           .data__flat
             div
-              span(data-type="type") 2c118
+              span(data-type="type" data-default-value='2c118') 2c118
             div пов:
-              span(data-type="floor") 12
+              span(data-type="floor" data-default-value='12') 12
             div кім:
-              span(data-type="flat") 2
+              span(data-type="flat" data-default-value='2') 2
             div кім:
-              span(data-type="area") 95.47
+              span(data-type="area" data-default-value='95.47') 95.47
               span м
                 sub 2
 
