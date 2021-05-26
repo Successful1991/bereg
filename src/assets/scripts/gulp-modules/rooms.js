@@ -40,7 +40,8 @@ function filterVisible() {
 }
 
 async function getFlats() {
-  const response = await window.axios.get('static/flats.json');
+  const response = await window.axios.post('/wp-admin/admin-ajax.php', { action: 'getFlats' });
+  // const response = await window.axios.get('/static/flats.json');
   return response.data;
 }
 
@@ -102,7 +103,7 @@ function filter(flats, param) {
 function render(flats, wraper) {
   const wrap = wraper;
   wrap.innerHTML = '';
-  const html = flats.map(flat => `<div class="card"><img class="card__img" src="./assets/images/rooms/flat.svg" title="foto" alt="foto">
+  const html = flats.map(flat => `<div class="card"><img class="card__img" src="/wp-content/themes/bereg/assets/images/rooms/flat.svg" title="foto" alt="foto">
             <div class="card__title">Квартира ${flat.type}</div>
             <table class="card__table">
               <tbody><tr>
