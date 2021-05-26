@@ -62,9 +62,10 @@ function checkFilterBorder(flats) {
 }
 
 function checkRangeParam(flat, key, value) {
+  console.log(flat, key, value);
   return (window._.has(flat, key)
-    && flat[key] >= value.min
-    && flat[key] <= value.max);
+    && +flat[key] >= value.min
+    && +flat[key] <= value.max);
 }
 
 function checkSelectParam(flat, key, value) {
@@ -122,7 +123,7 @@ function render(flats, wraper) {
                 <td>Житлова пл. м²:</td>
                 <td>${flat.life_room}</td>
               </tr>
-            </tbody></table><a class="card__link" href=""><span>Детальніше</span>
+            </tbody></table><a class="card__link" href="/flat/?id${flat.id}"><span>Детальніше</span>
               <div class="card__link-svg">
                 <svg class="icon--arrow" role="presentation">
                   <use xlink:href="#icon-arrow"></use>
@@ -150,7 +151,10 @@ async function initFilter() {
       from: borderParam[name].min,
       to: borderParam[name].max,
       step: 1,
-      // onChange: updateInputs,
+      onFinish: (e) => {
+        borderParam[name].min = e.from;
+        borderParam[name].max = e.to;
+      },
     });
     const instance = $(`input[name=${name}]`).data('ionRangeSlider');
     instance.update({
