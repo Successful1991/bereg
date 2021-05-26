@@ -1,5 +1,5 @@
 function initSlider() {
-  // eslint-disable-next-line no-undef
+  // eslint-disable-next-line no-undef,no-unused-vars
   const swiper = new Swiper('.js-gallery__slider', {
     loop: true,
     navigation: {
@@ -15,7 +15,7 @@ function initSlider() {
     speed: 400,
     watchSlidesVisibility: true,
   });
-  console.log(swiper);
+  window.locoScroll.update();
 }
 
 document.addEventListener('DOMContentLoaded', initSlider);

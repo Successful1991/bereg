@@ -1,0 +1,49 @@
+.page-view {
+  padding: 185px 0 80px 0;
+  @include to(1440px) {
+    padding: 135px 0 80px 0;
+  }
+  @include to(992px) {
+    padding: 140px 0 80px 0;
+  }
+  @include to(576px) {
+    padding: 90px 0 50px 0;
+  }
+  .title {
+    color: $mc;
+    text-align: center;
+    &:after {
+      border-bottom-color: #E2E3E4;
+    }
+  }
+}
+
+.view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &__info {
+    margin-top: 25px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: max(vw(18, 1920), 18px);
+    line-height: 100%;
+    color: $gold;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    &-icon {
+      height: 18px;
+      width: 18px;
+      margin-right: 15px;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

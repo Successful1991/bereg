@@ -35,7 +35,6 @@ function initDropdown() {
     const selectedHeight = selected.clientHeight;
     const maxHeight = containerHeight - selectedHeight;
     list.style.maxHeight = `${maxHeight}px`;
-    console.log(containerHeight, ' - ', selectedHeight, '  =  ', maxHeight);
   } else {
     list.style.maxHeight = '40vh';
   }
@@ -73,6 +72,7 @@ function initDropdown() {
 function init() {
   setHeightCam(); // don't change orders 1.
   initDropdown(); // don't change orders 2
+  window.locoScroll.update();
 }
 
 document.addEventListener('DOMContentLoaded', init);

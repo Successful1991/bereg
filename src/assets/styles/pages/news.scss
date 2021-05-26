@@ -184,6 +184,7 @@
   align-content: center;
   align-items: center;
   justify-content: center;
+  grid-column: 1 / -1;
   @include to(1440px) {
     margin: 70px 0 0;
   }
@@ -217,6 +218,8 @@
   }
   &__dots {
     display: flex;
+    align-items: center;
+    align-content: center;
     margin: 0 50px;
     @include to(1440px) {
       margin: 0 40px;
@@ -242,6 +245,14 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     color: $mc;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    @include from(1023px) {
+      &:hover {
+        color: $wc;
+        background: rgba(26, 41, 65, 0.4);
+      }
+    }
     @include to(1440px) {
       font-size: 18px;
       height: 35px;

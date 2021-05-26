@@ -295,12 +295,20 @@
   }
   &__svg {
     width: vw(1260, 1920);
+    height: 100%;
     flex-shrink: 0;
+
     @include to(1440px) {
       width: vw(870, 1360);
     }
     @include to(992px) {
       width: 100%;
+    }
+  }
+  &__polygon {
+    opacity: 0;
+    &.active {
+      opacity: 0.7;
     }
   }
   &__content {
@@ -350,6 +358,12 @@
     color: #E2E3E4;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
+    &.active {
+      color: $gold;
+      &:before {
+        background: $gold;
+      }
+    }
     @include to(992px) {
       font-size: 20px;
       break-inside: avoid;
@@ -378,16 +392,18 @@
       }
     }
 
-    @include from(1024px) {
-      &:hover {
-        color: $gold;
-        &:before {
-          background: $gold;
-        }
-      }
-    }
+    //@include from(1024px) {
+    //  &:hover {
+    //    color: $gold;
+    //    &:before {
+    //      background: $gold;
+    //    }
+    //  }
+    //}
   }
 }
+
+
 .map {
   display: inline-block;
   height: 100%;
@@ -404,7 +420,7 @@
 
 .helper-map {
   position: fixed;
-  bottom: 30px;
+  bottom: 50px;
   left: 50px;
   display: flex;
   align-items: center;

@@ -28,10 +28,11 @@ function createSlide(slide) {
  </div>`;
 }
 function replaceContent(data) {
-  const slider = document.querySelector('.js-construction__slider');
-  slider.destroy();
+  const slider = $('.js-construction__slider');
+  console.log(slider);
+  slider[0].swiper.destroy(true, true);
   const slidesWrap = document.querySelector('[data-slides-wrap]');
-  const slides = data.images.map(createSlide).join('\n');
+  const slides = data.slider.map(createSlide).join('\n');
   slidesWrap.innerHTML = slides;
   initSlider();
 
@@ -49,7 +50,7 @@ function updateSelected(selected, state) {
 }
 
 function getConstruction(id) {
-  return window.axios.post('admin-ajax.php', { id });
+  return window.axios.post('/wp-admin/admin-ajax.php', { action: 'progress', id });
 }
 
 function initDropdown() {
@@ -96,7 +97,6 @@ function initDropdown() {
       getConstruction(id)
         .then(response => response.data)
         .then((data) => {
-          console.log(data);
           state.selected = window.parseInt(id);
           state.year = year;
           state.month = month;
