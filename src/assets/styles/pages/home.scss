@@ -1,4 +1,15 @@
 .page-home {
+  .title {
+    &:after {
+      display: none;
+    }
+  }
+  .footer {
+    background: #1C2029;
+  }
+}
+
+.home {
   &-section{
     &-0 {
       position: relative;
@@ -360,9 +371,9 @@
         grid-row: 1 / span 3;
         grid-column: 1 / span 3;
         @include to(992px) {
-           grid-column: 1 / span 3;
-           grid-row: 2 /span 2;
-         }
+          grid-column: 1 / span 3;
+          grid-row: 2 /span 2;
+        }
       }
       .template-content {
         justify-content: flex-end;
@@ -547,9 +558,6 @@
     @include to(992px) {
       display: none;
     }
-  }
-  .footer {
-    background: #1C2029;
   }
 }
 

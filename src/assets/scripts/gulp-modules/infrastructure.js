@@ -191,13 +191,15 @@ function setMap(data) {
 }
 // eslint-disable-next-line no-unused-vars
 function initMap() {
-  $.ajax({
-    method: 'GET',
-    url: 'url',
-    data: 'action=infrastructure',
-  }).done((data) => {
-    setMap(JSON.parse(data));
-  });
+  window.axios.post('/wp-admin/admin-ajax.php', { action: 'infrastructure' })
+    .then(data => setMap(JSON.parse(data)));
+  // $.ajax({
+  //   method: 'GET',
+  //   url: '/wp-admin/admin-ajax.php',
+  //   data: 'action=infrastructure',
+  // }).done((data) => {
+  //   setMap(JSON.parse(data));
+  // });
 }
 
 function helperMapInit() {

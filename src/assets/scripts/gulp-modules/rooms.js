@@ -39,8 +39,15 @@ function filterVisible() {
   });
 }
 
+function getTypeRoom() {
+  const pageName = window.location.pathname;
+  const num = pageName.match(/\d/)[0];
+  console.log(num);
+  return num;
+}
+
 async function getFlats() {
-  const response = await window.axios.post('/wp-admin/admin-ajax.php', { action: 'getFlats' });
+  const response = await window.axios.post('/wp-admin/admin-ajax.php', { action: 'getFlats', rooms: getTypeRoom() });
   // const response = await window.axios.get('/static/flats.json');
   return response.data;
 }
@@ -123,7 +130,7 @@ function render(flats, wraper) {
                 <td>Житлова пл. м²:</td>
                 <td>${flat.life_room}</td>
               </tr>
-            </tbody></table><a class="card__link" href="/flat/?id${flat.id}"><span>Детальніше</span>
+            </tbody></table><a class="card__link" href="/flat/?id=${flat.id}"><span>Детальніше</span>
               <div class="card__link-svg">
                 <svg class="icon--arrow" role="presentation">
                   <use xlink:href="#icon-arrow"></use>
