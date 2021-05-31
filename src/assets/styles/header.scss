@@ -227,7 +227,8 @@
   @include to(992px) {
     padding: 0 0 0 32px;
   }
-  a {
+  &__link {
+    padding: 0;
     font-weight: 500;
     font-size: 18px;
     line-height: 1em;
@@ -236,6 +237,8 @@
     text-decoration-line: none;
     text-transform: lowercase;
     color: $light;
+    background: none;
+    border: none;
     border-bottom: 1px solid $light;
     @include to(1440px) {
       font-size: 14px;

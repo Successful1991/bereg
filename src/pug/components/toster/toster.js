@@ -13,28 +13,47 @@ export default class MyToster {
   }
 
   /*  */
-  createItem({ type, title, text }) {
+  createItem({
+    type, title, text, link,
+  }) {
     return `
       <div class="toast" data-toast-item="" data-toast-status="${type}">
-        <div class="toast-logo-block">
-          <div class="toast__logo">
-            <svg class="icon--logo" role="presentation">
-              <use xlink:href="#icon-logo"></use>
+        <div class="toast__close" data-success-close><span></span><span></span></div>
+        <div class="toast__title">${title}</div>
+        <div class="toast__description">${text}</div>
+        <a class="link toast__link" href="/" type="submit">
+          <span>${link}</span>
+          <div class="link__arrow toast__arrow">
+            <svg class="icon--arrow" role="presentation">
+              <use xlink:href="#icon-arrow"></use>
             </svg>
           </div>
-        </div>
-        <div class="toast-content-block">
-          <h5 class="toast__title">${title}</h5>
-          <p class="toast__text">${text}</p>
-        </div>
-        <button class="toast__colose-btn" data-toast-colose-btn="" type="button">
-          <svg class="icon--close" role="presentation">
-            <use xlink:href="#icon-close"></use>
-          </svg>
-        </button>
+        </a>
       </div>
     `;
   }
+  // createItem({ type, title, text }) {
+  //   return `
+  //     <div class="toast" data-toast-item="" data-toast-status="${type}">
+  //       <div class="toast-logo-block">
+  //         <div class="toast__logo">
+  //           <svg class="icon--logo" role="presentation">
+  //             <use xlink:href="#icon-logo"></use>
+  //           </svg>
+  //         </div>
+  //       </div>
+  //       <div class="toast-content-block">
+  //         <h5 class="toast__title">${title}</h5>
+  //         <p class="toast__text">${text}</p>
+  //       </div>
+  //       <button class="toast__colose-btn" data-toast-colose-btn="" type="button">
+  //         <svg class="icon--close" role="presentation">
+  //           <use xlink:href="#icon-close"></use>
+  //         </svg>
+  //       </button>
+  //     </div>
+  //   `;
+  // }
 
   removeItem(item) {
     gsap.fromTo(

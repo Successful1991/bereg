@@ -29,6 +29,33 @@ function menuInit() {
   document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
 }
 
+function initPopup() {
+  const openPopup = document.querySelectorAll('.js-form-open');
+  const closePopup = document.querySelector('[data-popup-close]');
+  const popup = document.querySelector('[data-popup]');
+
+  openPopup.forEach((openEl) => {
+    openEl.addEventListener('click', (event) => {
+      event.preventDefault();
+      popup.classList.add('active');
+    });
+  });
+  closePopup.addEventListener('click', (event) => {
+    event.preventDefault();
+    popup.classList.remove('active');
+  });
+}
+
+// function initSuccess() {
+//   const closePopup = document.querySelector('[data-success-close]');
+//   const popup = document.querySelector('[data-success]');
+//
+//   closePopup.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     popup.classList.remove('active');
+//   });
+// }
+
 function init() {
   const unSelectHandler = (container) => {
     const elem = container.querySelector('.select-items');
@@ -47,7 +74,8 @@ function init() {
   };
   document.querySelector('[data-lang="mobile"]').addEventListener('click', selectHandler);
   document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
-
+  initPopup();
+  // initSuccess();
   menuInit();
 }
 

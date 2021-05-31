@@ -30,6 +30,7 @@ const lang = langDetect();
           required: 'это поле обязательне',
           sendingSuccessTitle: 'Cообщение отправлено',
           sendingSuccessText: 'Ждите ответа наших менеджеров',
+          sendingSuccessLinkName: 'На главную',
           sendingErrorText: 'Ждите ответа наших менеджеров',
           sendingErrorTitle: 'Ошибка',
           send_fail: 'Сообщение не было отправлено за неизвестной ошибки сервера. Код: [send_fail]',
@@ -56,6 +57,7 @@ const lang = langDetect();
           required: 'Це поле є обов`язковим',
           sendingSuccessTitle: 'Повідомлення надіслано',
           sendingSuccessText: 'Чекайте відповіді наших менеджерів',
+          sendingSuccessLinkName: 'На головну',
           sendingErrorText: 'Чекайте відповіді наших менеджерів',
 
           sendingErrorTitle: 'Сталася помилка',
@@ -84,6 +86,7 @@ const lang = langDetect();
           required: 'this field is required',
           sendingSuccessTitle: 'Message sent',
           sendingSuccessText: 'Wait for the answers of our managers',
+          sendingSuccessLinkName: 'To the main',
           sendingErrorText: 'Wait for the answers of our managers',
           sendingErrorTitle: 'An error has occurred',
           send_fail: 'The message was not sent due to an unknown server error. Code: [send_fail] ',

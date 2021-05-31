@@ -7,6 +7,7 @@ form {
   width: 100%;
 }
 .form-label {
+  margin-top: 35px;
   font-weight: 400;
   font-size: 22px;
   line-height: 140%;
@@ -15,9 +16,11 @@ form {
     font-size: 16px;
   }
   @include to(992px) {
+    margin-top: 40px;
     font-size: 20px;
   }
   @include to(576px) {
+    margin-top: 20px;
     font-size: 12px;
   }
 }

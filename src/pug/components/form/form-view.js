@@ -65,6 +65,7 @@ const renderForm = (form, elements, toast) => {
           type: 'success',
           text: i18next.t('sendingSuccessText'),
           title: i18next.t('sendingSuccessTitle'),
+          link: i18next.t('sendingSuccessLinkName'),
         });
       }
       if (typeof elementsParamFn.successAction === 'function') {
