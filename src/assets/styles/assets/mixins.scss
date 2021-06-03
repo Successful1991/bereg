@@ -8,7 +8,6 @@
 		src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
 		url('#{$url}.woff') format('woff'),
 		url('#{$url}.ttf') format('truetype');
-
 	}
 }
 
@@ -24,21 +23,13 @@
 	}
 }
 
-
 @function max($numbers...) {
-
 	@return m#{a}x(#{$numbers})
-}
-
-;
+};
 
 @function min($numbers...) {
-
-	@return m#{i}n(#{$numbers})
-}
-
-;
-
+  @return m#{i}n(#{$numbers})
+};
 
 $full-width: 1200;
 $work-width: 80;
@@ -46,8 +37,7 @@ $screen-height: 720;
 
 @function vmax($pixels, $context: $full-width) {
 	@return #{($pixels/$context)* 100}vmax
-}
-;
+};
 
 @function vw($pixels, $context: $full-width) {
 	@return  #{($pixels/$context)* 100}vw

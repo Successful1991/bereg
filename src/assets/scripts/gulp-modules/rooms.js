@@ -42,7 +42,6 @@ function filterVisible() {
 function getTypeRoom() {
   const pageName = window.location.pathname;
   const num = pageName.match(/\d/)[0];
-  console.log(num);
   return num;
 }
 
@@ -69,7 +68,6 @@ function checkFilterBorder(flats) {
 }
 
 function checkRangeParam(flat, key, value) {
-  console.log(flat, key, value);
   return (window._.has(flat, key)
     && +flat[key] >= value.min
     && +flat[key] <= value.max);
@@ -108,9 +106,11 @@ function filter(flats, param) {
   return result;
 }
 
-function render(flats, wraper) {
+function render(flats, wraper, fountNum) {
   const wrap = wraper;
+  const fountNumEl = fountNum;
   wrap.innerHTML = '';
+
   const html = flats.map(flat => `<div class="card"><img class="card__img" src="/wp-content/themes/bereg/assets/images/rooms/flat.svg" title="foto" alt="foto">
             <div class="card__title">Квартира ${flat.type}</div>
             <table class="card__table">
@@ -137,16 +137,20 @@ function render(flats, wraper) {
                 </svg>
               </div></a>
           </div>`);
+  fountNumEl.innerHTML = flats.length;
   wrap.innerHTML = html.join('');
   return true;
 }
 
 async function initFilter() {
   const form = document.querySelector('form[name="filter"]');
+  const resetBtn = form.querySelector('.filter__reset');
+  const fountNum = document.querySelector('.found__num');
   const flats = await getFlats();
   const borderParam = checkFilterBorder(flats);
   const ranges = document.querySelectorAll('input[data-type="range"]');
   const flatsContainer = document.querySelector('[data-list]');
+  document.querySelector('.found__all').innerHTML = flats.length;
 
   ranges.forEach((range) => {
     const { name } = range;
@@ -175,10 +179,21 @@ async function initFilter() {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const filteredFlats = filter(flats, borderParam);
-    render(filteredFlats, flatsContainer);
+    render(filteredFlats, flatsContainer, fountNum);
     window.locoScroll.update();
   });
-  render(flats, flatsContainer);
+
+  resetBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    ranges.forEach((range) => {
+      const rangeEl = $(range).data('ionRangeSlider');
+      rangeEl.reset();
+    });
+    render(flats, flatsContainer, fountNum);
+    window.locoScroll.update();
+  });
+
+  render(flats, flatsContainer, fountNum);
   window.locoScroll.update();
 }
 

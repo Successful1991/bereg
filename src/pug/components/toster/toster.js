@@ -4,6 +4,7 @@ import BezierEasing from 'bezier-easing';
 export default class MyToster {
   constructor(setting) {
     this.$wrap = setting.$wrap;
+    this.$popup = setting.$popup;
     this.$item = setting.$item;
     this.ease_0 = BezierEasing(0.34, 0.98, 0.43, 0.95);
 
@@ -18,7 +19,7 @@ export default class MyToster {
   }) {
     return `
       <div class="toast" data-toast-item="" data-toast-status="${type}">
-        <div class="toast__close" data-success-close><span></span><span></span></div>
+        <div class="toast__close" data-success-close data-toast-colose-btn><span></span><span></span></div>
         <div class="toast__title">${title}</div>
         <div class="toast__description">${text}</div>
         <a class="link toast__link" href="/" type="submit">
@@ -59,14 +60,26 @@ export default class MyToster {
     gsap.fromTo(
       item,
       0.25,
-      { xPercent: 0, ease: this.ease_0 },
+      { visibility: 'visible', opacity: 1, ease: this.ease_0 },
       {
-        xPercent: 100,
+        opacity: 0,
+        visibility: 'visible',
         onComplete: () => {
           item.remove();
         },
       },
     );
+    // gsap.fromTo(
+    //   item,
+    //   0.25,
+    //   { xPercent: 0, ease: this.ease_0 },
+    //   {
+    //     xPercent: 100,
+    //     onComplete: () => {
+    //       item.remove();
+    //     },
+    //   },
+    // );
   }
 
   addToast(settingObj) {
@@ -79,13 +92,19 @@ export default class MyToster {
     gsap.fromTo(
       item,
       0.75,
-      { xPercent: 100, skewX: -10 },
-      { xPercent: 0, skewX: 0, ease: this.ease_0 },
+      { opacity: 0, visibility: 'hidden' },
+      { opacity: 1, visibility: 'visible', ease: this.ease_0 },
     );
+    // gsap.fromTo(
+    //   item,
+    //   0.75,
+    //   { xPercent: 100, skewX: -10 },
+    //   { xPercent: 0, skewX: 0, ease: this.ease_0 },
+    // );
 
     setTimeout(() => {
       this.removeItem(item);
-    }, 3000);
+    }, 23000);
   }
 
   listeners() {

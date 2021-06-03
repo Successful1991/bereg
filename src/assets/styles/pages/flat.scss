@@ -58,12 +58,23 @@
   .plan {
     margin-top: 30px;
   }
+
+  .link {
+    background: none;
+    border: none;
+    span {
+      pointer-events: none;
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
 }
 
 .flat {
   display: grid;
   width: 100%;
-  grid-template-columns: auto auto 1.7fr 1fr;
+  grid-template-columns: auto auto 1.7fr 30%;
   grid-template-rows: auto 1fr;
   grid-gap: 20px vw(80, 1920);
   grid-template-areas: 'back compass breadcrumbs breadcrumbs'
@@ -112,6 +123,9 @@
   }
   &__floor {
     grid-area: floor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 vw(80, 1920) 0 0;
     @include to(1440px) {
       margin: 0 vw(40, 1360) 0 0;

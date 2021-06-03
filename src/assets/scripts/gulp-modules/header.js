@@ -1,50 +1,3 @@
-function menuOpen(menu) {
-  menu.classList.add('menu__active');
-  const createAnimation = (links, translateY = 0, delay = 0) => {
-    links.forEach((link, i) => {
-      // eslint-disable-next-line no-undef
-      gsap.from(link, {
-        delay: delay + i / 10,
-        y: translateY,
-        opacity: 0,
-      });
-    });
-  };
-
-  const links1 = menu.querySelectorAll('[data-animation1]');
-  const links2 = menu.querySelectorAll('[data-animation2]');
-  const links3 = menu.querySelectorAll('[data-animation3]');
-  createAnimation(links1, 100, 0.5);
-  createAnimation(links2, 100, 0.8);
-  createAnimation(links3, 100, 1.1);
-}
-
-function menuClose(menu) {
-  menu.classList.remove('menu__active');
-}
-
-function menuInit() {
-  const menu = document.querySelector('[data-menu]');
-  document.querySelector('[data-open-menu]').addEventListener('click', () => menuOpen(menu));
-  document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
-}
-
-function initPopup() {
-  const openPopup = document.querySelectorAll('.js-form-open');
-  const closePopup = document.querySelector('[data-popup-close]');
-  const popup = document.querySelector('[data-popup]');
-
-  openPopup.forEach((openEl) => {
-    openEl.addEventListener('click', (event) => {
-      event.preventDefault();
-      popup.classList.add('active');
-    });
-  });
-  closePopup.addEventListener('click', (event) => {
-    event.preventDefault();
-    popup.classList.remove('active');
-  });
-}
 
 // function initSuccess() {
 //   const closePopup = document.querySelector('[data-success-close]');
@@ -57,6 +10,81 @@ function initPopup() {
 // }
 
 function init() {
+  function menuOpen(menu) {
+    const menuEl = menu;
+    menuEl.style.visibility = 'visible';
+    menuEl.classList.add('menu__active');
+    const createAnimation = (links, translateY = 0, delay = 0) => {
+      links.forEach((link, i) => {
+        // eslint-disable-next-line no-undef
+        gsap.from(link, {
+          delay: delay + i / 10,
+          y: translateY,
+          opacity: 0,
+        });
+      });
+    };
+
+    const links1 = menu.querySelectorAll('[data-animation1]');
+    const links2 = menu.querySelectorAll('[data-animation2]');
+    const links3 = menu.querySelectorAll('[data-animation3]');
+    createAnimation(links1, 100, 0.5);
+    createAnimation(links2, 100, 0.8);
+    createAnimation(links3, 100, 1.1);
+  }
+
+  function menuClose(menu) {
+    const menuEl = menu;
+    menuEl.classList.remove('menu__active');
+    menuEl.style.visibility = '';
+  }
+
+  function menuInit() {
+    const menu = document.querySelector('[data-menu]');
+    document.querySelector('[data-open-menu]').addEventListener('click', () => menuOpen(menu));
+    document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
+  }
+
+  function initPopup() {
+    console.log('initPopup');
+    const openPopup = document.querySelectorAll('.js-form-open');
+    const closePopup = document.querySelector('[data-popup-close]');
+    const popup = document.querySelector('[data-popup]');
+    console.log(openPopup);
+    openPopup.forEach((openEl) => {
+      console.log(openEl);
+      openEl.addEventListener('click', (event) => {
+        console.log(event);
+        event.preventDefault();
+        popup.style.visibility = 'visible';
+        popup.classList.add('active');
+      });
+    });
+    closePopup.addEventListener('click', (event) => {
+      event.preventDefault();
+      popup.classList.remove('active');
+      popup.style.visibility = '';
+    });
+  }
+
+  function initPopupPresentation() {
+    const openPopup = document.querySelectorAll('[data-popup-open-presentation]');
+    const popup = document.querySelector('[data-popup-presentation]');
+    const closePopup = popup.querySelector('[data-popup-close]');
+
+    openPopup.forEach((openEl) => {
+      openEl.addEventListener('click', (event) => {
+        event.preventDefault();
+        popup.style.visibility = 'visible';
+        popup.classList.add('active');
+      });
+    });
+    closePopup.addEventListener('click', (event) => {
+      event.preventDefault();
+      popup.classList.remove('active');
+      popup.style.visibility = '';
+    });
+  }
   const unSelectHandler = (container) => {
     const elem = container.querySelector('.select-items');
     if (!elem.classList.contains('select-hide')) {
@@ -74,7 +102,9 @@ function init() {
   };
   document.querySelector('[data-lang="mobile"]').addEventListener('click', selectHandler);
   document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
+
   initPopup();
+  initPopupPresentation();
   // initSuccess();
   menuInit();
 }

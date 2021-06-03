@@ -1,41 +1,41 @@
-function updateHoverFlat(containers, data) {
-  const wrap = containers;
-  wrap.type.innerHTML = data.type;
-  wrap.flat.innerHTML = data.rooms;
-  wrap.area.innerHTML = data.area;
-}
+function flatInit() {
+  function updateHoverFlat(containers, data) {
+    const wrap = containers;
+    // wrap.type.innerHTML = data.type;
+    wrap.flat.innerHTML = data.rooms;
+    wrap.area.innerHTML = data.area;
+  }
 
-function initPopup() {
-  $('[data-flat-image]').magnificPopup({
-    type: 'image',
-  });
-}
-
-function hoverDataHundler(hoverElement, dataContainers) {
-  if (hoverElement.tagName === 'polygon') {
-    const data = hoverElement.dataset;
-    updateHoverFlat(dataContainers, data);
-  } else {
-    Object.values(dataContainers).forEach((element) => {
-      const el = element;
-      el.innerHTML = element.dataset.defaultValue;
+  function initPopup() {
+    $('[data-flat-image]').magnificPopup({
+      type: 'image',
     });
   }
-}
 
-function initPlan(conf) {
-  fetch(conf['3d'])
-    .then(res => (res.ok ? res : Promise.reject(res)))
-    .then(() => {
-      $('.plan').addClass('plan-active');
-    }).catch(() => {
-      $('.plan').removeClass('plan-active');
-    });
-}
+  function hoverDataHundler(hoverElement, dataContainers) {
+    if (hoverElement.tagName === 'polygon') {
+      const data = hoverElement.dataset;
+      updateHoverFlat(dataContainers, data);
+    } else {
+      Object.values(dataContainers).forEach((element) => {
+        const el = element;
+        el.innerHTML = element.dataset.defaultValue;
+      });
+    }
+  }
 
-function flatInit() {
+  function initPlan(conf) {
+    fetch(conf['3d'])
+      .then(res => (res.ok ? res : Promise.reject(res)))
+      .then(() => {
+        $('.plan').addClass('plan-active');
+      }).catch(() => {
+        $('.plan').removeClass('plan-active');
+      });
+  }
+
   const dataContainers = {
-    type: document.querySelector('[data-type="type"]'),
+    // type: document.querySelector('[data-type="type"]'),
     flat: document.querySelector('[data-type="flat"]'),
     area: document.querySelector('[data-type="area"]'),
   };

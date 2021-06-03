@@ -35,10 +35,14 @@ global.locoScroll = locoScroll;
  * form handlers start
  */
 const forms = [
-  '[data-home-contact]',
+  '[data-form-home-contact]',
+  '[data-form-contact]',
+  '[data-form-popup]',
+  '[data-form-popup-presentation]',
+  '[data-condition-contact]',
 ];
 const formsWithRedirect = [
-  '[data-popup-form]',
+  // '[data-popup-form]',
 ];
 
 formsWithRedirect.forEach((form) => {
@@ -55,7 +59,7 @@ formsWithRedirect.forEach((form) => {
         fields: {
           name: {
             inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
+            rule: yup.string().required(i18next.t('required')).trim().matches(/^\D+$/),
             defaultMessage: i18next.t('name'),
             valid: false,
             error: [],
@@ -91,18 +95,18 @@ forms.forEach((form) => {
       /* eslint-enable */
       elements: {
         $form,
+        $popup: document.querySelector('[data-popup]'),
         showSuccessMessage: false,
-        successAction: () => { window.location.href = 'message'; },
+        successAction: 'toster',
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
           name: {
             inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
+            rule: yup.string().required(i18next.t('required')).trim().matches(/^\D+$/, i18next.t('field_too_letter')),
             defaultMessage: i18next.t('name'),
             valid: false,
             error: [],
           },
-
           phone: {
             inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-phone]'), typeInput: 'phone' }),
             rule: yup
@@ -123,7 +127,6 @@ forms.forEach((form) => {
     }, false);
   }
 });
-
 /*
  * form handlers end
  */

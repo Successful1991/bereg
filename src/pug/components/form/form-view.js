@@ -67,6 +67,9 @@ const renderForm = (form, elements, toast) => {
           title: i18next.t('sendingSuccessTitle'),
           link: i18next.t('sendingSuccessLinkName'),
         });
+        setTimeout(() => {
+          elementsParamFn.$popup.classList.remove('active');
+        }, 3400);
       }
       if (typeof elementsParamFn.successAction === 'function') {
         elementsParamFn.successAction();
@@ -79,7 +82,8 @@ const renderForm = (form, elements, toast) => {
       toast.addToast({
         type: 'error',
         text: i18next.t(form.serverError),
-        title: 'Сталася помилка',
+        title: i18next.t('sendingErrorTitle'),
+        link: i18next.t('sendingSuccessLinkName'),
       });
       elementsParamFn.$btnSubmit.removeAttribute('disabled');
       elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
@@ -96,6 +100,7 @@ const renderForm = (form, elements, toast) => {
 const initView = (state, elementsParamFn) => {
   const toast = new MyToster({
     $wrap: document.querySelector('[data-toast-wrapper]'),
+    $popup: elementsParamFn.$popup,
   });
 
   const mapping = {

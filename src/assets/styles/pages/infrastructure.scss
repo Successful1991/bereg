@@ -288,6 +288,7 @@
   display: flex;
   padding: 0 0 60px;
   width: 100%;
+  height: initial;
   background: #1D222B;
   @include to(992px) {
     flex-direction: column-reverse;
@@ -295,7 +296,7 @@
   }
   &__svg {
     width: vw(1260, 1920);
-    height: 100%;
+    height: min-content;
     flex-shrink: 0;
 
     @include to(1440px) {
@@ -303,6 +304,7 @@
     }
     @include to(992px) {
       width: 100%;
+      height: initial;
     }
   }
   &__polygon {
@@ -314,9 +316,11 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+
     height: 100%;
     margin: 0 auto;
+    padding: 70px 0 0;
     @include to(992px) {
       height: auto;
       padding: 80px vw(90, 768);
@@ -341,6 +345,9 @@
     }
   }
   &__list {
+    overflow-y: auto;
+    padding: 0 20px 0 0;
+    margin-top: 45px;
     @include to(992px) {
       column-count: 2;
       margin-top: 40px;
@@ -386,7 +393,7 @@
       transition: color 0.3s ease-in-out;
     }
     &:first-child {
-      margin-top: 45px;
+      margin-top: 0;
       @include to(992px) {
         margin-top: 0;
       }

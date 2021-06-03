@@ -15,9 +15,10 @@ function setHeightCam() {
   camera.style.height = `${height}px`;
 }
 
-function replaceContent(data) {
+function replaceContent(link) {
   const camera = document.querySelector('[data-camera]');
-  camera.setAttribute('href', data.link);
+  camera.setAttribute('src', link);
+  camera.setAttribute('href', link);
 }
 
 function initDropdown() {
@@ -40,6 +41,7 @@ function initDropdown() {
   }
 
   const changeDropdown = () => {
+    console.log(44, 'changeDropdown', dropdown);
     dropdown.classList.toggle('active');
   };
 
@@ -64,6 +66,7 @@ function initDropdown() {
       replaceContent(link);
       updateSelected(selected, state);
       state.changeDropdown = !state.changeDropdown;
+      console.log(64, state, dropdown);
       changeDropdown();
     }
   });

@@ -2,7 +2,7 @@ function developerSlider() {
   // eslint-disable-next-line no-undef,no-unused-vars
   const developerSwiper = new Swiper('.js-objects__slider', {
     loop: true,
-    slidesPerView: 1,
+    slidesPerView: 2,
     navigation: {
       prevEl: document.querySelector('[data-prev]'),
       nextEl: document.querySelector('[data-next]'),
@@ -25,6 +25,7 @@ function developerSlider() {
         spaceBetween: 40,
       },
       1440: {
+        slidesPerView: 2,
         spaceBetween: 60,
       },
     },

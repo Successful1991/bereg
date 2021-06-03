@@ -34,11 +34,11 @@ maps.forEach((image) => {
 
 function setMap(data) {
   const gmarkers1 = [];
-  const { points, main: center } = data;
-  // const center = {
-  //   lat: 50.476303,
-  //   lng: 30.516779,
-  // };
+  const { points, main } = data;
+  const center = {
+    lat: +main.lat,
+    lng: +main.lng,
+  };
   /** Массив, куда записываются выбраные категории */
   const choosedCategories = new Set();
   choosedCategories.add('main');
@@ -106,93 +106,37 @@ function setMap(data) {
     });
   });
 
-  // var baseFolder = '/wp-content/themes/rusaniv/assets/images/markers/';
-  // const baseFolder = './assets/images/markers/';
-  // const defaultMarkerSize = new google.maps.Size(40, 50);
-  // const buildLogoSize = new google.maps.Size(70, 87);
-  // const markersAdresses = {
-  //   main: `${baseFolder}marker-main.svg`,
-  //   sport: `${baseFolder}marker-sport-complex.svg`,
-  //   school: `${baseFolder}marker-school.svg`,
-  //   bank: `${baseFolder}marker-bank.svg`,
-  //   kindergarden: `${baseFolder}marker-kindergarden.svg`,
-  //   park: `${baseFolder}marker-park.svg`,
-  //   meal: `${baseFolder}marker-meal.svg`,
-  //   dentist: `${baseFolder}marker-dentist.svg`,
-  //   medicine: `${baseFolder}marker-medicine.svg`,
-  //   metro: `${baseFolder}marker-metro.svg`,
-  //   post: `${baseFolder}marker-post.svg`,
-  //   shop: `${baseFolder}marker-shop.svg`,
-  //   supermarkets: `${baseFolder}marker-supermarkets.svg`,
-  // };
-  // const markerPopupStyle = `
-  //   style="
-  //   background: #1798D5;
-  //   padding:5px 10px;
-  //   font-weight: 500;
-  //   font-size: 14px;
-  //   line-height: 22px;"
-  //  `;
-  /* beautify preserve:start */
-  // const points = [
-  //   {
-  //     content: `<img style="background:white" src="${markersAdresses.main}">`,
-  //     position: { lat: 50.476303, lng: 30.516779 },
-  //     type: 'main',
-  //     icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
-  //   },
-  //   {
-  //     content: `<div ${markerPopupStyle}>PARK</div>`,
-  //     position: { lat: 50.478303, lng: 30.516779 },
-  //     type: 'park',
-  //     icon: { url: markersAdresses.park, scaledSize: defaultMarkerSize },
-  //   },
-  //   {
-  //     content: `<div ${markerPopupStyle}>Shop</div>`,
-  //     position: { lat: 50.480303, lng: 30.516779 },
-  //     type: 'shop',
-  //     icon: { url: markersAdresses.shop, scaledSize: defaultMarkerSize },
-  //   },
-  //   {
-  //     content: `<div ${markerPopupStyle}>Post</div>`,
-  //     position: { lat: 50.482303, lng: 30.516779 },
-  //     type: 'post',
-  //     icon: { url: markersAdresses.post, scaledSize: defaultMarkerSize },
-  //   },
-  //   {
-  //     content: `<div ${markerPopupStyle}>Bank</div>`,
-  //     position: { lat: 50.484303, lng: 30.516779 },
-  //     type: 'bank',
-  //     icon: { url: markersAdresses.bank, scaledSize: defaultMarkerSize },
-  //   },
-  // ];
-  /* beautify preserve:end */
-  const infowindow = new google.maps.InfoWindow({
-    content: '',
-    maxWidth: 200,
-  });
+  // const infowindow = new google.maps.InfoWindow({
+  //   content: '',
+  //   maxWidth: 200,
+  // });
   points.forEach((marker) => {
     const category = marker.type;
     const mapMarker = new google.maps.Marker({
       map,
       category,
       icon: marker.icon,
-      position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
+      position: new google.maps.LatLng(marker.cor),
+      // position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
     });
 
-    google.maps.event.addListener(mapMarker, 'click', function () {
-      infowindow.setContent(marker.content);
-      infowindow.open(map, mapMarker);
-      map.panTo(this.getPosition());
-    });
+    // google.maps.event.addListener(mapMarker, 'click', function () {
+    //   infowindow.setContent(marker.content);
+    //   infowindow.open(map, mapMarker);
+    //   map.panTo(this.getPosition());
+    // });
     mapMarker.name = marker.type;
     gmarkers1.push(mapMarker);
   });
+
+  locoScroll.update();
 }
 // eslint-disable-next-line no-unused-vars
 function initMap() {
   window.axios.post('/wp-admin/admin-ajax.php', { action: 'infrastructure' })
-    .then(data => setMap(JSON.parse(data)));
+    .then((resp) => {
+      setMap(resp.data);
+    });
   // $.ajax({
   //   method: 'GET',
   //   url: '/wp-admin/admin-ajax.php',
@@ -235,9 +179,20 @@ function helperMapInit() {
   });
 }
 
+function setHeightToGenplanPoints(svg, markersWrap) {
+  // const svg = document.querySelector('[data-genplane]');
+  const heightSvg = svg.clientHeight;
+  const wrap = markersWrap;
+  // const markersWrap = document.querySelector('[data-markers-wrap]');
+  wrap.style.height = `${heightSvg}px`;
+}
+
 function genplane() {
   const svg = document.querySelector('[data-genplane]');
+  const heightSvg = svg.clientHeight;
   const markersWrap = document.querySelector('[data-markers-wrap]');
+  markersWrap.style.height = `${heightSvg}px`;
+  setHeightToGenplanPoints(svg, markersWrap);
   const state = {
     activeType: '',
   };
@@ -291,6 +246,11 @@ function genplane() {
   });
   markersWrap.addEventListener('mouseleave', () => {
     watchedState.activeType = '';
+  });
+
+  window.addEventListener('resize', () => {
+    setHeightToGenplanPoints(svg, markersWrap);
+    locoScroll.update();
   });
 }
 

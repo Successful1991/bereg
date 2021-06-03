@@ -1,4 +1,4 @@
-.popup-wrap(data-popup)
+.popup-wrap(data-popup style="visibility: hidden;")
   .popup
     .popup__close(data-popup-close)
       span
@@ -6,7 +6,7 @@
     .popup__title Замовити дзвінок
     .form
       h5.form-label Залишились запитання?
-      form(data-home-contact autocomplete="off")
+      form(data-form-popup autocomplete="off")
         .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
           input(type='text' name="name" placeholder="Ім’я:").form-field__input
           .form-field-message Ваше ім’я
@@ -21,6 +21,32 @@
         .form-textarea
           textarea(placeholder="Повідомлення:")
           .form-field-message Введіть ваше повідомлення
+
+        .form-btn-wrap.df.jcsb.aic
+          button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit").link
+            span.main-button__text(data-btn-submit-text="data-btn-submit-text") Надіслати
+            .main-button__arrow.link__arrow
+              +svg('arrow')
+
+
+.popup-wrap(data-popup-presentation style="visibility: hidden;")
+  .popup
+    .popup__close(data-popup-close)
+      span
+      span
+    .popup__title Замовити презентацію
+    .form
+      form(data-form-popup-presentation autocomplete="off")
+        .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(type='text' name="name" placeholder="Ім’я:").form-field__input
+          .form-field-message Ваше ім’я
+          .input-message(data-input-message)
+
+        .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+          input(type='text' name="phone" placeholder="Телефон:").form-field__input
+          .form-field-message Ваш телефон
+          .mask-absolute.js-mask-absolute
+          .input-message(data-input-message)
 
         .form-btn-wrap.df.jcsb.aic
           button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit").link
