@@ -142,8 +142,14 @@ function disableScroll() {
   });
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
   disableScroll();
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
   window.locoScroll.update();
+});
+
+window.addEventListener('resize', () => {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 });
 /** ******************************* */

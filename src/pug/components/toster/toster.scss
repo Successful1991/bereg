@@ -5,7 +5,7 @@
   position: fixed;
   left: 0;
   top: 50%;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -14,9 +14,17 @@
   //width: 360px;
   //visibility: hidden;
   z-index: 130;
-  //background-image: url("../images/pattern.jpg");
+  //pointer-events: none;
 }
-
+.toast__wrap {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  background-image: url("../images/pattern.jpg");
+}
 .toast {
   position: relative;
   display: flex;
@@ -168,11 +176,11 @@
 
 [data-toast-item][data-toast-status="success"]:not(#r) {
   .toast-logo-block {
-    background-color: #96C380;
+    //background-color: #96C380;
   }
 
   .toast__title {
-    color: #96C380;
+    //color: #96C380;
   }
 }
 

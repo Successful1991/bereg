@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
-  mode: 'development',
+  mode: 'development', // development. production
   entry: {
     index: './src/assets/scripts/index-app.js',
   },

@@ -29,7 +29,6 @@ function createSlide(slide) {
 }
 function replaceContent(data) {
   const slider = $('.js-construction__slider');
-  console.log(slider);
   slider[0].swiper.destroy(true, true);
   const slidesWrap = document.querySelector('[data-slides-wrap]');
   const slides = data.slider.map(createSlide).join('\n');

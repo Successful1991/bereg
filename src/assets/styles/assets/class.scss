@@ -363,7 +363,7 @@
     display: none;
   }
   svg {
-    display: inline-block;
+    display: block;
     margin: 0 0 0 -2px;
     width: var(--sliceFigure-big);
     height: 100%
@@ -413,6 +413,7 @@ picture img {
     grid-column: 3 / span 3;
     grid-row: 1 / span 3;
     z-index: 3;
+    overflow: hidden;
     picture {
       height: 100%;
       width: 100%;

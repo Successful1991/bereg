@@ -30,8 +30,8 @@ const lang = langDetect();
           only_number: 'здесь только цифры',
           required: 'это поле обязательне',
           sendingSuccessTitle: 'Cообщение отправлено',
-          sendingSuccessText: 'Спасибо за обращение! Очищайте информацию о продажах BEREG Residence.\n' +
-            'Желаем приятного дня и хорошего настроения =)',
+          sendingSuccessText: 'Спасибо за обращение! Очищайте информацию о продажах BEREG Residence.\n'
+            + 'Желаем приятного дня и хорошего настроения =)',
           sendingSuccessLinkName: 'На главную',
           sendingErrorText: 'Ждите ответа наших менеджеров',
           sendingErrorTitle: 'Ошибка',
@@ -59,8 +59,8 @@ const lang = langDetect();
           only_number: 'тут лише цифри',
           required: 'Це поле є обов`язковим',
           sendingSuccessTitle: 'Повідомлення надіслано',
-          sendingSuccessText: 'Дякуємо за звернення! Очікуйте на дзвінок з відділу продажів BEREG Residence.\n' +
-            'Бажаємо приємного дня та гарного настрою =)',
+          sendingSuccessText: 'Дякуємо за звернення! Очікуйте на дзвінок з відділу продажів BEREG Residence.\n'
+            + 'Бажаємо приємного дня та гарного настрою =)',
           sendingSuccessLinkName: 'На головну',
           sendingErrorText: 'Чекайте відповіді наших менеджерів',
 
@@ -90,8 +90,8 @@ const lang = langDetect();
           only_number: 'only digits here',
           required: 'this field is required',
           sendingSuccessTitle: 'Message sent',
-          sendingSuccessText: 'Thank you for contacting us! Clear sales information for BEREG Residence.\n' +
-            'We wish you a pleasant day and good mood =)',
+          sendingSuccessText: 'Thank you for contacting us! Clear sales information for BEREG Residence.\n'
+            + 'We wish you a pleasant day and good mood =)',
           sendingSuccessLinkName: 'To the main',
           sendingErrorText: 'Wait for the answers of our managers',
           sendingErrorTitle: 'An error has occurred',

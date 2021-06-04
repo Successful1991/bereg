@@ -371,7 +371,7 @@
 }
 
 /* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
+.select-arrow-active .select-selected:after {
   transform: rotate(225deg);
 }
 
@@ -379,8 +379,8 @@
 .select-items a,.select-selected {
   color: #ffffff;
   padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: rgba(0, 0, 0, 0.1) transparent transparent transparent;
+  //border: 1px solid transparent;
+  //border-color: rgba(0, 0, 0, 0.1) transparent transparent transparent;
   cursor: pointer;
 }
 
@@ -397,12 +397,17 @@
   @include to(576px) {
     font-size: 12px;
   }
+  @include from(1023px) {
+    &:hover {
+      background-color: $dark;
+    }
+  }
 }
 
 /* Style items (options): */
 .select-items {
   position: absolute;
-  background-color: rgba(26, 41, 65, 0.6);
+  background-color: $dark;
   top: 100%;
   left: 0;
   right: 0;
@@ -411,7 +416,7 @@
 
 .select-item {
   display: flex;
-  justify-content: center;
+  //justify-content: center;
   width: 100%;
   padding: 3px;
   text-decoration: none;
@@ -427,6 +432,10 @@
   @include to(576px) {
     font-size: 12px;
   }
+}
+
+.select-arrow-active .select-selected {
+  background-color: $dark;
 }
 
 /* Hide the items when the select box is closed: */

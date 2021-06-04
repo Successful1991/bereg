@@ -185,6 +185,7 @@ function setHeightToGenplanPoints(svg, markersWrap) {
   const wrap = markersWrap;
   // const markersWrap = document.querySelector('[data-markers-wrap]');
   wrap.style.height = `${heightSvg}px`;
+  locoScroll.update();
 }
 
 function genplane() {
@@ -256,6 +257,16 @@ function genplane() {
 
 window.addEventListener('load', () => {
   helperMapInit();
+
+  const mouseEl = $('.icon-mouse');
+  locoScroll.on('scroll', (args) => {
+    if (args.scroll.y > 50) {
+      mouseEl[0].style.visibility = 'hidden';
+    } else {
+      mouseEl[0].style.visibility = 'visible';
+    }
+  });
+
   /** Выдвижная панель маркеров на мобильной версии */
   const legend = document.querySelector('[data-mob-accordeon]');
   const legendTitle = legend.querySelector('.map__legend-title');

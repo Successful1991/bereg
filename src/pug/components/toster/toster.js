@@ -18,7 +18,8 @@ export default class MyToster {
     type, title, text, link,
   }) {
     return `
-      <div class="toast" data-toast-item="" data-toast-status="${type}">
+      <div class="toast__wrap" data-toast-item="" data-toast-status="${type}">
+      <div class="toast">
         <div class="toast__close" data-success-close data-toast-colose-btn><span></span><span></span></div>
         <div class="toast__title">${title}</div>
         <div class="toast__description">${text}</div>
@@ -30,6 +31,7 @@ export default class MyToster {
             </svg>
           </div>
         </a>
+      </div>
       </div>
     `;
   }
@@ -104,7 +106,7 @@ export default class MyToster {
 
     setTimeout(() => {
       this.removeItem(item);
-    }, 23000);
+    }, 5000);
   }
 
   listeners() {

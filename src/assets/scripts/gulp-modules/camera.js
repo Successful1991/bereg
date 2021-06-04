@@ -41,7 +41,6 @@ function initDropdown() {
   }
 
   const changeDropdown = () => {
-    console.log(44, 'changeDropdown', dropdown);
     dropdown.classList.toggle('active');
   };
 
@@ -66,7 +65,6 @@ function initDropdown() {
       replaceContent(link);
       updateSelected(selected, state);
       state.changeDropdown = !state.changeDropdown;
-      console.log(64, state, dropdown);
       changeDropdown();
     }
   });

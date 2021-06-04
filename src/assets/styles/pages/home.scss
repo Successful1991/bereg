@@ -79,7 +79,7 @@
         line-height: 1.2em;
         text-transform: uppercase;
         color: $light;
-        white-space: pre-line;
+        //white-space: pre-line;
         span {
           font-weight: 600;
         }
@@ -427,6 +427,7 @@
     width: 100%;
     flex: 1 1 100%;
     z-index: 3;
+    overflow: hidden;
     picture {
       height: 100%;
       width: 100%;
@@ -608,7 +609,7 @@
       font-size: 35px;
     }
     @include to(576px) {
-      font-size: 15px;
+      font-size: max(vw(15, 320), 15px);
     }
     &:after {
       content: '';

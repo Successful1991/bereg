@@ -40,6 +40,7 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/animation.js')
 block content
   //- include ../includes/breadcrumbs.pug
   section.home-section-0
@@ -107,7 +108,7 @@ block content
               .link__arrow
                   +svg('arrow')
   section.home-section-3.home-section__grid.home-section-right
-    .home-bg__image.home-bg__image--left
+    .home-bg__image.home-bg__image--left(data-home-paralax)
       picture
         source(media="(min-width: 993px)" srcset="assets/images/home/3.jpg")
         source(media="(max-width: 992px)" srcset="assets/images/home/3-table.jpg")

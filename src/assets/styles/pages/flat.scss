@@ -126,6 +126,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin: 0 vw(80, 1920) 0 0;
     @include to(1440px) {
       margin: 0 vw(40, 1360) 0 0;
@@ -134,8 +135,13 @@
       margin: 0;
     }
   }
+  &__svg {
+    height: 100%;
+    width: 100%;
+  }
   &__img {
     width: 100%;
+    max-height: 55vh;
     object-fit: contain;
     cursor: pointer;
   }

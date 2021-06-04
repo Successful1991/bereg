@@ -360,7 +360,7 @@ const pathsProd = {
 		src: './dist/assets/images/**/*',
 		dest: './prod/assets/images'
 	},
-}
+};
 // CLEAN PROD FOLDER
 function _clean() {
 	return del(pathsProd.root);

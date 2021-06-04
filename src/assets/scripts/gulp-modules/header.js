@@ -18,8 +18,9 @@ function init() {
       links.forEach((link, i) => {
         // eslint-disable-next-line no-undef
         gsap.from(link, {
-          delay: delay + i / 10,
+          delay: delay + i / 25,
           y: translateY,
+          skewX: 15,
           opacity: 0,
         });
       });
@@ -28,9 +29,9 @@ function init() {
     const links1 = menu.querySelectorAll('[data-animation1]');
     const links2 = menu.querySelectorAll('[data-animation2]');
     const links3 = menu.querySelectorAll('[data-animation3]');
-    createAnimation(links1, 100, 0.5);
-    createAnimation(links2, 100, 0.8);
-    createAnimation(links3, 100, 1.1);
+    createAnimation(links1, 70, 0.05);
+    createAnimation(links2, 70, 0.15);
+    createAnimation(links3, 70, 0.25);
   }
 
   function menuClose(menu) {
@@ -46,15 +47,12 @@ function init() {
   }
 
   function initPopup() {
-    console.log('initPopup');
     const openPopup = document.querySelectorAll('.js-form-open');
     const closePopup = document.querySelector('[data-popup-close]');
     const popup = document.querySelector('[data-popup]');
-    console.log(openPopup);
+
     openPopup.forEach((openEl) => {
-      console.log(openEl);
       openEl.addEventListener('click', (event) => {
-        console.log(event);
         event.preventDefault();
         popup.style.visibility = 'visible';
         popup.classList.add('active');

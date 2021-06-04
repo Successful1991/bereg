@@ -69,7 +69,7 @@
   flex-wrap: wrap;
   .sliceFigure-big {
     svg {
-      fill: #FFFFFF;
+      fill: $light;
     }
   }
   &__genplan {
@@ -296,7 +296,8 @@
   }
   &__svg {
     width: vw(1260, 1920);
-    height: min-content;
+    height: inherit;
+    height: intrinsic;
     flex-shrink: 0;
 
     @include to(1440px) {
@@ -431,7 +432,7 @@
   left: 50px;
   display: flex;
   align-items: center;
-  z-index: 700;
+  z-index: 70;
   text-decoration: none;
   &__title {
     font-weight: 500;
