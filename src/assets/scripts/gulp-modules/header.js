@@ -1,4 +1,3 @@
-
 // function initSuccess() {
 //   const closePopup = document.querySelector('[data-success-close]');
 //   const popup = document.querySelector('[data-success]');
@@ -47,16 +46,15 @@ function init() {
   }
 
   function initPopup() {
-    const openPopup = document.querySelectorAll('.js-form-open');
     const closePopup = document.querySelector('[data-popup-close]');
     const popup = document.querySelector('[data-popup]');
-
-    openPopup.forEach((openEl) => {
-      openEl.addEventListener('click', (event) => {
-        event.preventDefault();
-        popup.style.visibility = 'visible';
-        popup.classList.add('active');
-      });
+    document.addEventListener('click', (event) => {
+      if (!event.target.classList.contains('js-form-open')) {
+        return;
+      }
+      event.preventDefault();
+      popup.style.visibility = 'visible';
+      popup.classList.add('active');
     });
     closePopup.addEventListener('click', (event) => {
       event.preventDefault();

@@ -457,7 +457,7 @@
   display: none;
   align-items: center;
   justify-content: space-around;
-  margin: 0 auto;
+  margin: 40px auto 0;
   &-switch{
     display: inline-block;
     width: 40px;
@@ -512,5 +512,14 @@
     @include to(576px) {
       font-size: 10px;
     }
+  }
+  @include to(1440px) {
+    margin: 30px auto 0;
+  }
+  @include to(992px) {
+    margin: 40px auto 0;
+  }
+  @include to(576px) {
+    margin: 15px auto 0;
   }
 }

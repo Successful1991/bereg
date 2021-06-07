@@ -192,15 +192,15 @@ liveSections.forEach((section) => {
 });
 
 /** Запуск слайдер при попадании в область скролла */
-const valesSliderIntersection = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      observer.unobserve(entry.target);
-    }
-  });
-};
-const observer = new IntersectionObserver(valesSliderIntersection, {});
-const valuesSliderTarget = document.querySelector('.values-slider');
-observer.observe(valuesSliderTarget);
+// const valesSliderIntersection = (entries, observer) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       observer.unobserve(entry.target);
+//     }
+//   });
+// };
+// const observer = new IntersectionObserver(valesSliderIntersection, {});
+// const valuesSliderTarget = document.querySelector('.values-slider');
+// observer.observe(valuesSliderTarget);
 
 // ///---------------------------------------------------

@@ -18,14 +18,7 @@ global._ = _;
 global.onChange = onChange;
 
 /* eslint-disable-next-line */
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true,
-  smoothMobile: false,
-  inertia: 1.1,
-});
 
-global.locoScroll = locoScroll;
 /*
  * smooth scroll end
  */
@@ -134,22 +127,38 @@ function disableScroll() {
   const containersScroll = document.querySelectorAll('[data-disable-page-scroll]');
   containersScroll.forEach((block) => {
     block.addEventListener('mouseenter', () => {
-      locoScroll.stop();
+      window.locoScroll.stop();
     });
     block.addEventListener('mouseleave', () => {
-      locoScroll.start();
+      window.locoScroll.start();
     });
   });
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  disableScroll();
   document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    smoothMobile: false,
+    inertia: 1.1,
+  });
+  window.locoScroll = locoScroll;
+  window.locoScroll.update();
+  disableScroll();
+  setTimeout(() => {
+    window.locoScroll.update();
+  }, 2000);
+});
+
+document.addEventListener('load', () => {
   window.locoScroll.update();
 });
 
 window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 });
+
+
 /** ******************************* */

@@ -18,8 +18,8 @@
           .mask-absolute.js-mask-absolute
           .input-message(data-input-message)
 
-        .form-textarea
-          textarea(placeholder="Повідомлення:")
+        .form-textarea(data-field-input data-field-textarea data-status="field--inactive")
+          textarea(name="message" placeholder="Повідомлення:").form-field__input
           .form-field-message Введіть ваше повідомлення
 
         .form-btn-wrap.df.jcsb.aic
