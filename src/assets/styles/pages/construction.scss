@@ -126,6 +126,17 @@
         margin-left: 15px;
       }
     }
+    &[aria-disabled="true"] {
+      visibility: hidden;
+      pointer-events: none;
+    }
+    @include from(1023px) {
+      &:hover {
+        svg {
+          fill: $gold;
+        }
+      }
+    }
   }
   &__slide img{
     height: 45vh;
@@ -357,10 +368,10 @@
     text-decoration: none;
     color: $dark;
     padding: 8px 20px 8px 0;
-    transition: background-color 0.3s ease-in;
+    transition: color 0.3s ease-in;
     @include from(1023px) {
       &:hover {
-        background-color: $gold;
+        color: $gold;
       }
     }
     @include to(576px) {

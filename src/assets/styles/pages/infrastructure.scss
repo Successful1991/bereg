@@ -296,7 +296,7 @@
   }
   &__svg {
     width: vw(1260, 1920);
-    height: inherit;
+    height: min-content;
     height: intrinsic;
     flex-shrink: 0;
 
@@ -434,6 +434,14 @@
   align-items: center;
   z-index: 70;
   text-decoration: none;
+  cursor: pointer;
+  @include from(1023px) {
+    &:hover {
+      svg {
+        animation: scroll2 1s alternate ease-in-out infinite;
+      }
+    }
+  }
   &__title {
     font-weight: 500;
     font-size: max(14px, vw(14, 1920));

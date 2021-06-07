@@ -7,13 +7,13 @@ function updateSelected(selected, state) {
   currentElement.classList.add('disabled');
 }
 
-function setHeightCam() {
-  const container = document.querySelector('[data-container-camera]');
-  const camera = document.querySelector('[data-camera]');
-  const width = container.clientWidth;
-  const height = width / 1.777;
-  camera.style.height = `${height}px`;
-}
+// function setHeightCam() {
+// //   const container = document.querySelector('[data-container-camera]');
+// //   const camera = document.querySelector('[data-camera]');
+// //   const width = container.clientWidth;
+// //   const height = width / 1.777;
+// //   camera.style.height = `${height}px`;
+// // }
 
 function replaceContent(link) {
   const camera = document.querySelector('[data-camera]');

@@ -75,7 +75,7 @@
       }
       &__title {
         font-weight: 400;
-        font-size: 68px;
+        font-size: min(vw(58, 1920), 58px);
         line-height: 1.2em;
         text-transform: uppercase;
         color: $light;
@@ -107,7 +107,7 @@
         margin: 20px 0 20px 150px;
         display: flex;
         flex-direction: column;
-        font-size: 24px;
+        font-size: min(vw(20, 1920), 20px);
         line-height: 1.4em;
         font-weight: 400;
         @include to(1440px) {
@@ -276,17 +276,17 @@
       display: flex;
       justify-content: space-between;
       align-content: center;
-      align-items: center;
+      //align-items: center;
       flex-wrap: wrap;
       height: 100%;
       min-height: 100vh;
       width: 100%;
-      padding: 170px 13% 220px;
+      padding: 170px 13% 120px;
       background: #1C2029;
       .title {
         width: 100%;
         margin-bottom: 60px;
-        font-size: 68px;
+        font-size: min(vw(58, 1920), 58px);
         line-height: 120%;
         font-weight: 600;
         text-transform: capitalize;

@@ -207,6 +207,13 @@
     &:first-child {
       transform: rotate(180deg);
     }
+    @include from(1023px) {
+      &:hover {
+        svg {
+          fill: $dark;
+        }
+      }
+    }
     @include to(1440px) {
       width: 50px;
       height: 9px;
@@ -239,7 +246,7 @@
     height: 55px;
     width: 55px;
     border-radius: 50%;
-
+    margin: 0 10px;
     font-weight: 500;
     font-size: 26px;
     line-height: 100%;
@@ -257,6 +264,7 @@
       font-size: 18px;
       height: 35px;
       width: 35px;
+      margin: 0 10px;
     }
     @include to(992px) {
       height: 40px;

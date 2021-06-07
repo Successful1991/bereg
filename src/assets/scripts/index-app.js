@@ -150,6 +150,17 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     window.locoScroll.update();
   }, 2000);
+
+  const mouseEl = document.querySelector('.icon-mouse');
+  if (mouseEl) {
+    locoScroll.on('scroll', (args) => {
+      if (args.scroll.y > 50) {
+        mouseEl.style.visibility = 'hidden';
+      } else {
+        mouseEl.style.visibility = 'visible';
+      }
+    });
+  }
 });
 
 document.addEventListener('load', () => {

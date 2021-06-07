@@ -58,12 +58,19 @@
     }
   }
   &__title {
+    margin-bottom: 35px;
     font-family: $default-font;
     font-weight: 500;
     font-size: 30px;
     line-height: 100%;
     letter-spacing: 0.02em;
     color: #FEFEFE;
+    @include to(992px) {
+      margin-bottom: 40px;
+    }
+    @include to(576px) {
+      margin-bottom: 20px;
+    }
   }
   form {
     margin-top: 40px;

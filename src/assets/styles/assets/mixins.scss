@@ -43,6 +43,10 @@ $screen-height: 720;
 	@return  #{($pixels/$context)* 100}vw
 }
 
+@function vh($pixels, $context: $full-width) {
+	@return  #{($pixels/$context)* 100}vh
+}
+
 @function lh($lh, $fz) {
 	@return #{($lh/$fz)}em
 }

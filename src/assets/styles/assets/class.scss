@@ -79,7 +79,7 @@
   &__text {
     position: relative;
     max-width: 460px;
-    padding: 0 0 0 78px;
+    padding: 0 0 0 50px;
     margin-top: 50px;
     font-family: $default-font;
     font-weight: 400;
@@ -784,7 +784,7 @@ picture img {
     z-index: 30;
   }
   &_animation svg {
-    animation: scroll 1s alternate ease-in-out infinite;
+    animation: download 1s alternate ease-in-out infinite;
   }
   svg {
     height: 100%;

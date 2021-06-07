@@ -1,7 +1,7 @@
 function initSlider() {
   // eslint-disable-next-line no-undef
   const slider = new Swiper('.js-construction__slider', {
-    loop: true,
+    loop: false,
     navigation: {
       nextEl: document.querySelector('[data-next]'),
       prevEl: document.querySelector('[data-prev]'),
@@ -11,7 +11,7 @@ function initSlider() {
       type: 'bullets',
       clickable: true,
       dynamicBullets: true,
-      dynamicMainBullets: 1,
+      dynamicMainBullets: 3,
     },
     preloadImages: false,
     lazy: true,
