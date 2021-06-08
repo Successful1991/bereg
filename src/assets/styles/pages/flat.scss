@@ -492,6 +492,9 @@
     &-input{
       display: none;
       &:checked{
+        + .plan-switch{
+          background: $gold;
+        }
         + .plan-switch:after{
           left: 20px;
         }
@@ -522,4 +525,8 @@
   @include to(576px) {
     margin: 15px auto 0;
   }
+}
+
+.irs--flat .irs-line {
+  background: #E2E3E4;
 }

@@ -81,23 +81,25 @@ function init() {
       popup.style.visibility = '';
     });
   }
-  const unSelectHandler = (container) => {
+  const unSelectHandler = () => {
+    const container = document.querySelector('.custom-select');
     const elem = container.querySelector('.select-items');
     if (!elem.classList.contains('select-hide')) {
       container.classList.remove('select-arrow-active');
       elem.classList.add('select-hide');
     }
-    window.removeEventListener('click', unSelectHandler);
+    // window.removeEventListener('click', unSelectHandler);
   };
   const selectHandler = (event) => {
     event.stopPropagation();
     const container = event.target.closest('[data-lang]');
     container.classList.add('select-arrow-active');
     container.querySelector('.select-items').classList.remove('select-hide');
-    window.addEventListener('click', unSelectHandler.bind(null, container));
+    // window.addEventListener('click', unSelectHandler.bind(null, container));
   };
   document.querySelector('[data-lang="mobile"]').addEventListener('click', selectHandler);
   document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
+  window.addEventListener('click', unSelectHandler());
 
   initPopup();
   initPopupPresentation();

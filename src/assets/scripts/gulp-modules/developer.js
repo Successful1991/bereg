@@ -10,7 +10,7 @@ function developerSlider() {
     preloadImages: false,
     lazy: true,
     autoplay: {
-      delay: 3000,
+      delay: 1500,
       pauseOnMouseEnter: true,
     },
     speed: 400,

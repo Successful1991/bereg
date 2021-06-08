@@ -481,6 +481,14 @@
         height: 100%;
         width: 100%;
         fill: #E2E3E4;
+        transition: fill 0.4s ease-in-out;
+      }
+      @include from(1023px) {
+        &:hover {
+          svg {
+            fill:$gold;
+          }
+        }
       }
       @include to(1440px) {
         width: 50px;
@@ -566,6 +574,17 @@
 .slide {
   position: relative;
   height: 100vh;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
   img {
     height: 100%;
     width: 100%;
@@ -578,6 +597,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 80%;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     align-items: center;

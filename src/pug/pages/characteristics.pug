@@ -3,8 +3,8 @@ extends ../layout/main
 block variable
   -
     var title_page = 'Характеристики квартир'
-    var id_page = 'id-page-characteristics'
-    var class_page = 'class-page-characteristics'
+    var id_page = 'page-characteristics'
+    var class_page = 'page-characteristics'
     var breadcrumbsSubitem = [
       // {
       //   label: 'About',
@@ -90,7 +90,7 @@ block variable
         ]
       },
     ]
-  
+
 block meta
   title= title_page
   meta(name='description', content='')
@@ -109,17 +109,19 @@ block content
   ul.characteristics-list
     each v, i in content
       if i == 0
-        li.characteristics-item.characteristics-item--width
-          h4.characteristics-item__title= v.title
-          .characteristics-item-text-wrap
-            each vv in v.text
-              p.characteristics-item__text= vv
+        li.characteristics-item-wrap.characteristics-item--width
+          .characteristics-item
+            h4.characteristics-item__title= v.title
+            .characteristics-item-text-wrap
+              each vv in v.text
+                p.characteristics-item__text= vv
       else
-        li.characteristics-item
-          h4.characteristics-item__title= v.title
-          .characteristics-item-text-wrap
-            each vv in v.text
-              p.characteristics-item__text= vv
+        li.characteristics-item-wrap
+          .characteristics-item
+            h4.characteristics-item__title= v.title
+            .characteristics-item-text-wrap
+              each vv in v.text
+                p.characteristics-item__text= vv
 
 block footer
   include ../includes/footer.pug

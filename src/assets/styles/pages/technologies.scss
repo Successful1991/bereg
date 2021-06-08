@@ -45,6 +45,9 @@
     }
     &-5 {
       background: #FCFCFC;
+      @include from(1024px){
+        grid-template-rows: calc(var(--header-h) + 100px) 1fr calc(var(--header-h) + 100px);
+      }
       .section-sliceFigure__template {
         width: 70%;
         @include to(992px) {

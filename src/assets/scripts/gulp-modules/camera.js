@@ -71,10 +71,10 @@ function initDropdown() {
 }
 
 function init() {
-  setHeightCam(); // don't change orders 1.
+  // setHeightCam(); // don't change orders 1.
   initDropdown(); // don't change orders 2
   window.locoScroll.update();
 }
 
 document.addEventListener('DOMContentLoaded', init);
-window.addEventListener('resize', setHeightCam);
+// window.addEventListener('resize', setHeightCam);

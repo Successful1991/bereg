@@ -116,7 +116,7 @@
     }
   }
   &__link {
-    padding: 0 0 0 78px;
+    padding: 0 0 0 50px;
     margin-top: 50px;
     font-size: min(vw(24, 1920), 24px);
     @include to(1440px) {
@@ -173,7 +173,7 @@
     display: flex;
     width: 70px;
     height: 13px;
-    margin: 0 0 0 50px;
+    margin: 0 0 0 40px;
     overflow: hidden;
     pointer-events: none;
     svg {
@@ -793,4 +793,3 @@ picture img {
     stroke: #FCFCFC;
   }
 }
-
