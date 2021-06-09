@@ -98,7 +98,7 @@
       font-size: max(vw(24, 768), 24px);
     }
     @include to(576px) {
-      font-size: max(vw(16, 768), 16px);
+      font-size: max(vw(16, 320), 16px);
     }
   }
   &__list {

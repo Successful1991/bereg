@@ -44,8 +44,9 @@
       margin: 36px 0 50px;
     }
     @include to(576px) {
-      padding: 0 40px;
-      margin: 20px 0 30px;
+      padding: 0;
+      margin: 20px auto 30px;
+      width: 75vw;
       text-align: left;
     }
   }

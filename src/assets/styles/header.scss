@@ -2,9 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: var(--header-h);
+  //height: var(--header-h);
   width: 100%;
-  padding: 0 min(vw(80, 1920), 80px);
+  padding: min(vw(30, 1920), 30px) min(vw(80, 1920), 80px);
   display: flex;
   align-content: center;
   align-items: center;
@@ -13,9 +13,10 @@
   background: rgba(26, 41, 65, 0.6);
   z-index: 100;
   @include to(1440px) {
-    padding: 0 50px;
+    padding: min(vw(30, 1440), 30px) 50px;
   }
   @include to(992px) {
+    height: var(--header-h);
     padding: 0;
   }
   &__logo {
@@ -104,7 +105,7 @@
   &__left {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    //padding: 20px 0;
     @include to(992px) {
       padding: 0;
     }
@@ -113,7 +114,7 @@
   &__right {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    //padding: 20px 0;
     @include to(992px) {
       padding: 0;
     }
@@ -206,7 +207,7 @@
     text-decoration: none;
     letter-spacing: 0.02em;
     color: $light;
-    margin: 0 0 0 30px;
+    margin: 0 0 0 min(vw(30, 1920), 30px);
     @include to(1440px) {
       font-size: 18px;
       margin: 0 0 0 15px;
@@ -236,7 +237,7 @@
   &__link {
     padding: 0;
     font-weight: 500;
-    font-size: min(min(18, 1920), 18px);
+    font-size: min(vw(18, 1920), 18px);
     line-height: 1em;
     text-align: center;
     letter-spacing: 0.07em;
@@ -393,7 +394,7 @@
 .select-selected {
   background-color: transparent;
   border: none;
-  font-size: 18px;
+  font-size: min(vw(18, 1920), 18px);
   @include to(1440px) {
     font-size: 14px;
   }

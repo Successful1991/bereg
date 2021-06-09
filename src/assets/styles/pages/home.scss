@@ -612,7 +612,7 @@
   &__title {
     position: relative;
     font-weight: 400;
-    font-size: 55px;
+    font-size: min(vw(55, 1920), 55px);
     line-height: 1.5em;
     letter-spacing: 0.2em;
     text-transform: uppercase;

@@ -13,7 +13,7 @@ function init() {
     on: {
       init: (e) => {
         document.querySelector('[data-total]').innerHTML = document.querySelectorAll('.slide').length - 2;
-        document.querySelector('[data-current]').innerHTML = e.activeIndex + 1;
+        document.querySelector('[data-current]').innerHTML = e.activeIndex;
       },
     },
   });

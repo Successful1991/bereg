@@ -15,6 +15,9 @@
     &:after {
       border-bottom-color: #E2E3E4;
     }
+    @include to(576px) {
+      text-align: left;
+    }
   }
 }
 .news {

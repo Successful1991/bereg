@@ -6,7 +6,7 @@
     width: 490px;
   }
   @include to(576px) {
-    width: 240px;
+    width: 75vw;
   }
   &__title {
     font-weight: 400;

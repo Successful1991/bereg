@@ -9,6 +9,12 @@
     padding-top: 135px;
     margin-bottom: 80px;
   }
+  @include to(992px){
+    padding-top: 140px;
+  }
+  @include to(576px){
+    padding-top: 90px;
+  }
 }
 
 .page-title-v1-wrap{
@@ -32,7 +38,7 @@
     text-align: left;
     font-size: max(20px, vw(20, 320));
     line-height: 130%;
-    padding: 0 vw(40, 320);
+    padding: 0 40px;
   }
   &::after{
     display: flex;
@@ -44,6 +50,9 @@
     height: 1px;
     width: 50px;
     background-color: rgba(226, 227, 228, 0.3);
+    @include to(576px) {
+      display: none;
+    }
   }
 }
 
@@ -92,10 +101,11 @@
   }
   @include to(992px) {
     grid-template-columns: 1fr 1fr;
-    padding: 0;
+    padding: 0 20px;
   }
   @include to(576px) {
     grid-template-columns: 1fr;
+    --pad: 40px;
   }
 }
 
@@ -171,9 +181,11 @@
     }
     @include to(768px){
       font-size: 24px;
+      margin-bottom: 20px;
     }
     @include to(576px){
       font-size: 16px;
+      margin-bottom: 10px;
     }
   }
   &__text {

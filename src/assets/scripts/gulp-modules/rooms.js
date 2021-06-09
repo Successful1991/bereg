@@ -110,33 +110,32 @@ function render(flats, wraper, fountNum) {
   const wrap = wraper;
   const fountNumEl = fountNum;
   wrap.innerHTML = '';
-
-  const html = flats.map(flat => `<div class="card"><img class="card__img" src="/wp-content/themes/bereg/assets/images/rooms/flat.svg" title="foto" alt="foto">
+  const html = flats.map(flat => `<a href="/flat/?id=${flat.id}" class="card"><img class="card__img" src="${(flat.img_small || '/wp-content/themes/bereg/assets/images/rooms/flat.svg')}" title="foto" alt="foto">
             <div class="card__title">Квартира ${flat.type}</div>
             <table class="card__table">
               <tbody><tr>
-                <td>Поверх:</td>
+                <td>${flat.floor_name}</td>
                 <td>${flat.floor}</td>
               </tr>
               <tr>
-                <td>Кімнат:</td>
+                <td>${flat.room_name}</td>
                 <td>${flat.rooms}</td>
               </tr>
               <tr>
-                <td>Загальна пл. м²:</td>
+                <td>${flat.area_name}</td>
                 <td>${flat.all_room}</td>
               </tr>
               <tr>
-                <td>Житлова пл. м²:</td>
+                <td>${flat.life_name}</td>
                 <td>${flat.life_room}</td>
               </tr>
-            </tbody></table><a class="card__link" href="/flat/?id=${flat.id}"><span>Детальніше</span>
+            </tbody></table><div class="card__link"><span>${flat.button}</span>
               <div class="card__link-svg">
                 <svg class="icon--arrow" role="presentation">
                   <use xlink:href="#icon-arrow"></use>
                 </svg>
-              </div></a>
-          </div>`);
+              </div></div>
+          </a>`);
   fountNumEl.innerHTML = flats.length;
   wrap.innerHTML = html.join('');
   return true;
@@ -185,11 +184,11 @@ async function initFilter() {
 
   resetBtn.addEventListener('click', (event) => {
     event.preventDefault();
+    render(flats, flatsContainer, fountNum);
     ranges.forEach((range) => {
       const rangeEl = $(range).data('ionRangeSlider');
       rangeEl.reset();
     });
-    render(flats, flatsContainer, fountNum);
     window.locoScroll.update();
   });
 

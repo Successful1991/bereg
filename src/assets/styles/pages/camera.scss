@@ -42,6 +42,7 @@
   }
   @include to(992px) {
     height: auto;
+    height: initial;
     grid-template-columns: 1fr;
     grid-template-rows: none;
     grid-auto-rows: auto;

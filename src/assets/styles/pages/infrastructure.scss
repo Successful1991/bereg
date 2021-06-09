@@ -442,6 +442,9 @@
       }
     }
   }
+  @include from(992px) {
+    display: none;
+  }
   &__title {
     font-weight: 500;
     font-size: max(14px, vw(14, 1920));

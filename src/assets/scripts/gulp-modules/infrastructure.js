@@ -177,6 +177,10 @@ function helperMapInit() {
   helperMap.on('click', () => {
     locoScroll.scrollTo(map[0]);
   });
+
+  document.addEventListener('scroll', (event) => {
+    throttleLogger(event);
+  });
 }
 
 function setHeightToGenplanPoints(svg, markersWrap) {
@@ -192,8 +196,10 @@ function genplane() {
   const svg = document.querySelector('[data-genplane]');
   const heightSvg = svg.clientHeight;
   const markersWrap = document.querySelector('[data-markers-wrap]');
-  markersWrap.style.height = `${heightSvg}px`;
-  setHeightToGenplanPoints(svg, markersWrap);
+  if (window.innerWidth > 992) {
+    markersWrap.style.height = `${heightSvg}px`;
+    setHeightToGenplanPoints(svg, markersWrap);
+  }
   const state = {
     activeType: '',
   };
@@ -212,7 +218,9 @@ function genplane() {
   };
   const removeActiveListElement = () => {
     const marker = markersWrap.querySelector('[data-marker].active');
-    marker.classList.remove('active');
+    if (marker) {
+      marker.classList.remove('active');
+    }
   };
 
   const watchedState = window.onChange(state, (path, value, prevValue) => {
@@ -261,6 +269,13 @@ window.addEventListener('load', () => {
   const mouseEl = $('.icon-mouse');
   locoScroll.on('scroll', (args) => {
     if (args.scroll.y > 50) {
+      mouseEl[0].style.visibility = 'hidden';
+    } else {
+      mouseEl[0].style.visibility = 'visible';
+    }
+  });
+  document.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 50) {
       mouseEl[0].style.visibility = 'hidden';
     } else {
       mouseEl[0].style.visibility = 'visible';
