@@ -188,11 +188,10 @@
   }
   @include to(992px) {
     margin: 60px auto 0;
-  }
-  @include to(992px) {
     width: vw(490, 768);
   }
   @include to(576px) {
+    margin: 30px auto 0;
     width: vw(240, 320);
   }
 }

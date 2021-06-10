@@ -56,38 +56,6 @@
   }
 }
 
-.breadcrumbs-item__link{
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 100%;
-
-  display: flex;
-  align-items: center;
-
-  color: #C4C7CC;
-  text-decoration: none;
-  @include to(1440px){
-    font-size: 12px;
-  }
-}
-.breadcrumbs-item{
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 100%;
-  @include to(1440px){
-    font-size: 12px;
-  }
-  svg{
-    margin: 0px 15px;
-    width: 35px;
-    height: 6px;
-    fill: #C4C7CC;
-  }
-}
-
-
 .characteristics-list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

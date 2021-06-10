@@ -207,7 +207,7 @@
       height: 8px;
       background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.8 1.18921L6.39999 6.00012L0.99999 1.18921' stroke='white' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E%0A");
       margin-left: 20px;
-      transform: translateY(-50%) rotate(
+      transform: translateY(0) rotate(
           0.5turn
       );
       @include to(992px) {
@@ -240,6 +240,7 @@
     line-height: 130%;
     color: #1A2941;
     text-decoration: none;
+    cursor: pointer;
     border-bottom: 1px solid #E2E3E4;
     background: #FCFCFC;
     @include to(1440px) {
@@ -258,7 +259,7 @@
     &:last-child {
       border: none;
     }
-    .active {
+    &.active {
       background: $gold;
       .infra__icon {
         fill: #FCFCFC;
@@ -293,6 +294,9 @@
   @include to(992px) {
     flex-direction: column-reverse;
     padding: 0 0 80px;
+  }
+  @include to(576px) {
+    padding: 0 0 50px;
   }
   &__svg {
     width: vw(1260, 1920);
@@ -418,9 +422,8 @@
   width: 100%;
   &__legend{
     &.opened {
-
       .map__legend-title:after{
-        transform: translateY(-50%);
+        transform: translateY(0);
       }
     }
   }

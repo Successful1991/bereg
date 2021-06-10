@@ -453,7 +453,7 @@ picture img {
         margin: calc(var(--header-h) + 80px) 0 120px vw(90, 768);
       }
       @include to(576px) {
-        margin: calc(var(--header-h) + 50px) 0 60px vw(40, 768);
+        margin: calc(var(--header-h) + 50px) 0 60px vw(40, 320);
       }
     }
   }
@@ -548,8 +548,12 @@ picture img {
       height: min(vw(187, 760), 187px);
     }
     @include to(576px) {
+      top: initial;
+      bottom: 0;
+      transform: translate(-50%, 50%);
       width: min(vw(94, 320), 94px);
       height: min(vw(86, 320), 86px);
+      stroke-width: 4px;
     }
   }
 }

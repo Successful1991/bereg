@@ -2,9 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  //height: var(--header-h);
+  height: var(--header-h);
   width: 100%;
-  padding: min(vw(30, 1920), 30px) min(vw(80, 1920), 80px);
+  padding: 0 min(vw(80, 1920), 80px);
   display: flex;
   align-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   background: rgba(26, 41, 65, 0.6);
   z-index: 100;
   @include to(1440px) {
-    padding: min(vw(30, 1440), 30px) 50px;
+    padding: 0 50px;
   }
   @include to(992px) {
     height: var(--header-h);
@@ -23,8 +23,10 @@
     position: absolute;
     top: 0;
     left: 50%;
-    height: min(vw(160, 1920), 160px);
-    width: min(vw(160, 1920), 160px);
+    height: 160px;
+    //height: min(vw(160, 1920), 160px);
+    width: 160px;
+    //width: min(vw(160, 1920), 160px);
     flex-shrink: 0;
     align-self: flex-start;
     display: flex;

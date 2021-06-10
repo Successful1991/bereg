@@ -37,6 +37,20 @@
     font-size: 10px;
   }
   &-item {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    @include to(1440px){
+      font-size: 12px;
+    }
+    svg{
+      margin: 0 15px;
+      width: 35px;
+      height: 6px;
+      fill: #C4C7CC;
+    }
     &:last-child {
       display: initial;
       white-space: nowrap;
@@ -45,6 +59,26 @@
       max-width: 23ch;
       @include to(576px) {
         max-width: 14ch;
+      }
+    }
+    &__link {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+
+      display: flex;
+      align-items: center;
+
+      color: #C4C7CC;
+      text-decoration: none;
+      @include to(1440px){
+        font-size: 12px;
+      }
+      @include to(992px){
+        font-size: 14px;
+      }
+      @include to(576px){
+        font-size: 10px;
       }
     }
   }

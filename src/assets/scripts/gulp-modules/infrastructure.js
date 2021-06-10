@@ -161,25 +161,22 @@ function helperMapInit() {
       }
     };
   }
-  const throttleLogger = throttle(() => {
+  const throttleLogger = throttle((event) => {
     const heightWrap = window.innerHeight;
     const mapTop = map.offset().top;
-    if (mapTop - heightWrap <= 0) {
+    if (mapTop - heightWrap - event.scroll.y <= 0) {
       helperMap[0].style.visibility = 'hidden';
     } else {
       helperMap[0].style.visibility = 'visible';
     }
   }, 400);
+
   locoScroll.on('scroll', (event) => {
     throttleLogger(event);
   });
 
   helperMap.on('click', () => {
     locoScroll.scrollTo(map[0]);
-  });
-
-  document.addEventListener('scroll', (event) => {
-    throttleLogger(event);
   });
 }
 
