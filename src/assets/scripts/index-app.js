@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import axios from 'axios';
 import * as yup from 'yup';
 import _ from 'lodash';
+import pannellum from 'pannellum/build/pannellum';
 import onChange from 'on-change';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
@@ -16,6 +17,7 @@ global.gsap = gsap;
 global.axios = axios;
 global._ = _;
 global.onChange = onChange;
+global.pannellum = pannellum;
 
 /* eslint-disable-next-line */
 

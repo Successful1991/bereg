@@ -4,3 +4,4 @@
 @@include('./magnific-popup/dist/jquery.magnific-popup.js')
 @@include('./swiper/swiper.js')
 @@include('./ion.rangeSlider/js/ion.rangeSlider.js')
+@@include('../../panorama/pannellum.js')

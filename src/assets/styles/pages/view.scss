@@ -24,6 +24,154 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 60vh;
+  padding: 0 max(vw(110, 1920), 110px) 0 0;
+  @include to(1440px) {
+    padding: 0 min(vw(110, 1440), 110px) 0 0;
+  }
+  @include to(992px) {
+    padding: 0 vw(50, 992) 0 0;
+  }
+  @include to(576px) {
+    padding: 0 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  &__container {
+    margin: 20px 0 0;
+    @include to(576px) {
+      margin: 50px 0 0;
+    }
+  }
+  &__iframe {
+    flex: 1;
+    height: 100%;
+    border: none;
+  }
+  &__tabs {
+    margin: 0 50px;
+    @include to(576px) {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: center;
+      margin: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    margin: 0 30px 0 0;
+    text-decoration: none;
+    color: $dark;
+    @include to(992px) {
+      margin: 0 0 20px 0;
+    }
+    @include to(576px) {
+      margin: 0 20px 0 0;
+    }
+    &:last-child {
+      margin: 0;
+    }
+    &_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1px solid #EFEFEF;
+      transition: border-color 0.3s ease-in-out;
+      margin: 0 15px 0 0;
+      @include to(576px) {
+        height: 35px;
+        width: 35px;
+        margin: 0 10px 0 0;
+      }
+      svg {
+        height: 40%;
+        width: 40%;
+      }
+    }
+    &_text {
+      font-family: $default-font;
+      font-weight: 500;
+      font-size: max(vw(18, 1920), 18px);
+      line-height: 100%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $dark;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 18px;
+      }
+      @include to(576px) {
+        font-size: 12px;
+      }
+    }
+    &.active {
+      .view__link_icon{
+        border-color: $gold;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    font-family: $default-font;
+    font-weight: 400;
+    line-height: 130%;
+    color: $dark;
+    font-size: max(vw(18, 1920), 18px);
+    @include to(992px) {
+      flex-direction: column;
+    }
+    @include to(576px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  &__list {
+    margin-top: 40px;
+    font-family: $default-font;
+    font-weight: 400;
+    font-size: max(vw(18, 1920), 18px);
+    line-height: 130%;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    @include to(992px) {
+      font-size: 18px;
+    }
+    @include to(576px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 12px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      display: none;
+      @include to(576px) {
+        margin: 5px 8px;
+      }
+    }
+    a {
+      display: inline-block;
+      padding: 7.5px 0;
+      text-decoration: none;
+      color: $dark;
+
+      @include to(576px) {
+        padding: 5px 0;
+      }
+      &.active {
+        color: $gold;
+      }
+    }
+  }
   &__info {
     margin-top: 25px;
     display: flex;
@@ -38,10 +186,22 @@
     @include to(1440px) {
       font-size: 14px;
     }
+    @include to(992px) {
+      font-size: 18px;
+    }
+    @include to(576px) {
+      font-size: 12px;
+      padding: 0 20px;
+    }
     &-icon {
       height: 18px;
       width: 18px;
       margin-right: 15px;
+      @include to(576px) {
+        height: 14px;
+        width: 14px;
+        margin-right: 8px;
+      }
       svg {
         height: 100%;
         width: 100%;

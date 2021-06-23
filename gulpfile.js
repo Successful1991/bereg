@@ -406,18 +406,18 @@ function _images() {
 						imagemin.jpegtran({
 							progressive: true
 						}),
-						imageminJpegRecompress({
-							loops: 5,
-							min: 85,
-							max: 95,
-							quality: 'high'
-						}),
+						// imageminJpegRecompress({
+						// 	loops: 5,
+						// 	min: 85,
+						// 	max: 95,
+						// 	quality: 'high'
+						// }),
 						imagemin.svgo(),
 						imagemin.optipng(),
-						imageminPngquant({
-							quality: [0.85, 0.90],
-							speed: 5
-						})
+						// imageminPngquant({
+						// 	quality: [0.85, 0.90],
+						// 	speed: 5
+						// })
 					], {
 						verbose: true
 					})))

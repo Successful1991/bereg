@@ -55,7 +55,6 @@ const formats = {
     script: 'js',
 };
 
-
 const typesFile = Object.keys(pathesToComponentParts);
 
 typesFile.forEach((type) => {

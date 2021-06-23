@@ -53,36 +53,37 @@ function setMap(data) {
     scaleControl: false,
     draggable: true,
     language: 'en',
-    styles: [{
-      featureType: 'all',
-      stylers: [{
-        saturation: 0,
+    styles: [
+      {
+        featureType: 'all',
+        stylers: [{
+          saturation: 0,
+        }, {
+          hue: '#e7ecf0',
+        }],
       }, {
-        hue: '#e7ecf0',
-      }],
-    }, {
-      featureType: 'road',
-      stylers: [{
-        saturation: -70,
-      }],
-    }, {
-      featureType: 'transit',
-      stylers: [{
-        visibility: 'off',
-      }],
-    }, {
-      featureType: 'poi',
-      stylers: [{
-        visibility: 'off',
-      }],
-    }, {
-      featureType: 'water',
-      stylers: [{
-        visibility: 'simplified',
+        featureType: 'road',
+        stylers: [{
+          saturation: -70,
+        }],
       }, {
-        saturation: -60,
+        featureType: 'transit',
+        stylers: [{
+          visibility: 'off',
+        }],
+      }, {
+        featureType: 'poi',
+        stylers: [{
+          visibility: 'off',
+        }],
+      }, {
+        featureType: 'water',
+        stylers: [{
+          visibility: 'simplified',
+        }, {
+          saturation: -60,
+        }],
       }],
-    }],
   });
   const filterMarkers = function filterMarkers(category, categoriesArray) {
     gmarkers1.forEach((el) => {

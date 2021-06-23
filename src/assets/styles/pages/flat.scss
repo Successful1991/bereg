@@ -252,16 +252,6 @@
         margin-bottom: 0;
       }
     }
-    &_ol {
-      counter-reset: ol;
-      li {
-        counter-increment: ol;
-        &:before {
-          content: counter(ol) '.';
-          margin: 0 18px 0 0;
-        }
-      }
-    }
     &_font-medium {
       font-weight: 500;
     }
@@ -284,6 +274,9 @@
   }
   &__value {
     margin: 0 0 0 auto;
+  }
+  &__number {
+    margin: 0 18px 0 0;
   }
 }
 

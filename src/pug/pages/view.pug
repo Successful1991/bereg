@@ -27,8 +27,38 @@ block scripts
 block content
   include ../includes/breadcrumbs.pug
   h1.title Огляд 360°
-  .view
-    iframe
+  .view__container
+    .view
+      .view__tabs
+        .view__buttons(data-tabs-buttons)
+          a(href="" class="view__link active" data-select-type="night")
+            span.view__link_icon
+              +svg('moon')
+            span.view__link_text ночь
+          a(href="" class="view__link" data-select-type="day")
+            span.view__link_icon
+              +svg('sun')
+            span.view__link_text день
+        ul.view__list(data-list)
+          li(data-list-type="day")
+            a(href="#" data-floor="3" data-href="assets/images/view/day/3.jpg" class="active") 3 поверх
+          li(data-list-type="day")
+            a(href="#" data-floor="5" data-href="assets/images/view/day/7.jpg") 7 поверх
+          li(data-list-type="day")
+            a(href="#" data-floor="7"  data-href="assets/images/view/day/11.jpg") 11 поверх
+          li(data-list-type="night")
+            a(href="#" data-floor="7"  data-href="assets/images/view/night/7.jpg") 7 поверх
+          li(data-list-type="night" )
+            a(href="#" data-floor="11" data-href="assets/images/view/night/11.jpg") 11 поверх
+          li(data-list-type="night" )
+            a(href="#" data-floor="15" data-href="assets/images/view/night/15.jpg") 15 поверх
+          li(data-list-type="night" )
+            a(href="#" data-floor="19" data-href="assets/images/view/night/19.jpg") 19 поверх
+          li(data-list-type="night" )
+            a(href="#" data-floor="23" data-href="assets/images/view/night/23.jpg") 23 поверх
+          li(data-list-type="night" )
+            a(href="#" data-floor="27" data-href="assets/images/view/night/27.jpg") 27 поверх
+      div(class="view__iframe" data-iframe id="panorama")
     .view__info
       .view__info-icon
         +svg('info')
