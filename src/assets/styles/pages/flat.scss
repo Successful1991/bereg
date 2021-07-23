@@ -190,7 +190,19 @@
       width: 100%;
     }
   }
-
+  &-link {
+    &-path {
+      fill: transparent;
+      &.current__flat {
+        fill: rgba(26, 41, 65, 0.7);
+      }
+      @include from(1023px) {
+        &:hover {
+          fill: rgba(207, 164, 110, 0.7);
+        }
+      }
+    }
+  }
   .pdf {
     width: max-content;
     margin: 40px auto 0 vw(80, 1920);

@@ -1,9 +1,31 @@
+let panorama;
 function initPanorama(path) {
-  window.pannellum.viewer('panorama', {
+  if (panorama) {
+    panorama.destroy();
+  }
+  panorama = window.pannellum.viewer('panorama', {
     type: 'equirectangular',
+    showZoomCtrl: false,
+    mouseZoom: false,
+    keyboardZoom: false,
     autoLoad: true,
     panorama: path,
   });
+}
+
+function changeActiveLink(selectState) {
+  const { type, floor } = selectState;
+  const prevActiveLink = document.querySelector('[data-list-type] a.active');
+  const nextActiveLink = document.querySelector(`[data-list-type="${type}"] [data-floor="${floor}"]`);
+  prevActiveLink.classList.remove('active');
+  if (nextActiveLink) {
+    nextActiveLink.classList.add('active');
+    initPanorama(nextActiveLink.dataset.href);
+    return;
+  }
+  const nextActiveLinkDefault = document.querySelector(`[data-list-type="${type}"] a`);
+  nextActiveLinkDefault.classList.add('active');
+  initPanorama(nextActiveLinkDefault.dataset.href);
 }
 
 function changeTabs(selectState) {
@@ -17,14 +39,7 @@ function changeTabs(selectState) {
       list.style.display = 'block';
     }
   });
-}
-
-function changeActiveLink(selectState) {
-  const { type, floor } = selectState;
-  const prevActiveLink = document.querySelector('[data-list-type] a.active');
-  const nextActiveLink = document.querySelector(`[data-list-type="${type}"] [data-floor="${floor}"]`);
-  prevActiveLink.classList.remove('active');
-  nextActiveLink.classList.add('active');
+  changeActiveLink(selectState);
 }
 
 function initView() {

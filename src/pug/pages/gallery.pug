@@ -29,7 +29,7 @@ block content
   h1.title gallery
   .gallery
     .gallery__slider
-      .swiper-container.js-gallery__slider
+      .swiper-container.js-gallery__slider(data-scroll)
         .swiper-wrapper(data-slides-wrap)
           .swiper-slide.gallery__slide
             +img('slider/1.jpg').gallery__slide_img

@@ -16,6 +16,33 @@ function initSlider() {
     watchSlidesVisibility: true,
   });
   window.locoScroll.update();
+
+  const position = {
+    last: 0,
+  };
+
+  const sliderContainer = document.querySelector('.js-gallery__slider');
+  window.locoScroll.on('scroll', (obj) => {
+    const direction = position.last < obj.scroll.y ? 'down' : 'up';
+    if (position.last < obj.scroll.y - 20 && position.last > obj.scroll.y + 20) return;
+    switch (direction) {
+      case 'down':
+        if (position.last === 0) {
+          position.last = obj.scroll.y;
+          window.locoScroll.scrollTo(sliderContainer);
+        }
+        break;
+      case 'up':
+        if (position.last === obj.limit.y) {
+          position.last = obj.scroll.y;
+          window.locoScroll.scrollTo(sliderContainer);
+        }
+        break;
+      default:
+        break;
+    }
+    position.last = obj.scroll.y;
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initSlider);
