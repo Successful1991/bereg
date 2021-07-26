@@ -69,6 +69,12 @@ function flatInit() {
     hoverDataHundler(event.target, dataContainers);
   });
 
+  svgContainer.addEventListener('click', (event) => {
+    const { id } = event.target.dataset;
+    if (!id) return;
+    window.location.href = `/flat/?id=${id}`;
+  });
+
   initPopup();
 }
 

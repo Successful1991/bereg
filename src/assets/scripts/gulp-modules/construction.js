@@ -27,6 +27,7 @@ function createSlide(slide) {
   <img src="${slide}" title="foto" alt="foto">
  </div>`;
 }
+
 function replaceContent(data) {
   const slider = $('.js-construction__slider');
   slider[0].swiper.destroy(true, true);

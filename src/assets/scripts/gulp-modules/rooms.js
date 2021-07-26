@@ -46,8 +46,8 @@ function getTypeRoom() {
 }
 
 async function getFlats() {
+  // const response = await window.axios.get('./static/flats.json');
   const response = await window.axios.post('/wp-admin/admin-ajax.php', { action: 'getFlats', rooms: getTypeRoom() });
-  // const response = await window.axios.get('/static/flats.json');
   return response.data;
 }
 
@@ -93,11 +93,11 @@ function filter(flats, param) {
     const settingColl = Object.entries(param);
     const isLeave = settingColl.every((setting) => {
       const [name, value] = setting;
-      const hasKey = window._.has(flats, [flat.id, name]);
-      if (hasKey && getTypeFilterParam(name) === 'range') {
-        return checkRangeParam(flats[flat.id], name, value);
-      } if (hasKey && getTypeFilterParam(name) === 'checkbox') {
-        return checkSelectParam(flats[flat.id], name, value);
+      if (getTypeFilterParam(name) === 'range') {
+        return checkRangeParam(flat, name, value);
+      }
+      if (getTypeFilterParam(name) === 'checkbox') {
+        return checkSelectParam(flat, name, value);
       }
       return false;
     });
