@@ -6,7 +6,7 @@
   grid-template-areas: 'top top top top top top top'
   '. . . . . . .'
   '. left . right right right .';
-  overflow: auto;
+  overflow: hidden;
 
   @include to(1440px) {
     grid-template-columns: 11.5% auto 1fr 2fr 1fr 2fr 11.5%;

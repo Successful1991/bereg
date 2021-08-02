@@ -418,6 +418,9 @@
 
 /* Style items (options): */
 .select-items {
+  pointer-events: none;
+  visibility: hidden;
+
   position: absolute;
   background-color: $dark;
   top: 100%;
@@ -456,4 +459,9 @@
 }
 .select-items a:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.disabled-style {
+  background: gray!important;
+  pointer-events: none!important;
 }
