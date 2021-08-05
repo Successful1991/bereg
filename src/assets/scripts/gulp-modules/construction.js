@@ -1,5 +1,5 @@
 function initSlider() {
-  // eslint-disable-next-line no-undef
+  // eslint-disable-next-line no-undef,no-unused-vars
   const slider = new Swiper('.js-construction__slider', {
     loop: false,
     navigation: {
@@ -18,9 +18,6 @@ function initSlider() {
     speed: 400,
     watchSlidesVisibility: true,
   });
-  if (slider) {
-    console.log('');
-  }
 }
 function createSlide(slide) {
   return `<div class="swiper-slide construction__slide">
@@ -103,7 +100,7 @@ function initDropdown() {
           replaceContent(data);
           updateSelected(selected, state);
         }).catch((error) => {
-          console.log(error);
+          console.warn(error);
         });
     }
   });

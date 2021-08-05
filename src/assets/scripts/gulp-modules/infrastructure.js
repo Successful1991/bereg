@@ -2,7 +2,7 @@
 // Google map start
 function func() {
   const script = document.createElement('script');
-  let key = '';
+  let key = 'AIzaSyDTqT4gdBBxpTmVdkHHlPuiqPs0wOhFIm8';
   if (window.location.href.match(/localhost/)) key = 'AIzaSyD9nfM9ITx5m84p5GxlRoXa24A6jBOFe3U';
   // const key = '';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
@@ -85,16 +85,20 @@ function setMap(data) {
         }],
       }],
   });
-  const filterMarkers = function filterMarkers(category, categoriesArray) {
-    gmarkers1.forEach((el) => {
-      if (categoriesArray.has(el.category)) {
-        el.setMap(map);
-        el.setAnimation(google.maps.Animation.DROP);
+
+  const filterMarkers = (category, categories) => {
+    const newCategory = ((categories.size === 1 && categories.has('main'))
+    || categories.size === 0 ? 'all' : category);
+    gmarkers1.forEach((marker) => {
+      if (newCategory === 'all' || categories.has(marker.category)) {
+        marker.setMap(map);
+        marker.setAnimation(google.maps.Animation.DROP);
       } else {
-        el.setMap(null);
+        marker.setMap(null);
       }
     });
   };
+
   filterItems.forEach((item) => {
     item.addEventListener('click', () => {
       item.classList.toggle('active');
@@ -103,22 +107,18 @@ function setMap(data) {
       } else {
         choosedCategories.delete(item.dataset.category);
       }
-      filterMarkers('main', choosedCategories);
+      filterMarkers(item.dataset.category, choosedCategories);
     });
   });
 
-  // const infowindow = new google.maps.InfoWindow({
-  //   content: '',
-  //   maxWidth: 200,
-  // });
   points.forEach((marker) => {
-    const category = marker.type;
+    const category = marker.categorie;
+    const [lat, lng] = marker.cor.split(', ');
     const mapMarker = new google.maps.Marker({
       map,
       category,
-      icon: marker.icon,
-      position: new google.maps.LatLng(marker.cor),
-      // position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
+      icon: marker.image,
+      position: new google.maps.LatLng({ lat: +lat, lng: +lng }),
     });
 
     // google.maps.event.addListener(mapMarker, 'click', function () {
@@ -126,7 +126,7 @@ function setMap(data) {
     //   infowindow.open(map, mapMarker);
     //   map.panTo(this.getPosition());
     // });
-    mapMarker.name = marker.type;
+    mapMarker.name = category;
     gmarkers1.push(mapMarker);
   });
 

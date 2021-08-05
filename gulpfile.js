@@ -434,5 +434,5 @@ exports._images = _images;
 
 gulp.task('prod', gulp.series(
 	_clean,
-	gulp.parallel(_templates, _fonts, _static, _scripts, _styles, _images)
+	gulp.parallel(_templates, _fonts, _static, _scripts, _styles)
 ));
