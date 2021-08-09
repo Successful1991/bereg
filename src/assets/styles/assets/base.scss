@@ -21,10 +21,12 @@
 
 html{
 	font-size: 14px;
+  width: 100%;
 }
 body {
 	margin: 0;
 	min-width: 320px;
+  width: 100%;
 	line-height: 1.5em;
 	font-family: $default-font;
 	overflow-x: hidden;

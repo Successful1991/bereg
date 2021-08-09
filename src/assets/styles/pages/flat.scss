@@ -156,6 +156,7 @@
     grid-area: compass;
     height: 70px;
     width: 70px;
+    transform: rotate(6deg);
     pointer-events: none;
     @include to(1440px) {
       height: 50px;

@@ -129,6 +129,10 @@
       @include to(576px) {
         font-size: 10px;
       }
+      &.disabled {
+        color: #ababab!important;
+        pointer-events: none;
+      }
     }
     &-mobile {
       position: relative;

@@ -97,9 +97,17 @@ function init() {
     container.querySelector('.select-items').classList.remove('select-hide');
     // window.addEventListener('click', unSelectHandler.bind(null, container));
   };
-  document.querySelector('[data-lang="mobile"]').addEventListener('click', selectHandler);
-  document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
-  window.addEventListener('click', unSelectHandler());
+  const langMobile = document.querySelector('[data-lang="mobile"]');
+  const langDesktop = document.querySelector('[data-lang="desktop"]');
+  if (langMobile) {
+    langMobile.addEventListener('click', selectHandler);
+  }
+  if (langDesktop) {
+    langDesktop.addEventListener('click', selectHandler);
+  }
+  if (langMobile || langDesktop) {
+    window.addEventListener('click', unSelectHandler());
+  }
 
   initPopup();
   initPopupPresentation();
