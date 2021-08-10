@@ -87,8 +87,9 @@ function setMap(data) {
   });
 
   const filterMarkers = (category, categories) => {
-    const newCategory = ((categories.size === 1 && categories.has('main'))
-    || categories.size === 0 ? 'all' : category);
+    // const newCategory = ((categories.size === 1 && categories.has('main'))
+    // || categories.size === 0 ? 'all' : category);
+    const newCategory = (categories.size === 0 ? 'all' : category);
     gmarkers1.forEach((marker) => {
       if (newCategory === 'all' || categories.has(marker.category)) {
         marker.setMap(map);
