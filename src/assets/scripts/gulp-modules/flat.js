@@ -70,7 +70,7 @@ function flatInit() {
   });
 
   svgContainer.addEventListener('click', (event) => {
-    const { id } = event.target.dataset;
+    const id = event.target.dataset.flat_id;
     if (!id) return;
     window.location.href = `/flat/?id=${id}`;
   });

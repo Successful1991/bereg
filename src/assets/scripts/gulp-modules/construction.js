@@ -104,6 +104,13 @@ function initDropdown() {
         });
     }
   });
+  const eventObj = document.createEvent('Events');
+  eventObj.initEvent('click', true, false);
+  const element = list.querySelector('.select__link');
+  if (!element) {
+    window.location = '/404';
+  }
+  element.dispatchEvent(eventObj);
 }
 
 function init() {
