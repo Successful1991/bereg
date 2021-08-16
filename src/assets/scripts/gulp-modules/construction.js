@@ -41,9 +41,13 @@ function updateSelected(selected, state) {
   const select = selected;
   select.innerHTML = `${state.month} ${state.year}`;
   const oldElement = document.querySelector('[select].disabled');
-  oldElement.classList.remove('disabled');
+  if (oldElement) {
+    oldElement.classList.remove('disabled');
+  }
   const currentElement = document.querySelector(`[data-id="${state.selected}"]`);
-  currentElement.classList.add('disabled');
+  if (currentElement) {
+    currentElement.classList.add('disabled');
+  }
 }
 
 function getConstruction(id) {
@@ -106,11 +110,13 @@ function initDropdown() {
   });
   const eventObj = document.createEvent('Events');
   eventObj.initEvent('click', true, false);
+
   const element = list.querySelector('.select__link');
   if (!element) {
     window.location = '/404';
   }
   element.dispatchEvent(eventObj);
+  document.dispatchEvent(eventObj);
 }
 
 function init() {
