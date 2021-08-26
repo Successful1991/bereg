@@ -294,7 +294,8 @@
 }
 
 .pdf {
-  display: flex;
+  /* display: flex; */
+  display: none;
   align-items: center;
   text-decoration: none;
   &__name {
