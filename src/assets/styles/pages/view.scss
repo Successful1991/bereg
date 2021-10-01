@@ -226,3 +226,14 @@
   }
 }
 
+.view[data-current-type="day"] .pnlm-compass {
+  background: rgba(255, 255, 255, 0) url(../images/Compass-day.svg) no-repeat center!important;
+}
+
+.view[data-current-type="night"] .pnlm-compass {
+  background: rgba(255, 255, 255, 0) url(../images/Compass-night.svg) no-repeat center!important;
+}
+.view__container .pnlm-compass {
+  background: rgba(255, 255, 255, 0) url(../images/Compass-night.svg) no-repeat center!important;
+  border: none;
+}

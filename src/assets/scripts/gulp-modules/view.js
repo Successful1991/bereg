@@ -11,7 +11,7 @@ function initPanorama(path) {
     autoLoad: true,
     panorama: path,
     compass: true,
-    northOffset: 200.5,
+    northOffset: 220.5,
   });
 }
 
