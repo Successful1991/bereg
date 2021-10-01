@@ -1133,12 +1133,12 @@ $.magnificPopup.registerModule('image', {
 					'<div class="mfp-close"></div>'+
 					'<figure>'+
 						'<div class="mfp-img"></div>'+
-						'<figcaption>'+
+						/* '<figcaption>'+
 							'<div class="mfp-bottom-bar">'+
 								'<div class="mfp-title"></div>'+
 								'<div class="mfp-counter"></div>'+
 							'</div>'+
-						'</figcaption>'+
+						'</figcaption>'+ */
 					'</figure>'+
 				'</div>',
 		cursor: 'mfp-zoom-out-cur',
