@@ -37,10 +37,26 @@
     flex-direction: column;
     flex-wrap: nowrap;
   }
+  &__wrap {
+    position: relative;
+  }
   &__container {
     margin: 20px 0 0;
     @include to(576px) {
       margin: 50px 0 0;
+    }
+
+    .pnlm-compass{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      margin: 30px 30px auto;
+      //transform: translateY(-15%);
+      background: #ffffff url('../images/view-compass.png') no-repeat center;
     }
   }
   &__iframe {
@@ -209,3 +225,4 @@
     }
   }
 }
+

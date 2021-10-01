@@ -84,6 +84,7 @@ formsWithRedirect.forEach((form) => {
 
 forms.forEach((form) => {
   const $form = document.querySelector(form);
+
   if ($form) {
     /* eslint-disable */
     new FormMonster({

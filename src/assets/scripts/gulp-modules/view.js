@@ -10,6 +10,8 @@ function initPanorama(path) {
     keyboardZoom: false,
     autoLoad: true,
     panorama: path,
+    compass: true,
+    northOffset: 200.5,
   });
 }
 
