@@ -1,8 +1,9 @@
 let panorama;
-function initPanorama(path) {
+function initPanorama(path, deg) {
   if (panorama) {
     panorama.destroy();
   }
+  const compassDeg = deg || 220.5;
   panorama = window.pannellum.viewer('panorama', {
     type: 'equirectangular',
     showZoomCtrl: false,
@@ -11,7 +12,7 @@ function initPanorama(path) {
     autoLoad: true,
     panorama: path,
     compass: true,
-    northOffset: 220.5,
+    northOffset: compassDeg,
   });
 }
 
@@ -20,14 +21,15 @@ function changeActiveLink(selectState) {
   const prevActiveLink = document.querySelector('[data-list-type] a.active');
   const nextActiveLink = document.querySelector(`[data-list-type="${type}"] [data-floor="${floor}"]`);
   prevActiveLink.classList.remove('active');
+  const compassDeg = nextActiveLink.dataset.compass;
   if (nextActiveLink) {
     nextActiveLink.classList.add('active');
-    initPanorama(nextActiveLink.dataset.href);
+    initPanorama(nextActiveLink.dataset.href, compassDeg);
     return;
   }
   const nextActiveLinkDefault = document.querySelector(`[data-list-type="${type}"] a`);
   nextActiveLinkDefault.classList.add('active');
-  initPanorama(nextActiveLinkDefault.dataset.href);
+  initPanorama(nextActiveLinkDefault.dataset.href, compassDeg);
 }
 
 function changeTabs(selectState) {
