@@ -194,7 +194,7 @@ export default class FormMonster {
         try {
           this.watchedState.status = 'loading';
           const formData = new FormData(this.elements.$form);
-          formData.append('action', 'app');
+          formData.append('action', this.elements.$form.dataset.action || 'app');
 
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);

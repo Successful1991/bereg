@@ -35,7 +35,7 @@ const forms = [
   '[data-form-popup]',
   '[data-form-popup-presentation]',
   '[data-condition-contact]',
-  '[data-form-quiz]',
+
 ];
 const formsWithRedirect = [
   // '[data-popup-form]',
@@ -83,6 +83,7 @@ formsWithRedirect.forEach((form) => {
   }
 });
 
+
 forms.forEach((form) => {
   const $form = document.querySelector(form);
 
@@ -124,6 +125,55 @@ forms.forEach((form) => {
     }, false);
   }
 });
+
+
+const quizForm = ['[data-form-quiz]'];
+quizForm.forEach((form) => {
+  const $form = document.querySelector(form);
+
+  if ($form) {
+    /* eslint-disable */
+    new FormMonster({
+      /* eslint-enable */
+      elements: {
+        $form,
+        $popup: document.querySelector('[data-popup]'),
+        showSuccessMessage: false,
+        successAction: () => {
+          gsap.to('[data-thanks-qviz]', { autoAlpha: 1 });
+          gsap.to('[data-qviz]', { autoAlpha: 0 });
+        },
+        $btnSubmit: $form.querySelector('[data-btn-submit]'),
+        fields: {
+          name: {
+            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
+            rule: yup.string().required(i18next.t('required')).trim().matches(/^\D+$/, i18next.t('field_too_letter')),
+            defaultMessage: i18next.t('name'),
+            valid: false,
+            error: [],
+          },
+          phone: {
+            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-phone]'), typeInput: 'phone' }),
+            rule: yup
+              .string()
+              .required(i18next.t('required'))
+              .min(17, i18next.t('field_too_short', { cnt: 17 - 5 })),
+
+            defaultMessage: i18next.t('phone'),
+            valid: false,
+            error: [],
+          },
+        },
+      },
+    });
+
+    $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
+      $form.querySelector('[name="phone"]').focus();
+    }, false);
+  }
+});
+
+
 /*
  * form handlers end
  */
