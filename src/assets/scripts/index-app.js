@@ -35,6 +35,7 @@ const forms = [
   '[data-form-popup]',
   '[data-form-popup-presentation]',
   '[data-condition-contact]',
+  '[data-form-quiz]',
 ];
 const formsWithRedirect = [
   // '[data-popup-form]',
