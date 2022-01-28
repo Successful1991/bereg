@@ -13,11 +13,6 @@
   "keywords": [],
   "author": "Dmitriy Lukianov",
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.(js|jsx)": [
       "make lint-w",
